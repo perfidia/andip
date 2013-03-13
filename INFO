@@ -139,8 +139,8 @@ Poniżej skrócona wersja przykładów.
 	}, # end czasownik
 	'przymiotnik': {  
 		'word': {
-			'piękny': { // brak przykładu - odmiana lub stopniowanie
-				
+			'piękny': { 
+			
 			} # end piękny
 		}
 	}, # end przymiotnik

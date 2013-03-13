@@ -4,7 +4,7 @@ from andip import AnDiP
 from andip.provider import FileProvider
 from andip.provider.wiki import PlWikiProvider
 
-#ad = AnDiP(FileProvider("../data/polish"))
+ad = AnDiP(FileProvider("../data/polish"))
 ad = AnDiP(PlWikiProvider())
 
 #print 'opisany', ad.get_word(('przymiotnik', 'opis', {'liczba': 'pojedyncza', 'rodzaj': 'm'}))

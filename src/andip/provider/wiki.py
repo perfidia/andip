@@ -43,6 +43,10 @@ class PlWikiProvider(WikiProvider):
     
     def __init__(self):
         WikiProvider.__init__(self, "http://pl.wiktionary.org/")
+        self.__schema_adjective = None
+    
+    def _load(self, data_set):
+        return eval(open(data_set + ".txt").read())
     
     def __get_conf_verb(self, data):
         if len(data) == 0:
@@ -57,18 +61,40 @@ class PlWikiProvider(WikiProvider):
                 
     def __get_conf_noun(self, data):
         print 'noun'
-        
+            
     def __get_conf_adjective(self, data):
         if len(data) == 0:
             raise Exception("adjective error")
         words = data[0].replace("|", "").split("\n")
         
         assert len(words) > 0
+        word = words[0]
         
-        if words[0] == '' or words[0] == 'brak':
-            print "regular"
+        # generowanie stopniowania
+        if word == '' or word == 'brak':
+            # brak stopniowania?
+            return
         else:
-            print words[0]
+#            print word # stopniowanie na podstawie podanego drugiego stopnia
+            pass
+    
+        # generowanie odmian
+        if self.__schema_adjective is None:
+            self.__schema_adjective = self._load("../data/adjective_schema")
+
+        last_letter = word[len(word) - 1]
+        if last_letter == 'y' or last_letter == 'i':
+            retval = self.__schema_adjective[last_letter]
+            for przyp in retval['przypadek']:
+                for licz in retval['przypadek'][przyp]['liczba']:
+                    for rodz in retval['przypadek'][przyp]['liczba'][licz]['rodzaj']:
+                        retval['przypadek'][przyp]['liczba'][licz]['rodzaj'][rodz] = word[0:len(word) - 2] + retval['przypadek'][przyp]['liczba'][licz]['rodzaj'][rodz] 
+                    
+        return retval
+#        print self.__schema_adjective['y']
+        
+#        retval = self.conf_cache.get(word, None)
+
 
     def get_conf(self, word):
         data = self._get_conf(word)
