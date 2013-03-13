@@ -15,19 +15,16 @@ ad = AnDiP(PlWikiProvider())
 #print ad.get_word(("czasownik", "występować", {'aspekt': 'dokonane', 'forma': 'czas teraźniejszy', 'liczba': 'mnoga', 'osoba': 'trzecia'}))
 #print ad.get_word(("czasownik", "występować", {'aspekt': 'dokonane', 'forma': 'czas przeszły', 'liczba': 'mnoga', 'osoba': 'trzecia'}))
 #
-<<<<<<< HEAD
 #print ad.get_word("występować")
 #print ad.get_word("srać")
 
-print ad.get_word(('czasownik', 'występować', {'aspekt' : 'dokonane', 'forma' : 'czas terazniejszy', 'liczba' : 'mnoga', 'osoba': 'trzecia'}))
-=======
+#print ad.get_word(('czasownik', 'występować', {'aspekt' : 'dokonane', 'forma' : 'czas terazniejszy', 'liczba' : 'mnoga', 'osoba': 'trzecia'}))
 #print ad.get_conf("występować")
 #print ad.get_conf("srać")
 print ad.get_conf("piękny")
 print ad.get_conf("zdrowy")
 print ad.get_conf("zachodni")
 #print ad.get_conf("zdrów")
->>>>>>> fixed switch error
-#
+
 #
 #print ad.get_word(('czasownik', 'być', {'forma': 'czas przesz\xc5\x82y', 'osoba': 'trzecia', 'aspekt': 'dokonane', 'liczba': 'pojedyncza'}))
