@@ -48,7 +48,7 @@ class PlWikiProvider(WikiProvider):
     def _load(self, data_set):
         return eval(open(data_set + ".txt").read())
     
-    def __get_conf_verb(self, data):
+    def __get_conf_verb(self, base_word, data):
         if len(data) == 0:
             raise Exception("verb error")
         for conf in data:
@@ -59,10 +59,10 @@ class PlWikiProvider(WikiProvider):
                 config[tmp[0]] = tmp[1]
             return config
                 
-    def __get_conf_noun(self, data):
+    def __get_conf_noun(self, base_word, data):
         print 'noun'
             
-    def __get_conf_adjective(self, data):
+    def __get_conf_adjective(self, base_word, data):
         if len(data) == 0:
             raise Exception("adjective error")
         words = data[0].replace("|", "").split("\n")
@@ -82,13 +82,15 @@ class PlWikiProvider(WikiProvider):
         if self.__schema_adjective is None:
             self.__schema_adjective = self._load("../data/adjective_schema")
 
-        last_letter = word[len(word) - 1]
+        last_letter = base_word[len(base_word) - 1]
         if last_letter == 'y' or last_letter == 'i':
             retval = self.__schema_adjective[last_letter]
             for przyp in retval['przypadek']:
                 for licz in retval['przypadek'][przyp]['liczba']:
                     for rodz in retval['przypadek'][przyp]['liczba'][licz]['rodzaj']:
-                        retval['przypadek'][przyp]['liczba'][licz]['rodzaj'][rodz] = word[0:len(word) - 2] + retval['przypadek'][przyp]['liczba'][licz]['rodzaj'][rodz] 
+                        print base_word[0:len(base_word) - 2], retval['przypadek'][przyp]['liczba'][licz]['rodzaj'][rodz] 
+                        
+                        retval['przypadek'][przyp]['liczba'][licz]['rodzaj'][rodz] = base_word[0:len(base_word) - 1] + retval['przypadek'][przyp]['liczba'][licz]['rodzaj'][rodz] 
                     
         return retval
 #        print self.__schema_adjective['y']
@@ -107,7 +109,7 @@ class PlWikiProvider(WikiProvider):
             'czasownik': self.__get_conf_verb,
             #(re.findall("\{\{odmiana-czasownik-polski([^\}]*)}}", data)),
             'rzeczownik': self.__get_conf_noun #
-        }.get(type[0])(re.findall("\{\{odmiana-" + type[0] + "-polski([^\}]*)}}", data));
+        }.get(type[0])(word, re.findall("\{\{odmiana-" + type[0] + "-polski([^\}]*)}}", data));
 
     def get_word(self, conf):
         '''
