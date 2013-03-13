@@ -45,6 +45,8 @@ class PlWikiProvider(WikiProvider):
         WikiProvider.__init__(self, "http://pl.wiktionary.org/")
     
     def __get_conf_verb(self, data):
+        if len(data) == 0:
+            raise Exception("verb error")
         for conf in data:
             config = dict()
             conf = conf.replace("| ", "").split("\n")
@@ -54,10 +56,20 @@ class PlWikiProvider(WikiProvider):
             return config
                 
     def __get_conf_noun(self, data):
-        pass
+        print 'noun'
+        
     def __get_conf_adjective(self, data):
-        pass
-    
+        if len(data) == 0:
+            raise Exception("adjective error")
+        words = data[0].replace("|", "").split("\n")
+        
+        assert len(words) > 0
+        
+        if words[0] == '' or words[0] == 'brak':
+            print "regular"
+        else:
+            print words[0]
+
     def get_conf(self, word):
         data = self._get_conf(word)
 
@@ -65,10 +77,11 @@ class PlWikiProvider(WikiProvider):
         if len(type) == 0:
             raise Exception("word not found")
         return {
-            'przymiotnik': self.__get_conf_adjective, #
-            'czasownik': self.__get_conf_verb(re.findall("\{\{odmiana-czasownik-polski([^\}]*)}}", data)),
+            'przymiotnik': self.__get_conf_adjective,
+            'czasownik': self.__get_conf_verb,
+            #(re.findall("\{\{odmiana-czasownik-polski([^\}]*)}}", data)),
             'rzeczownik': self.__get_conf_noun #
-        }.get(type[0]);
+        }.get(type[0])(re.findall("\{\{odmiana-" + type[0] + "-polski([^\}]*)}}", data));
 
     def get_word(self, conf):
         '''
