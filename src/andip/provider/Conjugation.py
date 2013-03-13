@@ -6,14 +6,15 @@ Created on 13-03-2013
 '''
 
 class Conjugation(object):
-    
-    def __init__(self, conjugation, done):
-        self.done = done
-        self.end = conjugation['end']
-        self.time = conjugation['time']
         
-    def get_word(self,time, number, which):
-        return self.time[time][number][which]
+    def get_word_present(self,conj_type, forma, liczba, osoba, base_word):
+        new_end =  conjugation[conj_type]['time'][forma][liczba][osoba]
+        return base_word.replace(str(conjugation[conj_type]['end']), str(new_end))
+    
+    def get_word_past(self,conj_type, forma, liczba, rodzaj, osoba, base_word):
+        new_end =  conjugation[conj_type]['time'][forma][liczba][rodzaj][osoba]
+        return  base_word.replace(conjugation[conj_type]['end'], new_end)
+        
         
 conjugation = {
                'I' : {
@@ -82,7 +83,44 @@ conjugation = {
                                                                         'trzecia' : 'ują'
                                                                 }
                                                        }
-                                }
+                                ,
+                                'czas przeszly' : {
+                                                   'pojedyncza' : {
+                                                                   'meski' : {
+                                                                                    'pierwsza' : 'owałem',
+                                                                                    'druga' : 'owałeś',
+                                                                                    'trzecia' : 'ował'
+                                                                              },
+                                                                   'zenski' : {
+                                                                                    'pierwsza' : 'owałam',
+                                                                                    'druga' : 'owałaś',
+                                                                                    'trzecia' : 'owała'
+                                                                               },
+                                                                   'nijaki' : {
+                                                                                    'pierwsza' : 'owałom',
+                                                                                    'druga' : 'owałoś',
+                                                                                    'trzecia' : 'owało'
+                                                                               }
+                                                                  },
+                                                   'mnoga' : {
+                                                                    'meski' : {
+                                                                                    'pierwsza' : 'owaliśmy',
+                                                                                    'druga' : 'owaliście',
+                                                                                    'trzecia' : 'owali'
+                                                                              },
+                                                                   'zenski' : {
+                                                                                    'pierwsza' : 'owałyśmy',
+                                                                                    'druga' : 'owałyście',
+                                                                                    'trzecia' : 'owały'
+                                                                               },
+                                                                   'nijaki' : {
+                                                                                    'pierwsza' : 'owałyśmy',
+                                                                                    'druga' : 'owałyście',
+                                                                                    'trzecia' : 'owały'
+                                                                               }
+                                                              }
+                                        }
+                                 }
                 },
                 'Va' : {
                         'end' : 'nąć',

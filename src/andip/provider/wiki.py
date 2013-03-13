@@ -1,4 +1,4 @@
-#-*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 '''
 Created on Apr 27, 2012
 
@@ -29,7 +29,7 @@ class WikiProvider(DataProvider):
         
         return urllib.urlopen(self.__url + 'w/api.php?format=xml&action=query&prop=revisions&rvprop=content&titles=' + word).read()
         
-    def _get_dump(self, word = None, conf = None):
+    def _get_dump(self, word=None, conf=None):
         """
         Dump data of a specified word in a string recognazible by FileProvider.
         @param word: a word to dump
@@ -51,14 +51,40 @@ class PlWikiProvider(WikiProvider):
     def __get_conf_verb(self, base_word, data):
         if len(data) == 0:
             raise Exception("verb error")
-        for conf in data:
-            config = dict()
-            conf = conf.replace("| ", "").split("\n")
-            for element in filter(None, conf): # filter removes empty elements
-                tmp = element.split("=")
-                config[tmp[0]] = tmp[1]
-            return config
-                
+        
+        conf = data[0]
+        config = dict()
+        conf = conf.replace("| ", "").split("\n")
+        for element in filter(None, conf):  # filter removes empty elements
+            tmp = element.split("=")
+            config[tmp[0]] = tmp[1]
+            
+        if config['dokonany'] == 'tak':
+            done = 'dokonane' 
+        else:
+            done = 'niedokonane'
+        
+        configuration = {}
+        configuration[base_word] = {}
+        configuration[base_word]['aspekt'] = {}
+        configuration[base_word]['aspekt'][done] = {}
+        for forma in ['czas terazniejszy', 'czas przeszly']:
+            configuration[base_word]['aspekt'][done][forma] = {}
+            configuration[base_word]['aspekt'][done][forma]['liczba'] = {}
+            for liczba in ['pojedyncza', 'mnoga']:
+                configuration[base_word]['aspekt'][done][forma]['liczba'][liczba] = {}
+                configuration[base_word]['aspekt'][done][forma]['liczba'][liczba]['osoba'] = {}
+                for osoba in ['pierwsza', 'druga', 'trzecia']:
+                    configuration[base_word]['aspekt'][done][forma]['liczba'][liczba]['osoba'][osoba] = {}
+                    conj = Conjugation.Conjugation()
+                    if forma == 'czas przeszly':
+                        for rodzaj in ['meski', 'zenski', 'nijaki']:
+                            configuration[base_word]['aspekt'][done][forma]['liczba'][liczba]['osoba'][osoba][rodzaj] = conj.get_word_past(config['koniugacja'], forma, liczba, rodzaj, osoba, base_word)
+                    else:
+                        configuration[base_word]['aspekt'][done][forma]['liczba'][liczba]['osoba'][osoba] =  conj.get_word_present(config['koniugacja'],forma, liczba, osoba, base_word)
+        
+        return configuration[base_word]
+                    
     def __get_conf_noun(self, base_word, data):
         print 'noun'
             
@@ -107,8 +133,8 @@ class PlWikiProvider(WikiProvider):
         return {
             'przymiotnik': self.__get_conf_adjective,
             'czasownik': self.__get_conf_verb,
-            #(re.findall("\{\{odmiana-czasownik-polski([^\}]*)}}", data)),
-            'rzeczownik': self.__get_conf_noun #
+            # (re.findall("\{\{odmiana-czasownik-polski([^\}]*)}}", data)),
+            'rzeczownik': self.__get_conf_noun  #
         }.get(type[0])(word, re.findall("\{\{odmiana-" + type[0] + "-polski([^\}]*)}}", data));
 
     def get_word(self, conf):
@@ -118,25 +144,24 @@ class PlWikiProvider(WikiProvider):
             and the third is a dictionary that contains details about form of word we want to have
         
         '''
-        word_about =  self._get_conf(conf[1])
+        word_about = self._get_conf(conf[1])
         
-        if conf[0] == 'przymiotnik':
-            tmp = self.__get_conf_adjective(word_about), #
-        elif conf[0] == 'czasownik': 
-            tmp = self.__get_conf_verb(re.findall("\{\{odmiana-czasownik-polski([^\}]*)}}", word_about)),
-            tmp = tmp[0]
-            
-            conj = Conjugation.Conjugation(Conjugation.conjugation[tmp['koniugacja']], tmp['dokonany'])
-            new_end = conj.get_word(conf[2]['forma'], conf[2]['liczba'], conf[2]['osoba'])
-            
-            return conf[1].replace(conj.end, new_end)
-        elif conf[0] == 'rzeczownik': 
-            tmp =  self.__get_conf_noun #
+        print conf[2]
+        
+        try:
+            if conf[0] == 'przymiotnik':
+                tmp = self.__get_conf_adjective(word_about),  #
+            elif conf[0] == 'czasownik':
+                return self.__get_conf_verb(conf[1], re.findall("\{\{odmiana-czasownik-polski([^\}]*)}}", word_about))['aspekt'][conf[2]['aspekt']][conf[2]['forma']]['liczba'][conf[2]['liczba']]['osoba'][conf[2]['osoba']]
+            elif conf[0] == 'rzeczownik': 
+                tmp = self.__get_conf_noun  #
+        except KeyError:
+            return 'No information about this form'
             
         
         
 
-    def get_dump(self, word = None, conf = None):
+    def get_dump(self, word=None, conf=None):
         return self._get_dump(word, conf)
 
 
