@@ -8,18 +8,18 @@ Created on 13-03-2013
 class Conjugation(object):
         
     def get_word_present(self,conj_type, forma, liczba, osoba, base_word):
-        new_end =  conjugation[conj_type]['time'][forma][liczba][osoba]
-        return base_word.replace(str(conjugation[conj_type]['end']), str(new_end))
+        new_end = conjugation[conj_type]['forma'][forma][liczba][osoba]
+        return base_word.replace(str(conjugation[conj_type]['koncowka']), str(new_end))
     
     def get_word_past(self,conj_type, forma, liczba, rodzaj, osoba, base_word):
-        new_end =  conjugation[conj_type]['time'][forma][liczba][rodzaj][osoba]
-        return  base_word.replace(conjugation[conj_type]['end'], new_end)
+        new_end = conjugation[conj_type]['forma'][forma][liczba][rodzaj][osoba]
+        return  base_word.replace(conjugation[conj_type]['koncowka'], new_end)
         
         
 conjugation = {
                'I' : {
-                      'end' : 'ać',
-                      'time' : {
+                      'koncowka' : 'ać',
+                      'forma' : {
                                 'czas terazniejszy' : {
                                                        'pojedyncza' : {
                                                                        'pierwsza' : 'am',
@@ -35,8 +35,8 @@ conjugation = {
                                 }
                 },
                'II' : {
-                       'end' : 'eć',
-                       'time' : {
+                       'koncowka' : 'eć',
+                       'forma' : {
                                 'czas terazniejszy' : {
                                                        'pojedyncza' : {
                                                                        'pierwsza' : 'em',
@@ -52,8 +52,8 @@ conjugation = {
                                 }
                 },
                'III' : {
-                        'end' : 'eć',
-                        'time' : {
+                        'koncowka' : 'eć',
+                        'forma' : {
                                 'czas terazniejszy' : {
                                                        'pojedyncza' : {
                                                                        'pierwsza' : 'eję',
@@ -69,8 +69,8 @@ conjugation = {
                                 }
                 },
                'IV' : {
-                       'end' : 'ować',
-                       'time' : {
+                       'koncowka' : 'ować',
+                       'forma' : {
                                 'czas terazniejszy' : {
                                                        'pojedyncza' : {
                                                                        'pierwsza' : 'uję',
@@ -123,8 +123,8 @@ conjugation = {
                                  }
                 },
                 'Va' : {
-                        'end' : 'nąć',
-                        'time' : {
+                        'koncowka' : 'nąć',
+                        'forma' : {
                                 'czas terazniejszy' : {
                                                        'pojedyncza' : {
                                                                        'pierwsza' : 'nę',
@@ -140,8 +140,8 @@ conjugation = {
                                 }
                 },
                 'Vb' : {
-                        'end' : 'nąć',
-                        'time' : {
+                        'koncowka' : 'nąć',
+                        'forma' : {
                                 'czas terazniejszy' : {
                                                        'pojedyncza' : {
                                                                        'pierwsza' : 'nę',
@@ -157,8 +157,8 @@ conjugation = {
                                 }
                 },
                 'Vc' : {
-                        'end' : 'nąć',
-                        'time' : {
+                        'koncowka' : 'nąć',
+                        'forma' : {
                                 'czas terazniejszy' : {
                                                        'pojedyncza' : {
                                                                        'pierwsza' : 'nę',
@@ -174,8 +174,8 @@ conjugation = {
                                 }
                 },
                'VIa' : {
-                       'end' : 'ić',
-                       'time' : {
+                       'koncowka' : 'ić',
+                       'forma' : {
                                 'czas terazniejszy' : {
                                                        'pojedyncza' : {
                                                                        'pierwsza' : 'ę',
@@ -191,8 +191,8 @@ conjugation = {
                                 } 
                 },
                'VIb' : {
-                       'end' : 'yć',
-                       'time' : {
+                       'koncowka' : 'yć',
+                       'forma' : {
                                 'czas terazniejszy' : {
                                                        'pojedyncza' : {
                                                                        'pierwsza' : 'ę',
@@ -208,8 +208,8 @@ conjugation = {
                                 } 
                 },
                'VIIa' : {
-                       'end' : 'eć',
-                       'time' : {
+                       'koncowka' : 'eć',
+                       'forma' : {
                                 'czas terazniejszy' : {
                                                        'pojedyncza' : {
                                                                        'pierwsza' : 'ę',
@@ -225,8 +225,8 @@ conjugation = {
                                 } 
                 },
                'VIIb' : {
-                       'end' : 'eć',
-                       'time' : {
+                       'koncowka' : 'eć',
+                       'forma' : {
                                 'czas terazniejszy' : {
                                                        'pojedyncza' : {
                                                                        'pierwsza' : 'ę',
@@ -242,8 +242,8 @@ conjugation = {
                                 } 
                 },
                'VIIIa' : {
-                       'end' : 'ywać',
-                       'time' : {
+                       'koncowka' : 'ywać',
+                       'forma' : {
                                 'czas terazniejszy' : {
                                                        'pojedyncza' : {
                                                                        'pierwsza' : 'uję',
@@ -259,8 +259,8 @@ conjugation = {
                                 } 
                 },
                'VIIIb' : {
-                       'end' : 'iwać',
-                       'time' : {
+                       'koncowka' : 'iwać',
+                       'forma' : {
                                 'czas terazniejszy' : {
                                                        'pojedyncza' : {
                                                                        'pierwsza' : 'uję',
@@ -276,8 +276,8 @@ conjugation = {
                                 } 
                 },
                'IX' : {
-                       'end' : 'ać',
-                       'time' : {
+                       'koncowka' : 'ać',
+                       'forma' : {
                                 'czas terazniejszy' : {
                                                        'pojedyncza' : {
                                                                        'pierwsza' : 'ę',
@@ -293,8 +293,8 @@ conjugation = {
                                 } 
                 },
                'Xa' : {
-                       'end' : 'ć',
-                       'time' : {
+                       'koncowka' : 'ć',
+                       'forma' : {
                                 'czas terazniejszy' : {
                                                        'pojedyncza' : {
                                                                        'pierwsza' : 'ję',
@@ -310,8 +310,8 @@ conjugation = {
                                 } 
                 },
                'Xb' : {
-                       'end' : 'ać',
-                       'time' : {
+                       'koncowka' : 'ać',
+                       'forma' : {
                                 'czas terazniejszy' : {
                                                        'pojedyncza' : {
                                                                        'pierwsza' : 'eję',
@@ -327,8 +327,8 @@ conjugation = {
                                 } 
                 },
                'Xc' : {
-                       'end' : 'ać',
-                       'time' : {
+                       'koncowka' : 'ać',
+                       'forma' : {
                                 'czas terazniejszy' : {
                                                        'pojedyncza' : {
                                                                        'pierwsza' : 'mę',
@@ -344,8 +344,8 @@ conjugation = {
                                 } 
                 },
                'XI' : {
-                       'end' : 'ć',
-                       'time' : {
+                       'koncowka' : 'ć',
+                       'forma' : {
                                 'czas terazniejszy' : {
                                                        'pojedyncza' : {
                                                                        'pierwsza' : 'ę',

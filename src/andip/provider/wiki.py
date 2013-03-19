@@ -9,7 +9,7 @@ import urllib
 import re
 
 from andip import DataProvider
-from andip.provider import Conjugation
+from andip.provider import Conjugation, DatabaseProvider
 
 
 class WikiProvider(DataProvider):
@@ -44,6 +44,7 @@ class PlWikiProvider(WikiProvider):
     def __init__(self):
         WikiProvider.__init__(self, "http://pl.wiktionary.org/")
         self.__schema_adjective = None
+        self.database = DatabaseProvider.DatabaseProvider('Data')
     
     def _load(self, data_set):
         return eval(open(data_set + ".txt").read())
@@ -58,7 +59,8 @@ class PlWikiProvider(WikiProvider):
         for element in filter(None, conf):  # filter removes empty elements
             tmp = element.split("=")
             config[tmp[0]] = tmp[1]
-            
+        
+        
         if config['dokonany'] == 'tak':
             done = 'dokonane' 
         else:
@@ -78,11 +80,15 @@ class PlWikiProvider(WikiProvider):
                     configuration[base_word]['aspekt'][done][forma]['liczba'][liczba]['osoba'][osoba] = {}
                     conj = Conjugation.Conjugation()
                     if forma == 'czas przeszly':
-                        for rodzaj in ['meski', 'zenski', 'nijaki']:
-                            configuration[base_word]['aspekt'][done][forma]['liczba'][liczba]['osoba'][osoba][rodzaj] = conj.get_word_past(config['koniugacja'], forma, liczba, rodzaj, osoba, base_word)
+                        try:
+                            for rodzaj in ['meski', 'zenski', 'nijaki']:
+                                configuration[base_word]['aspekt'][done][forma]['liczba'][liczba]['osoba'][osoba][rodzaj] = conj.get_word_past(config['koniugacja'], forma, liczba, rodzaj, osoba, base_word)
+                        except Exception:
+                            pass
                     else:
                         configuration[base_word]['aspekt'][done][forma]['liczba'][liczba]['osoba'][osoba] =  conj.get_word_present(config['koniugacja'],forma, liczba, osoba, base_word)
         
+        self.database.save_verb(configuration[base_word], base_word)
         return configuration[base_word]
                     
     def __get_conf_noun(self, base_word, data):
@@ -133,7 +139,6 @@ class PlWikiProvider(WikiProvider):
         return {
             'przymiotnik': self.__get_conf_adjective,
             'czasownik': self.__get_conf_verb,
-            # (re.findall("\{\{odmiana-czasownik-polski([^\}]*)}}", data)),
             'rzeczownik': self.__get_conf_noun  #
         }.get(type[0])(word, re.findall("\{\{odmiana-" + type[0] + "-polski([^\}]*)}}", data));
 
@@ -146,19 +151,18 @@ class PlWikiProvider(WikiProvider):
         '''
         word_about = self._get_conf(conf[1])
         
-        print conf[2]
-        
         try:
-            if conf[0] == 'przymiotnik':
-                tmp = self.__get_conf_adjective(word_about),  #
-            elif conf[0] == 'czasownik':
-                return self.__get_conf_verb(conf[1], re.findall("\{\{odmiana-czasownik-polski([^\}]*)}}", word_about))['aspekt'][conf[2]['aspekt']][conf[2]['forma']]['liczba'][conf[2]['liczba']]['osoba'][conf[2]['osoba']]
-            elif conf[0] == 'rzeczownik': 
-                tmp = self.__get_conf_noun  #
-        except KeyError:
-            return 'No information about this form'
-            
-        
+            return self.database.get_verb(conf[2], conf[1])
+        except:
+            try:
+                if conf[0] == 'przymiotnik':
+                    tmp = self.__get_conf_adjective(word_about),  #
+                elif conf[0] == 'czasownik':
+                    return self.__get_conf_verb(conf[1], re.findall("\{\{odmiana-czasownik-polski([^\}]*)}}", word_about))['aspekt'][conf[2]['aspekt']][conf[2]['forma']]['liczba'][conf[2]['liczba']]['osoba'][conf[2]['osoba']]
+                elif conf[0] == 'rzeczownik': 
+                    tmp = self.__get_conf_noun  #
+            except KeyError, Exception:
+                return 'No information about this form'
         
 
     def get_dump(self, word=None, conf=None):
