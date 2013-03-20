@@ -600,7 +600,7 @@ adjective_schema = {
                     'pojedyńcza': {
                         'rodzaj': {
                             'm': 'i',
-                            'ż': 'a
+                            'ż': 'a',
                             'n': 'ie'
                         }
                     },

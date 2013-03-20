@@ -7,7 +7,11 @@ from andip.provider import PlWikiProvider
 class WikiPolishTest(unittest.TestCase):
     
     def setUp(self):
-        self.ad = AnDiP(PlWikiProvider())
+        self.wiki = PlWikiProvider()
+        self.ad = AnDiP(self.wiki)
+        
+    def tearDown(self):
+        self.wiki.close_database()
         
     def test_verb_get_conf(self):
         self.assertEquals('występują', self.ad.get_word(('czasownik', 'występować', {'aspekt' : 'niedokonane', 'forma' : 'czas terazniejszy', 'liczba' : 'mnoga', 'osoba': 'trzecia'})))

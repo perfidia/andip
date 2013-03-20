@@ -13,12 +13,17 @@ import transaction
 class DatabaseProvider(object):
     
     def __init__(self, name):
-        storage = FileStorage('../data/' + name + '.fs')
-        db = DB(storage)
-        connection = db.open()
-        self.root = connection.root()
+        self.storage = FileStorage('../data/' + name + '.fs')
+        self.db = DB(self.storage)
+        self.connection = self.db.open()
+        self.root = self.connection.root()
         if not self.root:
             self._dictionary_init()
+
+    def close(self):
+        self.connection.close()
+        self.db.close()
+        self.storage.close()
 
     def _dictionary_init(self):
        '''

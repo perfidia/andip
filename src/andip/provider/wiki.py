@@ -45,7 +45,10 @@ class PlWikiProvider(WikiProvider):
     def __init__(self):
         WikiProvider.__init__(self, "http://pl.wiktionary.org/")
         self.__schema_adjective = None
-        self.database = database.DatabaseProvider('polish')
+        self.database = database.DatabaseProvider('Polish')
+    
+    def close_database(self):
+        self.database.close()
     
     def _load(self, data_set):
         return eval(open(data_set + ".txt").read())
@@ -132,7 +135,6 @@ class PlWikiProvider(WikiProvider):
         assert len(words) > 0
         word = words[0]
         
-        print base_word
         last_letter = base_word[len(base_word) - 1]
         
         if last_letter == 'y' or last_letter == 'i':
