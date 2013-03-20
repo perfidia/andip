@@ -71,23 +71,24 @@ class PlWikiProvider(WikiProvider):
         configuration[base_word] = {}
         configuration[base_word]['aspekt'] = {}
         configuration[base_word]['aspekt'][done] = {}
+        configuration[base_word]['aspekt'][done]['forma'] = {}
         for forma in ['czas terazniejszy', 'czas przeszly']:
-            configuration[base_word]['aspekt'][done][forma] = {}
-            configuration[base_word]['aspekt'][done][forma]['liczba'] = {}
+            configuration[base_word]['aspekt'][done]['forma'][forma] = {}
+            configuration[base_word]['aspekt'][done]['forma'][forma]['liczba'] = {}
             for liczba in ['pojedyncza', 'mnoga']:
-                configuration[base_word]['aspekt'][done][forma]['liczba'][liczba] = {}
-                configuration[base_word]['aspekt'][done][forma]['liczba'][liczba]['osoba'] = {}
+                configuration[base_word]['aspekt'][done]['forma'][forma]['liczba'][liczba] = {}
+                configuration[base_word]['aspekt'][done]['forma'][forma]['liczba'][liczba]['osoba'] = {}
                 for osoba in ['pierwsza', 'druga', 'trzecia']:
-                    configuration[base_word]['aspekt'][done][forma]['liczba'][liczba]['osoba'][osoba] = {}
+                    configuration[base_word]['aspekt'][done]['forma'][forma]['liczba'][liczba]['osoba'][osoba] = {}
                     conj = Schema.Schema()
                     if forma == 'czas przeszly':
                         try:
                             for rodzaj in ['meski', 'zenski', 'nijaki']:
-                                configuration[base_word]['aspekt'][done][forma]['liczba'][liczba]['osoba'][osoba][rodzaj] = conj.get_word_past(config['koniugacja'], forma, liczba, rodzaj, osoba, base_word)
+                                configuration[base_word]['aspekt'][done]['forma'][forma]['liczba'][liczba]['osoba'][osoba][rodzaj] = conj.get_word_past(config['koniugacja'], forma, liczba, rodzaj, osoba, base_word)
                         except Exception:
                             pass
                     else:
-                        configuration[base_word]['aspekt'][done][forma]['liczba'][liczba]['osoba'][osoba] =  conj.get_word_present(config['koniugacja'],forma, liczba, osoba, base_word)
+                        configuration[base_word]['aspekt'][done]['forma'][forma]['liczba'][liczba]['osoba'][osoba] =  conj.get_word_present(config['koniugacja'],forma, liczba, osoba, base_word)
         
         self.database.save_verb(configuration[base_word], base_word)
         return configuration[base_word]
@@ -145,7 +146,7 @@ class PlWikiProvider(WikiProvider):
                 if conf[0] == 'przymiotnik':
                     tmp = self.__get_conf_adjective(word_about),  #
                 elif conf[0] == 'czasownik':
-                    return self.__get_conf_verb(conf[1], re.findall("\{\{odmiana-czasownik-polski([^\}]*)}}", word_about))['aspekt'][conf[2]['aspekt']][conf[2]['forma']]['liczba'][conf[2]['liczba']]['osoba'][conf[2]['osoba']]
+                    return self.__get_conf_verb(conf[1], re.findall("\{\{odmiana-czasownik-polski([^\}]*)}}", word_about))['aspekt'][conf[2]['aspekt']]['forma'][conf[2]['forma']]['liczba'][conf[2]['liczba']]['osoba'][conf[2]['osoba']]
                 elif conf[0] == 'rzeczownik': 
                     tmp = self.__get_conf_noun  #
             except KeyError, Exception:

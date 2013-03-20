@@ -44,7 +44,7 @@ class DatabaseProvider(object):
             Get verb using configuration
         '''
         try:
-            return self.root['czasownik']['word'][base_word]['aspekt'][conf['aspekt']][conf['forma']]['liczba'][conf['liczba']]['osoba'][conf['osoba']]
+            return self.root['czasownik']['word'][base_word]['aspekt'][conf['aspekt']]['forma'][conf['forma']]['liczba'][conf['liczba']]['osoba'][conf['osoba']]
         except KeyError:
             raise Exception("Key Error occured")
 
