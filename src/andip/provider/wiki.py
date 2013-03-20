@@ -118,16 +118,17 @@ class PlWikiProvider(WikiProvider):
         assert len(words) > 0
         word = words[0]
         
+        print base_word
         last_letter = base_word[len(base_word) - 1]
+        
         if last_letter == 'y' or last_letter == 'i':
-            configuration = copy.deepcopy(schema.adjective_schema)
+            configuration = copy.deepcopy(schema.adjective_schema[last_letter])
             for przypadek in configuration['przypadek']:
                 for liczba in configuration['przypadek'][przypadek]['liczba']:
                     for rodzaj in configuration['przypadek'][przypadek]['liczba'][liczba]['rodzaj']:
                         configuration['przypadek'][przypadek]['liczba'][liczba]['rodzaj'][rodzaj] = base_word[0:len(base_word) - 1] + configuration['przypadek'][przypadek]['liczba'][liczba]['rodzaj'][rodzaj] 
-                    
-        configuration = {'stopień' : {'podstawowy' : {configuration}}}
-        self.database.save_adjective(configuration, base_word)
+
+        configuration = { 'stopien' : { 'podstawowy' : configuration } }
         return configuration
 
     def get_conf(self, word):
@@ -156,7 +157,9 @@ class PlWikiProvider(WikiProvider):
         except:
             try:
                 if conf[0] == 'przymiotnik':
-                    tmp = self.__get_conf_adjective(conf[1], re.findall("\{\{odmiana-przymiotnik-polski([^\}]*)}}", word_about)),  #
+                    tmp = self.__get_conf_adjective(conf[1], re.findall("\{\{odmiana-przymiotnik-polski([^\}]*)}}", word_about))['stopien'][conf[2]['stopień']]['przypadek'][conf[2]['przypadek']]['liczba'][conf[2]['liczba']]['rodzaj'][conf[2]['rodzaj']],  #
+                    tmp = tmp[0]
+                    return tmp
                 elif conf[0] == 'czasownik':
                     return self.__get_conf_verb(conf[1], re.findall("\{\{odmiana-czasownik-polski([^\}]*)}}", word_about))['aspekt'][conf[2]['aspekt']]['forma'][conf[2]['forma']]['liczba'][conf[2]['liczba']]['osoba'][conf[2]['osoba']]
                 elif conf[0] == 'rzeczownik': 
