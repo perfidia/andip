@@ -10,7 +10,8 @@ import re
 import copy
 
 from andip import DataProvider
-from andip.provider import Schema, DatabaseProvider
+from andip.provider import DatabaseProvider
+from andip.wiki import Schema
 
 
 class WikiProvider(DataProvider):
@@ -50,6 +51,23 @@ class PlWikiProvider(WikiProvider):
     def _load(self, data_set):
         return eval(open(data_set + ".txt").read())
     
+    def __get_conf_noun(self, base_word, data):
+        for conf in data:
+            config = dict()
+            conf = conf.replace("|", "").split("\n")
+            for element in filter(None, conf): # filter removes empty elements
+                tmp = element.split("=")
+                config[tmp[0]] = tmp[1]
+            return config
+
+    def __get_word_noun(self, data, case, number):
+        if number == 'pojedyncza':
+            ret = data[case + ' lp ']
+        else:
+            ret = data[case + ' lm ']
+        ret = ret.replace(" ", "")
+        return ret
+    
     def __get_conf_verb(self, base_word, data):
         if len(data) == 0:
             raise Exception("verb error")
@@ -60,7 +78,6 @@ class PlWikiProvider(WikiProvider):
         for element in filter(None, conf):  # filter removes empty elements
             tmp = element.split("=")
             config[tmp[0]] = tmp[1]
-        
         
         if config['dokonany'] == 'tak':
             done = 'dokonane' 
@@ -80,7 +97,7 @@ class PlWikiProvider(WikiProvider):
                 configuration[base_word]['aspekt'][done]['forma'][forma]['liczba'][liczba]['osoba'] = {}
                 for osoba in ['pierwsza', 'druga', 'trzecia']:
                     configuration[base_word]['aspekt'][done]['forma'][forma]['liczba'][liczba]['osoba'][osoba] = {}
-                    conj = Schema.Schema()
+                    conj = Schema()
                     if forma == 'czas przeszly':
                         try:
                             for rodzaj in ['meski', 'zenski', 'nijaki']:
@@ -92,9 +109,6 @@ class PlWikiProvider(WikiProvider):
         
         self.database.save_verb(configuration[base_word], base_word)
         return configuration[base_word]
-                    
-    def __get_conf_noun(self, base_word, data):
-        print 'noun'
             
     def __get_conf_adjective(self, base_word, data):
         if len(data) == 0:
@@ -106,12 +120,10 @@ class PlWikiProvider(WikiProvider):
         
         last_letter = base_word[len(base_word) - 1]
         if last_letter == 'y' or last_letter == 'i':
-            configuration = copy.deepcopy(Schema.adjective_schema)
-            for przypadek in retval['przypadek']:
-                for liczba in retval['przypadek'][przyp]['liczba']:
-                    for rodzaj in retval['przypadek'][przyp]['liczba'][licz]['rodzaj']:
-                        #print base_word[0:len(base_word) - 2], retval['przypadek'][przypadek]['liczba'][liczba]['rodzaj'][rodzaj] 
-                        
+            configuration = copy.deepcopy(Schema().adjective_schema)
+            for przypadek in configuration['przypadek']:
+                for liczba in configuration['przypadek'][przypadek]['liczba']:
+                    for rodzaj in configuration['przypadek'][przypadek]['liczba'][liczba]['rodzaj']:
                         configuration['przypadek'][przypadek]['liczba'][liczba]['rodzaj'][rodzaj] = base_word[0:len(base_word) - 1] + configuration['przypadek'][przypadek]['liczba'][liczba]['rodzaj'][rodzaj] 
                     
         configuration = {'stopień' : {'podstawowy' : {configuration}}}
