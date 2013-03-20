@@ -51,21 +51,35 @@ class PlWikiProvider(WikiProvider):
         return eval(open(data_set + ".txt").read())
     
     def __get_conf_noun(self, base_word, data):
+        configuration = {}
+        configuration[base_word] = {}
+        configuration[base_word]['przypadek'] = {}
+        
+        for przypadek in ['mianownik', 'dopełniacz', 'celownik', 'biernik', 'narzędnik', 'miejscownik', 'wołacz']:
+            configuration[base_word]['przypadek'][przypadek] = {}
+            configuration[base_word]['przypadek'][przypadek]['liczba'] = {}
+            #for liczba in ['pojedyncza', 'mnoga']:
+            #    config[base_word]['przypadek'][przypadek][liczba] = ""
+
         for conf in data:
             config = dict()
             conf = conf.replace("|", "").split("\n")
-            for element in filter(None, conf): # filter removes empty elements
+            for element in filter(None, conf):
                 tmp = element.split("=")
-                config[tmp[0]] = tmp[1]
-            return config
+                przypadek = tmp[0].lower().split(' ')[0]
+                liczba = tmp[0].lower().split(' ')[1]
+                tmp[1] = tmp[1].replace(" ", "")
+                if liczba == 'lp':
+                    liczba = "pojedyncza"
+                else:
+                    liczba = "mnoga"
+                configuration[base_word]['przypadek'][przypadek]['liczba'][liczba] = tmp[1]
+            self.database.save_noun(configuration[base_word], base_word)  
+            return configuration[base_word]
 
     def __get_word_noun(self, data, case, number):
-        if number == 'pojedyncza':
-            ret = data[case + ' lp ']
-        else:
-            ret = data[case + ' lm ']
-        ret = ret.replace(" ", "")
-        return ret
+        
+        return data['przypadek'][case]['liczba'][number]
     
     def __get_conf_verb(self, base_word, data):
         if len(data) == 0:
@@ -160,9 +174,7 @@ class PlWikiProvider(WikiProvider):
                 elif conf[0] == 'czasownik':
                     return self.__get_conf_verb(conf[1], re.findall("\{\{odmiana-czasownik-polski([^\}]*)}}", word_about))['aspekt'][conf[2]['aspekt']]['forma'][conf[2]['forma']]['liczba'][conf[2]['liczba']]['osoba'][conf[2]['osoba']]
                 elif conf[0] == 'rzeczownik': 
-                    tmp = self.__get_conf_noun("", re.findall("\{\{odmiana-rzeczownik-polski([^\}]*)\}\}", word_about)),
-                    tmp = tmp[0]
-                    return self.__get_word_noun(tmp, conf[2]['przypadek'], conf[2]['liczba'])
+                    return self.__get_conf_noun(conf[1], re.findall("\{\{odmiana-rzeczownik-polski([^\}]*)\}\}", word_about))['przypadek'][conf[2]['przypadek']]['liczba'][conf[2]['liczba']]
             except KeyError, Exception:
                 return 'No information about this form'
         

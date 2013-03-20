@@ -24,14 +24,14 @@ ad = AnDiP(PlWikiProvider())
 #print db.get_verb({'aspekt' : 'niedokonane', 'forma' : 'czas terazniejszy', 'liczba' : 'mnoga', 'osoba': 'trzecia'}, 'zabierać')
 
 #print ad.get_conf('występować')
-print ad.get_word(('czasownik', 'występować', {'aspekt' : 'niedokonane', 'forma' : 'czas terazniejszy', 'liczba' : 'mnoga', 'osoba': 'trzecia'}))
+#print ad.get_word(('czasownik', 'występować', {'aspekt' : 'niedokonane', 'forma' : 'czas terazniejszy', 'liczba' : 'mnoga', 'osoba': 'trzecia'}))
 #print ad.get_conf("występować")
 #print ad.get_conf("srać")
 #print ad.get_conf("piękny")
 #print ad.get_conf("zdrowy")
 #print ad.get_conf("zachodni")
 #print ad.get_conf("zdrów")
-print ad.get_word(('rzeczownik', 'kot', {'przypadek':'Wołacz', 'liczba': 'mnoga'}));
+#print ad.get_word(('rzeczownik', 'pies', {'przypadek':'wołacz', 'liczba': 'mnoga'}));
 print ad.get_conf('kot')
 
 #
