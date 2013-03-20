@@ -94,7 +94,20 @@ class PlWikiProvider(WikiProvider):
         return configuration[base_word]
                     
     def __get_conf_noun(self, base_word, data):
-        print 'noun'
+        for conf in data:
+            config = dict()
+            conf = conf.replace("|", "").split("\n")
+            for element in filter(None, conf): # filter removes empty elements
+                tmp = element.split("=")
+                config[tmp[0]] = tmp[1]
+            return config
+    def __get_word_noun(self, data, case, number):
+        if number == 'pojedyncza':
+            ret = data[case + ' lp ']
+        else:
+            ret = data[case + ' lm ']
+        ret = ret.replace(" ", "")
+        return ret
             
     def __get_conf_adjective(self, base_word, data):
         if len(data) == 0:
@@ -148,7 +161,9 @@ class PlWikiProvider(WikiProvider):
                 elif conf[0] == 'czasownik':
                     return self.__get_conf_verb(conf[1], re.findall("\{\{odmiana-czasownik-polski([^\}]*)}}", word_about))['aspekt'][conf[2]['aspekt']]['forma'][conf[2]['forma']]['liczba'][conf[2]['liczba']]['osoba'][conf[2]['osoba']]
                 elif conf[0] == 'rzeczownik': 
-                    tmp = self.__get_conf_noun  #
+                    tmp = self.__get_conf_noun("", re.findall("\{\{odmiana-rzeczownik-polski([^\}]*)\}\}", word_about)),
+                    tmp = tmp[0]
+                    return self.__get_word_noun(tmp, conf[2]['przypadek'], conf[2]['liczba'])
             except KeyError, Exception:
                 return 'No information about this form'
         

@@ -31,6 +31,8 @@ print ad.get_word(('czasownik', 'występować', {'aspekt' : 'niedokonane', 'form
 #print ad.get_conf("zdrowy")
 #print ad.get_conf("zachodni")
 #print ad.get_conf("zdrów")
+print ad.get_word(('rzeczownik', 'kot', {'przypadek':'Wołacz', 'liczba': 'mnoga'}));
+print ad.get_conf('kot')
 
 #
 #print ad.get_word(('czasownik', 'być', {'forma': 'czas przesz\xc5\x82y', 'osoba': 'trzecia', 'aspekt': 'dokonane', 'liczba': 'pojedyncza'}))
