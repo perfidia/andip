@@ -45,7 +45,7 @@ class PlWikiProvider(WikiProvider):
     def __init__(self):
         WikiProvider.__init__(self, "http://pl.wiktionary.org/")
         self.__schema_adjective = None
-        self.database = database.DatabaseProvider('Data')
+        self.database = database.DatabaseProvider('polish')
     
     def _load(self, data_set):
         return eval(open(data_set + ".txt").read())
