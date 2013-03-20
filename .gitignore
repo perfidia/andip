@@ -1,5 +1,7 @@
 *.py[cod]
 
+data/Data.fs.*
+
 # C extensions
 *.so
 
