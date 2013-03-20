@@ -3,7 +3,7 @@
 from andip import AnDiP
 from andip.provider import FileProvider
 from andip.provider.wiki import PlWikiProvider
-from andip.provider import DatabaseProvider
+from andip.provider import database
 
 ad = AnDiP(FileProvider("../data/polish"))
 ad = AnDiP(PlWikiProvider())

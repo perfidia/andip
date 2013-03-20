@@ -63,6 +63,7 @@ class DatabaseProvider(object):
             return self.root['przymiotnik']['word'][base_word]['stopień'][conf['stopień']]['przypadek'][conf['przypadek']]['liczba'][conf['liczba']]['rodzaj'][conf['rodzaj']]
         except KeyError:
             raise Exception("Key Error occured")
+
     def save_noun(self, dict, base_word):
         '''
             Save noun to database in Bartosz Alchimowicz convention

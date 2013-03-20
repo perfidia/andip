@@ -10,9 +10,8 @@ import re
 import copy
 
 from andip import DataProvider
-from andip.provider import DatabaseProvider
-from andip.wiki import Schema
-
+from andip.provider import database
+from andip.wiki import schema
 
 class WikiProvider(DataProvider):
     def __init__(self, url):
@@ -46,7 +45,7 @@ class PlWikiProvider(WikiProvider):
     def __init__(self):
         WikiProvider.__init__(self, "http://pl.wiktionary.org/")
         self.__schema_adjective = None
-        self.database = DatabaseProvider.DatabaseProvider('Data')
+        self.database = database.DatabaseProvider('Data')
     
     def _load(self, data_set):
         return eval(open(data_set + ".txt").read())
@@ -97,7 +96,7 @@ class PlWikiProvider(WikiProvider):
                 configuration[base_word]['aspekt'][done]['forma'][forma]['liczba'][liczba]['osoba'] = {}
                 for osoba in ['pierwsza', 'druga', 'trzecia']:
                     configuration[base_word]['aspekt'][done]['forma'][forma]['liczba'][liczba]['osoba'][osoba] = {}
-                    conj = Schema()
+                    conj = schema.Schema()
                     if forma == 'czas przeszly':
                         try:
                             for rodzaj in ['meski', 'zenski', 'nijaki']:
@@ -109,25 +108,7 @@ class PlWikiProvider(WikiProvider):
         
         self.database.save_verb(configuration[base_word], base_word)
         return configuration[base_word]
-<<<<<<< HEAD
-                    
-    def __get_conf_noun(self, base_word, data):
-        for conf in data:
-            config = dict()
-            conf = conf.replace("|", "").split("\n")
-            for element in filter(None, conf): # filter removes empty elements
-                tmp = element.split("=")
-                config[tmp[0]] = tmp[1]
-            return config
-    def __get_word_noun(self, data, case, number):
-        if number == 'pojedyncza':
-            ret = data[case + ' lp ']
-        else:
-            ret = data[case + ' lm ']
-        ret = ret.replace(" ", "")
-        return ret
-=======
->>>>>>> 718ace0556cefe01577b940ba83ce2e3d3050431
+
             
     def __get_conf_adjective(self, base_word, data):
         if len(data) == 0:
@@ -139,7 +120,7 @@ class PlWikiProvider(WikiProvider):
         
         last_letter = base_word[len(base_word) - 1]
         if last_letter == 'y' or last_letter == 'i':
-            configuration = copy.deepcopy(Schema().adjective_schema)
+            configuration = copy.deepcopy(schema.adjective_schema)
             for przypadek in configuration['przypadek']:
                 for liczba in configuration['przypadek'][przypadek]['liczba']:
                     for rodzaj in configuration['przypadek'][przypadek]['liczba'][liczba]['rodzaj']:
@@ -175,7 +156,7 @@ class PlWikiProvider(WikiProvider):
         except:
             try:
                 if conf[0] == 'przymiotnik':
-                    tmp = self.__get_conf_adjective(word_about),  #
+                    tmp = self.__get_conf_adjective(conf[1], re.findall("\{\{odmiana-przymiotnik-polski([^\}]*)}}", word_about)),  #
                 elif conf[0] == 'czasownik':
                     return self.__get_conf_verb(conf[1], re.findall("\{\{odmiana-czasownik-polski([^\}]*)}}", word_about))['aspekt'][conf[2]['aspekt']]['forma'][conf[2]['forma']]['liczba'][conf[2]['liczba']]['osoba'][conf[2]['osoba']]
                 elif conf[0] == 'rzeczownik': 
