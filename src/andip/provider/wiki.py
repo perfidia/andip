@@ -10,7 +10,7 @@ import re
 import copy
 
 from andip import DataProvider
-from andip.provider import Conjugation, DatabaseProvider
+from andip.provider import Schema, DatabaseProvider
 
 
 class WikiProvider(DataProvider):
@@ -79,7 +79,7 @@ class PlWikiProvider(WikiProvider):
                 configuration[base_word]['aspekt'][done][forma]['liczba'][liczba]['osoba'] = {}
                 for osoba in ['pierwsza', 'druga', 'trzecia']:
                     configuration[base_word]['aspekt'][done][forma]['liczba'][liczba]['osoba'][osoba] = {}
-                    conj = Conjugation.Conjugation()
+                    conj = Schema.Schema()
                     if forma == 'czas przeszly':
                         try:
                             for rodzaj in ['meski', 'zenski', 'nijaki']:
@@ -105,7 +105,7 @@ class PlWikiProvider(WikiProvider):
         
         last_letter = base_word[len(base_word) - 1]
         if last_letter == 'y' or last_letter == 'i':
-            configuration = copy.deepcopy(Conjugation.adjective_schema)
+            configuration = copy.deepcopy(Schema.adjective_schema)
             for przypadek in retval['przypadek']:
                 for liczba in retval['przypadek'][przyp]['liczba']:
                     for rodzaj in retval['przypadek'][przyp]['liczba'][licz]['rodzaj']:

@@ -28,6 +28,8 @@ class DatabaseProvider(object):
        self.root['rzeczownik'] = PersistentMapping() # tutaj uzupe�nij, je�li potrzebujesz co� wi�cej do s�ownika
        self.root['czasownik'] = PersistentMapping()
        self.root['czasownik']['word'] = PersistentMapping()
+       self.root['przymiotnik']['word'] = PersistentMapping()
+       self.root['rzeczownik']['word'] = PersistentMapping()
        transaction.commit()
 
     def save_verb(self, dict, base_word):
@@ -42,9 +44,9 @@ class DatabaseProvider(object):
             Get verb using configuration
         '''
         try:
-            return self.root['czasownik']['word'][base_word]['aspekt'][conf['aspekt']][conf['forma']]['liczba'][conf['liczba']]['osoba'][conf['osoba']];
+            return self.root['czasownik']['word'][base_word]['aspekt'][conf['aspekt']][conf['forma']]['liczba'][conf['liczba']]['osoba'][conf['osoba']]
         except KeyError:
-            raise Exception("Key Error occured");
+            raise Exception("Key Error occured")
 
     def save_adjective(self, dict, base_word):
         '''
@@ -53,14 +55,14 @@ class DatabaseProvider(object):
         self.root['przymiotnik']['word'][base_word] = dict
         transaction.commit()
 
-    def get_verb(self, conf, base_word):
+    def get_adjective(self, conf, base_word):
         '''
             Get verb using configuration
         '''
         try:
-            return self.root['przymiotnik']['word'][base_word]['stopień'][conf['stopień']]['przypadek'][conf['przypadek']]['liczba'][conf['liczba']]['rodzaj'][conf['rodzaj']];
+            return self.root['przymiotnik']['word'][base_word]['stopień'][conf['stopień']]['przypadek'][conf['przypadek']]['liczba'][conf['liczba']]['rodzaj'][conf['rodzaj']]
         except KeyError:
-            raise Exception("Key Error occured");
+            raise Exception("Key Error occured")
 
 
     
