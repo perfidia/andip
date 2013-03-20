@@ -46,6 +46,22 @@ class DatabaseProvider(object):
         except KeyError:
             raise Exception("Key Error occured");
 
+    def save_adjective(self, dict, base_word):
+        '''
+            Save verb to database in Bartosz Alchimowicz convention
+        '''
+        self.root['przymiotnik']['word'][base_word] = dict
+        transaction.commit()
+
+    def get_verb(self, conf, base_word):
+        '''
+            Get verb using configuration
+        '''
+        try:
+            return self.root['przymiotnik']['word'][base_word]['stopień'][conf['stopień']]['przypadek'][conf['przypadek']]['liczba'][conf['liczba']]['rodzaj'][conf['rodzaj']];
+        except KeyError:
+            raise Exception("Key Error occured");
+
 
     
 

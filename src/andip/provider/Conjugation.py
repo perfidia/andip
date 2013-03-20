@@ -362,3 +362,129 @@ conjugation = {
                 },
                
 }
+
+adjective_schema = {
+	'y': {
+		'przypadek': {
+			'mianownik': {
+				'liczba': {
+					'pojedyncza': {
+						'rodzaj': {
+							'm': 'y',
+							'ż': 'a',
+							'n': 'e'
+						}
+					},
+					'mnoga': {
+						'rodzaj': {
+							'm': 'i',
+							'nm': 'e'
+						}
+					}
+				}
+			}, # end mianownik
+			'dopełniacz': {
+				'liczba': {
+					'pojedyncza': {
+						'rodzaj': {
+							'm': 'ego',
+							'ż': 'ej',
+							'n': 'ego'
+						}
+					},
+					'mnoga': {
+						'rodzaj': {
+							'm': 'ych', 
+							'nm': 'ych'
+						}
+					}
+				}
+			}, # end dopełniacz
+			'celownik': {
+				'liczba': {
+					'pojedyncza': {
+						'rodzaj': {
+							'm': 'emu',
+							'ż': 'ej',
+							'n': 'emu'
+						}
+					},
+					'mnoga': {
+						'rodzaj': {
+							'm': 'ym', 
+							'nm': 'ym'
+						}
+					}
+				}
+			}, # end celownik
+			'biernik': {
+				'liczba': {
+					'pojedyncza': {
+						'rodzaj': {
+							'm': 'ego',
+							'ż': 'ą',
+							'n': 'e'
+						}
+					},
+					'mnoga': {
+						'rodzaj': {
+							'm': 'ych', 
+							'nm': 'e'
+						}
+					}
+				}
+			}, # end biernik
+			'narzędnik': {
+				'liczba': {
+					'pojedyncza': {
+						'rodzaj': {
+							'm': 'ym',
+							'ż': 'ą',
+							'n': 'ym'
+						}
+					},
+					'mnoga': {
+						'rodzaj': {
+							'm': 'ymi', 
+							'nm': 'ymi'
+						}
+					}
+				}
+			}, # end narzędnik
+			'miejscownik': {
+				'liczba': {
+					'pojedyncza': {
+						'rodzaj': {
+							'm': 'ym',
+							'ż': 'ej',
+							'n': 'ym'
+						}
+					},
+					'mnoga': {
+						'rodzaj': {
+							'm': 'ych', 
+							'nm': 'ych'
+						}
+					}
+				}
+			}, # end miekscownik
+			'wołacz': {
+				'liczba': {
+					'pojedyncza': {
+						'rodzaj': {
+							'm': 'y',
+							'ż': 'a',
+							'n': 'e'
+						}
+					},
+					'mnoga': {
+						'rodzaj': {
+							'm': 'i', 
+							'nm': 'e'
+						}
+					}
+				}
+			} # end wołacz
+		} # end przypadek
+	} # end y
+}

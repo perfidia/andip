@@ -7,6 +7,7 @@ Created on Apr 27, 2012
 
 import urllib
 import re
+import copy
 
 from andip import DataProvider
 from andip.provider import Conjugation, DatabaseProvider
@@ -102,33 +103,19 @@ class PlWikiProvider(WikiProvider):
         assert len(words) > 0
         word = words[0]
         
-        # generowanie stopniowania
-        if word == '' or word == 'brak':
-            # brak stopniowania?
-            return
-        else:
-#            print word # stopniowanie na podstawie podanego drugiego stopnia
-            pass
-    
-        # generowanie odmian
-        if self.__schema_adjective is None:
-            self.__schema_adjective = self._load("../data/adjective_schema")
-
         last_letter = base_word[len(base_word) - 1]
         if last_letter == 'y' or last_letter == 'i':
-            retval = self.__schema_adjective[last_letter]
-            for przyp in retval['przypadek']:
-                for licz in retval['przypadek'][przyp]['liczba']:
-                    for rodz in retval['przypadek'][przyp]['liczba'][licz]['rodzaj']:
-                        print base_word[0:len(base_word) - 2], retval['przypadek'][przyp]['liczba'][licz]['rodzaj'][rodz] 
+            configuration = copy.deepcopy(Conjugation.adjective_schema)
+            for przypadek in retval['przypadek']:
+                for liczba in retval['przypadek'][przyp]['liczba']:
+                    for rodzaj in retval['przypadek'][przyp]['liczba'][licz]['rodzaj']:
+                        #print base_word[0:len(base_word) - 2], retval['przypadek'][przypadek]['liczba'][liczba]['rodzaj'][rodzaj] 
                         
-                        retval['przypadek'][przyp]['liczba'][licz]['rodzaj'][rodz] = base_word[0:len(base_word) - 1] + retval['przypadek'][przyp]['liczba'][licz]['rodzaj'][rodz] 
+                        configuration['przypadek'][przypadek]['liczba'][liczba]['rodzaj'][rodzaj] = base_word[0:len(base_word) - 1] + configuration['przypadek'][przypadek]['liczba'][liczba]['rodzaj'][rodzaj] 
                     
-        return retval
-#        print self.__schema_adjective['y']
-        
-#        retval = self.conf_cache.get(word, None)
-
+        configuration = {'stopień' : {'podstawowy' : {configuration}}}
+        self.database.save_adjective(configuration, base_word)
+        return configuration
 
     def get_conf(self, word):
         data = self._get_conf(word)
