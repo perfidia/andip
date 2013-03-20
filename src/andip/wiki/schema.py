@@ -372,7 +372,7 @@ adjective_schema = {
         'przypadek': {
             'mianownik': {
                 'liczba': {
-                    'pojedyncza': {
+                    'pojedyńcza': {
                         'rodzaj': {
                             'm': 'y',
                             'ż': 'a',
@@ -389,7 +389,7 @@ adjective_schema = {
             }, # end mianownik
             'dopełniacz': {
                 'liczba': {
-                    'pojedyncza': {
+                    'pojedyńcza': {
                         'rodzaj': {
                             'm': 'ego',
                             'ż': 'ej',
@@ -406,7 +406,7 @@ adjective_schema = {
             }, # end dopełniacz
             'celownik': {
                 'liczba': {
-                    'pojedyncza': {
+                    'pojedyńcza': {
                         'rodzaj': {
                             'm': 'emu',
                             'ż': 'ej',
@@ -423,7 +423,7 @@ adjective_schema = {
             }, # end celownik
             'biernik': {
                 'liczba': {
-                    'pojedyncza': {
+                    'pojedyńcza': {
                         'rodzaj': {
                             'm': 'ego',
                             'ż': 'ą',
@@ -440,7 +440,7 @@ adjective_schema = {
             }, # end biernik
             'narzędnik': {
                 'liczba': {
-                    'pojedyncza': {
+                    'pojedyńcza': {
                         'rodzaj': {
                             'm': 'ym',
                             'ż': 'ą',
@@ -457,7 +457,7 @@ adjective_schema = {
             }, # end narzędnik
             'miejscownik': {
                 'liczba': {
-                    'pojedyncza': {
+                    'pojedyńcza': {
                         'rodzaj': {
                             'm': 'ym',
                             'ż': 'ej',
@@ -474,7 +474,7 @@ adjective_schema = {
             }, # end miekscownik
             'wołacz': {
                 'liczba': {
-                    'pojedyncza': {
+                    'pojedyńcza': {
                         'rodzaj': {
                             'm': 'y',
                             'ż': 'a',
@@ -495,7 +495,7 @@ adjective_schema = {
         'przypadek': {
             'mianownik': {
                 'liczba': {
-                    'pojedyncza': {
+                    'pojedyńcza': {
                         'rodzaj': {
                             'm': 'i',
                             'ż': 'a',
@@ -512,7 +512,7 @@ adjective_schema = {
             }, # end mianownik
             'dopełniacz': {
                 'liczba': {
-                    'pojedyncza': {
+                    'pojedyńcza': {
                         'rodzaj': {
                             'm': 'iego',
                             'ż': 'a',
@@ -529,7 +529,7 @@ adjective_schema = {
             }, # end dopełniacz
             'celownik': {
                 'liczba': {
-                    'pojedyncza': {
+                    'pojedyńcza': {
                         'rodzaj': {
                             'm': 'iemu',
                             'ż': 'iej',
@@ -546,7 +546,7 @@ adjective_schema = {
             }, # end celownik
             'biernik': {
                 'liczba': {
-                    'pojedyncza': {
+                    'pojedyńcza': {
                         'rodzaj': {
                             'm': 'iego',
                             'ż': 'ą',
@@ -563,7 +563,7 @@ adjective_schema = {
             }, # end biernik
             'narzędnik': {
                 'liczba': {
-                    'pojedyncza': {
+                    'pojedyńcza': {
                         'rodzaj': {
                             'm': 'im',
                             'ż': 'ą',
@@ -580,7 +580,7 @@ adjective_schema = {
             }, # end narzędnik
             'miejscownik': {
                 'liczba': {
-                    'pojedyncza': {
+                    'pojedyńcza': {
                         'rodzaj': {
                             'm': 'im',
                             'ż': 'iej',
@@ -597,10 +597,10 @@ adjective_schema = {
             }, # end miekscownik
             'wołacz': {
                 'liczba': {
-                    'pojedyncza': {
+                    'pojedyńcza': {
                         'rodzaj': {
                             'm': 'i',
-                            'ż': 'a',
+                            'ż': 'a
                             'n': 'ie'
                         }
                     },
