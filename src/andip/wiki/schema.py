@@ -32,7 +32,43 @@ conjugation = {
                                                                         'trzecia' : 'ają'
                                                                 }
                                                        }
-                                }
+                                },
+                                'czas przeszly' : {
+                                                   'pojedyncza' : {
+                                                                   'meski' : {
+                                                                                    'pierwsza' : 'ałem',
+                                                                                    'druga' : 'ałeś',
+                                                                                    'trzecia' : 'ał'
+                                                                              },
+                                                                   'zenski' : {
+                                                                                    'pierwsza' : 'ałam',
+                                                                                    'druga' : 'ałaś',
+                                                                                    'trzecia' : 'ała'
+                                                                               },
+                                                                   'nijaki' : {
+                                                                                    'pierwsza' : 'ałom',
+                                                                                    'druga' : 'ałoś',
+                                                                                    'trzecia' : 'ało'
+                                                                               }
+                                                                  },
+                                                   'mnoga' : {
+                                                                    'meski' : {
+                                                                                    'pierwsza' : 'aliśmy',
+                                                                                    'druga' : 'aliście',
+                                                                                    'trzecia' : 'ali'
+                                                                              },
+                                                                   'zenski' : {
+                                                                                    'pierwsza' : 'ałyśmy',
+                                                                                    'druga' : 'ałyście',
+                                                                                    'trzecia' : 'ały'
+                                                                               },
+                                                                   'nijaki' : {
+                                                                                    'pierwsza' : 'ałyśmy',
+                                                                                    'druga' : 'ałyście',
+                                                                                    'trzecia' : 'ały'
+                                                                               }
+                                                              }
+                                        }
                 },
                'II' : {
                        'koncowka' : 'eć',
@@ -49,7 +85,43 @@ conjugation = {
                                                                         'trzecia' : 'eją'
                                                                 }
                                                        }
-                                }
+                                },
+                                'czas przeszly' : {
+                                                   'pojedyncza' : {
+                                                                   'meski' : {
+                                                                                    'pierwsza' : 'ałem',
+                                                                                    'druga' : 'ałeś',
+                                                                                    'trzecia' : 'ał'
+                                                                              },
+                                                                   'zenski' : {
+                                                                                    'pierwsza' : 'ałam',
+                                                                                    'druga' : 'ałaś',
+                                                                                    'trzecia' : 'ała'
+                                                                               },
+                                                                   'nijaki' : {
+                                                                                    'pierwsza' : 'ałom',
+                                                                                    'druga' : 'ałoś',
+                                                                                    'trzecia' : 'ało'
+                                                                               }
+                                                                  },
+                                                   'mnoga' : {
+                                                                    'meski' : {
+                                                                                    'pierwsza' : 'eliśmy',
+                                                                                    'druga' : 'eliście',
+                                                                                    'trzecia' : 'eli'
+                                                                              },
+                                                                   'zenski' : {
+                                                                                    'pierwsza' : 'ałyśmy',
+                                                                                    'druga' : 'ałyście',
+                                                                                    'trzecia' : 'ały'
+                                                                               },
+                                                                   'nijaki' : {
+                                                                                    'pierwsza' : 'ałyśmy',
+                                                                                    'druga' : 'ałyście',
+                                                                                    'trzecia' : 'ały'
+                                                                               }
+                                                              }
+                                        }
                 },
                'III' : {
                         'koncowka' : 'eć',
@@ -66,7 +138,43 @@ conjugation = {
                                                                         'trzecia' : 'eją'
                                                                 }
                                                        }
-                                }
+                                },
+                                'czas przeszly' : {
+                                                   'pojedyncza' : {
+                                                                   'meski' : {
+                                                                                    'pierwsza' : 'ałem',
+                                                                                    'druga' : 'ałeś',
+                                                                                    'trzecia' : 'ał'
+                                                                              },
+                                                                   'zenski' : {
+                                                                                    'pierwsza' : 'ałam',
+                                                                                    'druga' : 'ałaś',
+                                                                                    'trzecia' : 'ała'
+                                                                               },
+                                                                   'nijaki' : {
+                                                                                    'pierwsza' : 'ałom',
+                                                                                    'druga' : 'ałoś',
+                                                                                    'trzecia' : 'ało'
+                                                                               }
+                                                                  },
+                                                   'mnoga' : {
+                                                                    'meski' : {
+                                                                                    'pierwsza' : 'liśmy',
+                                                                                    'druga' : 'eliście',
+                                                                                    'trzecia' : 'eli'
+                                                                              },
+                                                                   'zenski' : {
+                                                                                    'pierwsza' : 'ałyśmy',
+                                                                                    'druga' : 'ałyście',
+                                                                                    'trzecia' : 'ały'
+                                                                               },
+                                                                   'nijaki' : {
+                                                                                    'pierwsza' : 'ałyśmy',
+                                                                                    'druga' : 'ałyście',
+                                                                                    'trzecia' : 'ały'
+                                                                               }
+                                                              }
+                                        }
                 },
                'IV' : {
                        'koncowka' : 'ować',
@@ -137,7 +245,41 @@ conjugation = {
                                                                         'trzecia' : 'ną'
                                                                 }
                                                        }
-                                }
+                                },
+                                'czas przeszly' : {
+                                                   'pojedyncza' : {
+                                                                   'meski' : {
+                                                                                    'pierwsza' : 'nąłem',
+                                                                                    'druga' : 'nąłeś',
+                                                                                    'trzecia' : 'nął'
+                                                                              },
+                                                                   'zenski' : {
+                                                                                    'pierwsza' : 'nęłam',
+                                                                                    'druga' : 'nęłaś',
+                                                                                    'trzecia' : 'nęła'
+                                                                               },
+                                                                   'nijaki' : {
+                                                                                    'trzecia' : 'nęło'
+                                                                               }
+                                                                  },
+                                                   'mnoga' : {
+                                                                    'meski' : {
+                                                                                    'pierwsza' : 'nęliśmy',
+                                                                                    'druga' : 'nęliście',
+                                                                                    'trzecia' : 'nęli'
+                                                                              },
+                                                                   'zenski' : {
+                                                                                    'pierwsza' : 'nęłyśmy',
+                                                                                    'druga' : 'nęłyście',
+                                                                                    'trzecia' : 'nęły'
+                                                                               },
+                                                                   'nijaki' : {
+                                                                                    'pierwsza' : 'nęłyśmy',
+                                                                                    'druga' : 'nęłyście',
+                                                                                    'trzecia' : 'nęły'
+                                                                               }
+                                                              }
+                                        }
                 },
                 'Vb' : {
                         'koncowka' : 'nąć',
@@ -154,7 +296,41 @@ conjugation = {
                                                                         'trzecia' : 'ną'
                                                                 }
                                                        }
-                                }
+                                },
+                                'czas przeszly' : {
+                                                   'pojedyncza' : {
+                                                                   'meski' : {
+                                                                                    'pierwsza' : 'nąłem',
+                                                                                    'druga' : 'nąłeś',
+                                                                                    'trzecia' : 'nął'
+                                                                              },
+                                                                   'zenski' : {
+                                                                                    'pierwsza' : 'nęłam',
+                                                                                    'druga' : 'nęłaś',
+                                                                                    'trzecia' : 'nęła'
+                                                                               },
+                                                                   'nijaki' : {
+                                                                                    'trzecia' : 'nęło'
+                                                                               }
+                                                                  },
+                                                   'mnoga' : {
+                                                                    'meski' : {
+                                                                                    'pierwsza' : 'nęliśmy',
+                                                                                    'druga' : 'nęliście',
+                                                                                    'trzecia' : 'nęli'
+                                                                              },
+                                                                   'zenski' : {
+                                                                                    'pierwsza' : 'nęłyśmy',
+                                                                                    'druga' : 'nęłyście',
+                                                                                    'trzecia' : 'nęły'
+                                                                               },
+                                                                   'nijaki' : {
+                                                                                    'pierwsza' : 'nęłyśmy',
+                                                                                    'druga' : 'nęłyście',
+                                                                                    'trzecia' : 'nęły'
+                                                                               }
+                                                              }
+                                        }
                 },
                 'Vc' : {
                         'koncowka' : 'nąć',
