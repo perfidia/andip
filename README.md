@@ -4,7 +4,8 @@ AnDiP
 Description
 -----------
 
-TODO
+Dictionary for natural language generation. It contains data about declension, 
+conjugation, ... (mainly for Polish an English language).
 
 Installation
 ------------
