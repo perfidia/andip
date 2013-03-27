@@ -7,7 +7,7 @@ from andip.provider import PlWikiProvider
 class WikiPolishTest(unittest.TestCase):
     
     def setUp(self):
-        self.wiki = PlWikiProvider()
+        self.wiki = PlWikiProvider("../data/Polish")
         self.ad = AnDiP(self.wiki)
         
     def tearDown(self):
@@ -26,4 +26,12 @@ class WikiPolishTest(unittest.TestCase):
         self.assertEquals('zachodniego', self.ad.get_word(('przymiotnik', 'zachodni', {'stopień': 'podstawowy', 'przypadek' : 'dopełniacz', 'liczba': 'pojedyńcza', 'rodzaj': 'm'})))
         self.assertEquals('zachodnim', self.ad.get_word(('przymiotnik', 'zachodni', {'stopień': 'podstawowy', 'przypadek' : 'miejscownik', 'liczba': 'pojedyńcza', 'rodzaj': 'm'})))
         self.assertEquals('zachodniej', self.ad.get_word(('przymiotnik', 'zachodni', {'stopień': 'podstawowy', 'przypadek' : 'miejscownik', 'liczba': 'pojedyńcza', 'rodzaj': 'ż'})))
-        
+
+        # stopniowanie
+        self.assertEquals('żółtszych', self.ad.get_word(('przymiotnik', 'żółty', {'przypadek' : 'dopełniacz', 'stopień' : 'wyższy', 'liczba': 'mnoga', 'rodzaj': 'm'})))
+        self.assertEquals('żółtszym', self.ad.get_word(('przymiotnik', 'żółty', {'przypadek' : 'celownik', 'stopień' : 'wyższy', 'liczba': 'mnoga', 'rodzaj': 'm'})))
+        self.assertEquals('najżółtszych', self.ad.get_word(('przymiotnik', 'żółty', {'przypadek' : 'dopełniacz', 'stopień' : 'najwyższy', 'liczba': 'mnoga', 'rodzaj': 'm'})))
+        self.assertEquals('najżółtszym', self.ad.get_word(('przymiotnik', 'żółty', {'przypadek' : 'celownik', 'stopień' : 'najwyższy', 'liczba': 'mnoga', 'rodzaj': 'm'})))
+       
+#    def test_adjective_get_word(self):
+#        self.assertEquals('')    

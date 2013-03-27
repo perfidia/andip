@@ -8,9 +8,15 @@ from andip.database import database
 #ad = AnDiP(FileProvider("../data/polish"))
 ad = AnDiP(PlWikiProvider("../data/Polish"))
 
-
-print ad.get_word(('przymiotnik', 'zdrowy', {'przypadek' : 'mianownik', 'stopień' : 'wyższy', 'liczba': 'mnoga', 'rodzaj': 'm'}))
 print ad.get_word(('przymiotnik', 'żółty', {'przypadek' : 'dopełniacz', 'stopień' : 'wyższy', 'liczba': 'mnoga', 'rodzaj': 'm'}))
+print ad.get_word(('przymiotnik', 'żółty', {'przypadek' : 'celownik', 'stopień' : 'wyższy', 'liczba': 'mnoga', 'rodzaj': 'm'}))
+print ad.get_word(('przymiotnik', 'żółty', {'przypadek' : 'dopełniacz', 'stopień' : 'najwyższy', 'liczba': 'mnoga', 'rodzaj': 'm'}))
+print ad.get_word(('przymiotnik', 'żółty', {'przypadek' : 'celownik', 'stopień' : 'najwyższy', 'liczba': 'mnoga', 'rodzaj': 'm'}))
+
+#print ad.get_conf('najżółtszych')
+#print ad.get_conf('najżółtszym')
+#print ad.get_conf('żółtszych')
+#print ad.get_conf('żółtszym')
 #print 'opisany', ad.get_word(('przymiotnik', 'opis', {'liczba': 'pojedyncza', 'rodzaj': 'm'}))
 #print 'opisane', ad.get_word(('przymiotnik', 'opis', {'liczba': 'mnoga', 'rodzaj': 'm'}))
 #print 'opisana', ad.get_word(('przymiotnik', 'opis', {'liczba': 'pojedyncza', 'rodzaj': 'ż'}))
