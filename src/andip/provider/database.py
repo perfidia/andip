@@ -11,17 +11,15 @@ class DatabaseProvider(DataProvider):
         self.database = Database(url)
     
     def get_word(self, conf):
-        word_result = ""
-        
-        # To zaraz postaram siê poprawiæ
-        if conf[0] == 'przymiotnik':
-            word_result = self.database.get_adjective(conf[2], conf[1])
-        elif conf[0] == 'rzeczownik':
-            word_result = self.database.get_noun(conf[2], conf[1])
-        elif conf[0] == 'czasownik':
-            word_result = self.database.get_verb(conf[2], conf[1])
-        
-        return word_result
+        '''
+            Returns word or throw KeyError, if there is no information
+            about word in database
+        '''
+        return self.database.get_conf(conf[1])
     
     def get_conf(self, word):
+        '''
+            Returns word configuration or KeyError, if there is no
+            information about word in database
+        '''
         return self.database.get_conf(word)
