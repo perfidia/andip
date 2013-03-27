@@ -44,15 +44,6 @@ class Database(object):
         self.root['czasownik']['word'][base_word] = dict
         transaction.commit()
 
-    def get_verb(self, conf, base_word):
-        '''
-            Get verb using configuration
-        '''
-        try:
-            return self.root['czasownik']['word'][base_word]['aspekt'][conf['aspekt']]['forma'][conf['forma']]['liczba'][conf['liczba']]['osoba'][conf['osoba']]
-        except KeyError:
-            raise Exception("Key Error occured")
-
     def save_adjective(self, dict, base_word):
         '''
             Save verb to database in Bartosz Alchimowicz convention
@@ -60,35 +51,41 @@ class Database(object):
         self.root['przymiotnik']['word'][base_word] = dict
         transaction.commit()
 
-    def get_adjective(self, conf, base_word):
-        '''
-            Get verb using configuration
-        '''
-        try:
-            return self.root['przymiotnik']['word'][base_word]['stopień'][conf['stopień']]['przypadek'][conf['przypadek']]['liczba'][conf['liczba']]['rodzaj'][conf['rodzaj']]
-        except KeyError:
-            raise Exception("Key Error occured")
-
     def save_noun(self, dict, base_word):
         '''
             Save noun to database in Bartosz Alchimowicz convention
         '''
         self.root['rzeczownik']['word'][base_word] = dict
         transaction.commit()
-
-    def get_noun(self, conf, base_word):
-        '''
-            Get noun using configuration
-        '''
-        try:
-            return self.root['rzeczownik']['word'][base_word]['przypadek'][conf['przypadek']]['liczba'][conf['liczba']]
-        except KeyError:
-            raise Exception("Key Error occured")
         
     def get_conf(self, base_word):
+        '''
+            Get configuration of word whic is in database
+        '''
         for word_type in ['rzeczownik', 'czasownik', 'przymiotnik']:
             for word in self.root[word_type]['word'].keys():
                 if word == base_word:
                     return self.root[word_type]['word'][word]
                 
-        raise KeyError("There is no sucha a word in Database")
+        raise KeyError("There is no such a word in Database")
+
+    def get_word(self, conf, base_word):
+        '''
+            Search all database and get word
+        '''
+        try:
+            return self.root['rzeczownik']['word'][base_word]['przypadek'][conf['przypadek']]['liczba'][conf['liczba']]
+        except KeyError:
+            try:
+                return self.root['przymiotnik']['word'][base_word]['stopień'][conf['stopień']]['przypadek'][conf['przypadek']]['liczba'][conf['liczba']]['rodzaj'][conf['rodzaj']]
+            except KeyError:
+                try:
+                    return self.root['czasownik']['word'][base_word]['aspekt'][conf['aspekt']]['forma'][conf['forma']]['liczba'][conf['liczba']]['osoba'][conf['osoba']]
+                except KeyError:
+                    raise KeyError("There is no such word in Database")
+                    
+        
+        
+        
+        
+        

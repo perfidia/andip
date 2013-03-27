@@ -169,7 +169,7 @@ class PlWikiProvider(WikiProvider):
         word_about = self._get_conf(conf[1])
         
         try:
-            return self.database.get_verb(conf[2], conf[1])
+            return self.database.get_word(conf[2], conf[1])
         except:
             try:
                 if conf[0] == 'przymiotnik':
