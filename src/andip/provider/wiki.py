@@ -128,24 +128,44 @@ class PlWikiProvider(WikiProvider):
 
             
     def __get_conf_adjective(self, base_word, data):
-        if len(data) == 0:
-            raise Exception("adjective error")
-        words = data[0].replace("|", "").split("\n")
         
+        last_letter = base_word[len(base_word) - 1]
+        if len(data) == 0 or (last_letter != 'y' and last_letter != 'i'):
+            raise Exception("adjective not found")
+
+        words = data[0].replace("|", "").split("\n")
         assert len(words) > 0
         word = words[0]
         
-        last_letter = base_word[len(base_word) - 1]
+        # stopień podstawowy       
+        configuration = copy.deepcopy(schema.adjective_schema[last_letter])
+        for przypadek in configuration['przypadek']:
+            for liczba in configuration['przypadek'][przypadek]['liczba']:
+                for rodzaj in configuration['przypadek'][przypadek]['liczba'][liczba]['rodzaj']:
+                    configuration['przypadek'][przypadek]['liczba'][liczba]['rodzaj'][rodzaj] = base_word[0:len(base_word) - 1] + configuration['przypadek'][przypadek]['liczba'][liczba]['rodzaj'][rodzaj] 
+        configuration_basic = copy.deepcopy(configuration)
         
-        if last_letter == 'y' or last_letter == 'i':
-            configuration = copy.deepcopy(schema.adjective_schema[last_letter])
-            for przypadek in configuration['przypadek']:
-                for liczba in configuration['przypadek'][przypadek]['liczba']:
-                    for rodzaj in configuration['przypadek'][przypadek]['liczba'][liczba]['rodzaj']:
-                        configuration['przypadek'][przypadek]['liczba'][liczba]['rodzaj'][rodzaj] = base_word[0:len(base_word) - 1] + configuration['przypadek'][przypadek]['liczba'][liczba]['rodzaj'][rodzaj] 
+        if word == 'brak' or word == '':
+            return { 'stopien' : { 'podstawowy' : configuration_basic } }
 
-        configuration = { 'stopien' : { 'podstawowy' : configuration } }
-        return configuration
+        # stopień wyższy
+        configuration = copy.deepcopy(schema.adjective_schema[last_letter])
+        for przypadek in configuration['przypadek']:
+            for liczba in configuration['przypadek'][przypadek]['liczba']:
+                for rodzaj in configuration['przypadek'][przypadek]['liczba'][liczba]['rodzaj']:
+                    configuration['przypadek'][przypadek]['liczba'][liczba]['rodzaj'][rodzaj] = word[0:len(word) - 1] + configuration['przypadek'][przypadek]['liczba'][liczba]['rodzaj'][rodzaj] 
+        configuration_higher = copy.deepcopy(configuration)
+        
+        # stopień najwyższy
+        for przypadek in configuration['przypadek']:
+            for liczba in configuration['przypadek'][przypadek]['liczba']:
+                for rodzaj in configuration['przypadek'][przypadek]['liczba'][liczba]['rodzaj']:
+                    configuration['przypadek'][przypadek]['liczba'][liczba]['rodzaj'][rodzaj] = 'naj' + configuration['przypadek'][przypadek]['liczba'][liczba]['rodzaj'][rodzaj] 
+        configuration_the_highest = copy.deepcopy(configuration)
+        
+        return { 'stopien' : {'podstawowy' : configuration_basic,
+                              'wyższy' : configuration_higher,
+                              'najwyższy' : configuration_the_highest  } }
 
     def get_conf(self, word):
         data = self._get_conf(word)
