@@ -1,6 +1,6 @@
 *.py[cod]
 
-data/Data.fs.*
+data/Polish.fs.*
 
 # C extensions
 *.so
