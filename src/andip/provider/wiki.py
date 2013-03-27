@@ -10,7 +10,7 @@ import re
 import copy
 
 from andip import DataProvider
-from andip.provider import database
+from andip.database import database
 from andip.wiki import schema
 
 class WikiProvider(DataProvider):
@@ -42,10 +42,10 @@ class WikiProvider(DataProvider):
     
 class PlWikiProvider(WikiProvider):
     
-    def __init__(self):
+    def __init__(self, url):
         WikiProvider.__init__(self, "http://pl.wiktionary.org/")
         self.__schema_adjective = None
-        self.database = database.DatabaseProvider('Polish')
+        self.database = database.Database(url)
     
     def close_database(self):
         self.database.close()

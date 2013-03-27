@@ -3,10 +3,10 @@
 from andip import AnDiP
 from andip.provider import FileProvider
 from andip.provider.wiki import PlWikiProvider
-from andip.provider import database
+from andip.database import database
 
 ad = AnDiP(FileProvider("../data/polish"))
-ad = AnDiP(PlWikiProvider())
+ad = AnDiP(PlWikiProvider("../data/Polish"))
 
 #print 'opisany', ad.get_word(('przymiotnik', 'opis', {'liczba': 'pojedyncza', 'rodzaj': 'm'}))
 #print 'opisane', ad.get_word(('przymiotnik', 'opis', {'liczba': 'mnoga', 'rodzaj': 'm'}))
