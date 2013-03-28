@@ -73,6 +73,7 @@ class Database(object):
         '''
             Search all database and get word
         '''
+        
         try:
             return self.root['rzeczownik']['word'][base_word]['przypadek'][conf['przypadek']]['liczba'][conf['liczba']]
         except KeyError:
@@ -80,7 +81,10 @@ class Database(object):
                 return self.root['przymiotnik']['word'][base_word]['stopień'][conf['stopień']]['przypadek'][conf['przypadek']]['liczba'][conf['liczba']]['rodzaj'][conf['rodzaj']]
             except KeyError:
                 try:
-                    return self.root['czasownik']['word'][base_word]['aspekt'][conf['aspekt']]['forma'][conf['forma']]['liczba'][conf['liczba']]['osoba'][conf['osoba']]
+                    if conf['forma'] == 'czas terazniejszy':
+                        return self.root['czasownik']['word'][base_word]['aspekt'][conf['aspekt']]['forma'][conf['forma']]['liczba'][conf['liczba']]['osoba'][conf['osoba']]
+                    else:
+                        return self.root['czasownik']['word'][base_word]['aspekt'][conf['aspekt']]['forma'][conf['forma']]['liczba'][conf['liczba']]['osoba'][conf['osoba']][conf['rodzaj']]
                 except KeyError:
                     raise KeyError("There is no such word in Database")
                     
