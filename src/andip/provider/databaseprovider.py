@@ -3,7 +3,7 @@ import re
 import copy
 
 from andip import DataProvider
-from andip.database import Database
+from andip.provider.database import Database
 
 class DatabaseProvider(DataProvider):
     

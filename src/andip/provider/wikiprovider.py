@@ -10,8 +10,8 @@ import re
 import copy
 
 from andip import DataProvider
-from andip.database import database
-from andip.wiki import schema
+from andip.provider.database import database
+from andip.provider.wiki import schema
 
 class WikiProvider(DataProvider):
     def __init__(self, url):

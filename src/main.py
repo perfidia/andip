@@ -1,12 +1,10 @@
 # -*- coding: utf-8 -*-
 
 from andip import AnDiP
-from andip.provider import FileProvider
-from andip.provider.wiki import PlWikiProvider
-from andip.database import database
+from andip.provider import FileProvider, DatabaseProvider, PlWikiProvider    
 
 #ad = AnDiP(FileProvider("../data/polish"))
-ad = AnDiP(PlWikiProvider("../data/Polish"))
+ad = AnDiP(PlWikiProvider("../data/polish"))
 
 print ad.get_word(('przymiotnik', 'żółty', {'przypadek' : 'dopełniacz', 'stopień' : 'wyższy', 'liczba': 'mnoga', 'rodzaj': 'm'}))
 print ad.get_word(('przymiotnik', 'żółty', {'przypadek' : 'celownik', 'stopień' : 'wyższy', 'liczba': 'mnoga', 'rodzaj': 'm'}))
