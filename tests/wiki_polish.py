@@ -7,11 +7,11 @@ from andip.provider import PlWikiProvider
 class WikiPolishTest(unittest.TestCase):
     
     def setUp(self):
-        self.wiki = PlWikiProvider("../data/Polish")
+        self.wiki = PlWikiProvider("../data/polish")
         self.ad = AnDiP(self.wiki)
         
     def tearDown(self):
-        self.wiki.close_database()
+        pass
         
     def test_verb_get_conf(self):
         self.assertEquals('występują', self.ad.get_word(('czasownik', 'występować', {'aspekt' : 'niedokonane', 'forma' : 'czas terazniejszy', 'liczba' : 'mnoga', 'osoba': 'trzecia'})))
@@ -32,6 +32,3 @@ class WikiPolishTest(unittest.TestCase):
         self.assertEquals('żółtszym', self.ad.get_word(('przymiotnik', 'żółty', {'przypadek' : 'celownik', 'stopień' : 'wyższy', 'liczba': 'mnoga', 'rodzaj': 'm'})))
         self.assertEquals('najżółtszych', self.ad.get_word(('przymiotnik', 'żółty', {'przypadek' : 'dopełniacz', 'stopień' : 'najwyższy', 'liczba': 'mnoga', 'rodzaj': 'm'})))
         self.assertEquals('najżółtszym', self.ad.get_word(('przymiotnik', 'żółty', {'przypadek' : 'celownik', 'stopień' : 'najwyższy', 'liczba': 'mnoga', 'rodzaj': 'm'})))
-       
-#    def test_adjective_get_word(self):
-#        self.assertEquals('')    

@@ -98,3 +98,6 @@ class FileProvider(DataProvider):
 		retval = self.conf_cache.get(word, None)
 
 		return retval
+	
+	def save(self, conf):
+		pass

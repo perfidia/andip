@@ -37,30 +37,37 @@ class Database(object):
         self.root['rzeczownik']['word'] = PersistentMapping()
         transaction.commit()
 
-    def save_verb(self, dict, base_word):
+#    def save_verb(self, dict, base_word):
+#        '''
+#            Save verb to database in Bartosz Alchimowicz convention
+#        '''
+#        self.root['czasownik']['word'][base_word] = dict
+#        transaction.commit()
+#
+#    def save_adjective(self, dict, base_word):
+#        '''
+#            Save verb to database in Bartosz Alchimowicz convention
+#        '''
+#        self.root['przymiotnik']['word'][base_word] = dict
+#        transaction.commit()
+#
+#    def save_noun(self, dict, base_word):
+#        '''
+#            Save noun to database in Bartosz Alchimowicz convention
+#        '''
+#        self.root['rzeczownik']['word'][base_word] = dict
+#        transaction.commit()
+#        
+    def save(self, dict, base_word, type):
         '''
-            Save verb to database in Bartosz Alchimowicz convention
+            Save object to database in Bartosz Alchimowicz convention
         '''
-        self.root['czasownik']['word'][base_word] = dict
+        self.root[type]['word'][base_word] = dict
         transaction.commit()
 
-    def save_adjective(self, dict, base_word):
-        '''
-            Save verb to database in Bartosz Alchimowicz convention
-        '''
-        self.root['przymiotnik']['word'][base_word] = dict
-        transaction.commit()
-
-    def save_noun(self, dict, base_word):
-        '''
-            Save noun to database in Bartosz Alchimowicz convention
-        '''
-        self.root['rzeczownik']['word'][base_word] = dict
-        transaction.commit()
-        
     def get_conf(self, base_word):
         '''
-            Get configuration of word whic is in database
+            Get configuration of word which is in database
         '''
         for word_type in ['rzeczownik', 'czasownik', 'przymiotnik']:
             for word in self.root[word_type]['word'].keys():
@@ -73,7 +80,7 @@ class Database(object):
         '''
             Search all database and get word
         '''
-        
+
         try:
             return self.root['rzeczownik']['word'][base_word]['przypadek'][conf['przypadek']]['liczba'][conf['liczba']]
         except KeyError:

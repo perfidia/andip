@@ -1,16 +1,9 @@
 # -*- coding: utf-8 -*-
-'''
-Created on Apr 27, 2012
-
-@author: Bartosz Alchimowicz
-'''
-
 import urllib
 import re
 import copy
 
 from andip import DataProvider
-from andip.provider.database import database
 from andip.provider.wiki import schema
 
 class WikiProvider(DataProvider):
@@ -25,7 +18,7 @@ class WikiProvider(DataProvider):
         assert isinstance(conf[2], dict)
         #
 
-    def _get_conf(self, word):
+    def _get_data_api(self, word):
         assert isinstance(word, str)
         
         return urllib.urlopen(self.__url + 'w/api.php?format=xml&action=query&prop=revisions&rvprop=content&titles=' + word).read()
@@ -38,21 +31,16 @@ class WikiProvider(DataProvider):
         @return: string in a JSON format
         """
         pass
+    
+    def save(self):
+        pass
 
     
 class PlWikiProvider(WikiProvider):
     
     def __init__(self, url):
         WikiProvider.__init__(self, "http://pl.wiktionary.org/")
-        self.__schema_adjective = None
-        self.database = database.Database(url)
-    
-    def close_database(self):
-        self.database.close()
-    
-    def _load(self, data_set):
-        return eval(open(data_set + ".txt").read())
-    
+       
     def __get_conf_noun(self, base_word, data):
         configuration = {}
         configuration[base_word] = {}
@@ -61,8 +49,6 @@ class PlWikiProvider(WikiProvider):
         for przypadek in ['mianownik', 'dopełniacz', 'celownik', 'biernik', 'narzędnik', 'miejscownik', 'wołacz']:
             configuration[base_word]['przypadek'][przypadek] = {}
             configuration[base_word]['przypadek'][przypadek]['liczba'] = {}
-            #for liczba in ['pojedyncza', 'mnoga']:
-            #    config[base_word]['przypadek'][przypadek][liczba] = ""
 
         for conf in data:
             config = dict()
@@ -76,14 +62,9 @@ class PlWikiProvider(WikiProvider):
                     liczba = "pojedyncza"
                 else:
                     liczba = "mnoga"
-                configuration[base_word]['przypadek'][przypadek]['liczba'][liczba] = tmp[1]
-            self.database.save_noun(configuration[base_word], base_word)  
+                configuration[base_word]['przypadek'][przypadek]['liczba'][liczba] = tmp[1]  
             return configuration[base_word]
 
-    def __get_word_noun(self, data, case, number):
-        
-        return data['przypadek'][case]['liczba'][number]
-    
     def __get_conf_verb(self, base_word, data):
         if len(data) == 0:
             raise Exception("verb error")
@@ -99,7 +80,7 @@ class PlWikiProvider(WikiProvider):
             done = 'dokonane' 
         else:
             done = 'niedokonane'
-        
+       
         configuration = {}
         configuration[base_word] = {}
         configuration[base_word]['aspekt'] = {}
@@ -122,8 +103,7 @@ class PlWikiProvider(WikiProvider):
                             pass
                     else:
                         configuration[base_word]['aspekt'][done]['forma'][forma]['liczba'][liczba]['osoba'][osoba] =  conj.get_word_present(config['koniugacja'],forma, liczba, osoba, base_word)
-        
-        self.database.save_verb(configuration[base_word], base_word)
+       
         return configuration[base_word]
 
             
@@ -146,7 +126,7 @@ class PlWikiProvider(WikiProvider):
         configuration_basic = copy.deepcopy(configuration)
         
         if word == 'brak' or word == '':
-            return { 'stopien' : { 'podstawowy' : configuration_basic } }
+            return { 'stopień' : { 'podstawowy' : configuration_basic } }
 
         # stopień wyższy
         configuration = copy.deepcopy(schema.adjective_schema[last_letter])
@@ -163,21 +143,12 @@ class PlWikiProvider(WikiProvider):
                     configuration['przypadek'][przypadek]['liczba'][liczba]['rodzaj'][rodzaj] = 'naj' + configuration['przypadek'][przypadek]['liczba'][liczba]['rodzaj'][rodzaj] 
         configuration_the_highest = copy.deepcopy(configuration)
         
-        return { 'stopien' : {'podstawowy' : configuration_basic,
+        return { 'stopień' : {'podstawowy' : configuration_basic,
                               'wyższy' : configuration_higher,
                               'najwyższy' : configuration_the_highest  } }
 
     def get_conf(self, word):
-        data = self._get_conf(word)
-
-        type = re.findall("-([^-]*)-polski", data)
-        if len(type) == 0:
-            raise Exception("word not found")
-        return {
-            'przymiotnik': self.__get_conf_adjective,
-            'czasownik': self.__get_conf_verb,
-            'rzeczownik': self.__get_conf_noun  #
-        }.get(type[0])(word, re.findall("\{\{odmiana-" + type[0] + "-polski([^\}]*)}}", data));
+        raise Exception('word not found') # use backoff to handle more providers
 
     def get_word(self, conf):
         '''
@@ -186,22 +157,20 @@ class PlWikiProvider(WikiProvider):
             and the third is a dictionary that contains details about form of word we want to have
         
         '''
-        word_about = self._get_conf(conf[1])
+        word_about = self._get_data_api(conf[1])
         
         try:
-            return self.database.get_word(conf[2], conf[1])
-        except:
-            try:
-                if conf[0] == 'przymiotnik':
-                    tmp = self.__get_conf_adjective(conf[1], re.findall("\{\{odmiana-przymiotnik-polski([^\}]*)}}", word_about))['stopien'][conf[2]['stopień']]['przypadek'][conf[2]['przypadek']]['liczba'][conf[2]['liczba']]['rodzaj'][conf[2]['rodzaj']],  #
-                    tmp = tmp[0]
-                    return tmp
-                elif conf[0] == 'czasownik':
-                    return self.__get_conf_verb(conf[1], re.findall("\{\{odmiana-czasownik-polski([^\}]*)}}", word_about))['aspekt'][conf[2]['aspekt']]['forma'][conf[2]['forma']]['liczba'][conf[2]['liczba']]['osoba'][conf[2]['osoba']]
-                elif conf[0] == 'rzeczownik': 
-                    return self.__get_conf_noun(conf[1], re.findall("\{\{odmiana-rzeczownik-polski([^\}]*)\}\}", word_about))['przypadek'][conf[2]['przypadek']]['liczba'][conf[2]['liczba']]
-            except KeyError, Exception:
-                return 'No information about this form'
+            if conf[0] == 'przymiotnik':
+                fullconf = ('przymiotnik', conf[1], self.__get_conf_adjective(conf[1], re.findall("\{\{odmiana-przymiotnik-polski([^\}]*)}}", word_about)))
+                return (fullconf[2]['stopień'][conf[2]['stopień']]['przypadek'][conf[2]['przypadek']]['liczba'][conf[2]['liczba']]['rodzaj'][conf[2]['rodzaj']], fullconf)
+            elif conf[0] == 'czasownik':
+                fullconf = ('czasownik', conf[1], self.__get_conf_verb(conf[1], re.findall("\{\{odmiana-czasownik-polski([^\}]*)}}", word_about)))
+                return (fullconf[2]['aspekt'][conf[2]['aspekt']]['forma'][conf[2]['forma']]['liczba'][conf[2]['liczba']]['osoba'][conf[2]['osoba']], fullconf)
+            elif conf[0] == 'rzeczownik': 
+                fullconf = ('rzeczownik', conf[1], self.__get_conf_noun(conf[1], re.findall("\{\{odmiana-rzeczownik-polski([^\}]*)\}\}", word_about)))
+                return (fullconf[2]['przypadek'][conf[2]['przypadek']]['liczba'][conf[2]['liczba']], fullconf)
+        except Exception:
+            raise Exception('No information about this form')
         
 
     def get_dump(self, word=None, conf=None):

@@ -26,3 +26,6 @@ class DatabaseProvider(DataProvider):
             information about word in database
         '''
         return self.database.get_conf(word)
+    
+    def save(self, conf):
+        self.database.save(conf[2], conf[1], conf[0])
