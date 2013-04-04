@@ -16,4 +16,7 @@ setup(
 	long_description = read("README.md"),
 	packages = find_packages(PACKAGE_DIR, exclude=['ez_setup', 'examples', 'tests']),
 	zip_safe = False,
+	install_requires = [
+			'ZODB',
+	],
 )
