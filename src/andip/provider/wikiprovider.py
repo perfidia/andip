@@ -35,6 +35,9 @@ class WikiProvider(DataProvider):
     def save(self):
         pass
 
+    def close(self):
+        pass
+
 class PlWikiProvider(WikiProvider):
     def __init__(self):
         WikiProvider.__init__(self, "http://pl.wiktionary.org/")
