@@ -11,8 +11,8 @@ class FileEnglishTest(unittest.TestCase):
 	def setUpClass(cls):
 		path = os.getcwd().split(os.sep)
 
-		for dir in reversed(path[:]):
-			if dir != 'andip':
+		for d in reversed(path[:]):
+			if d != 'andip':
 				path.pop()
 				continue
 
