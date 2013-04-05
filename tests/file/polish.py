@@ -1,12 +1,27 @@
 # -*- coding: utf-8 -*-
 
+import os
 import unittest
+
 from andip import AnDiP
 from andip.provider import FileProvider
 
-class PolishTest(unittest.TestCase):
-	def setUp(self):
-		self.ad = AnDiP(FileProvider('../data/polish'))
+class FilePolishTest(unittest.TestCase):
+	@classmethod
+	def setUpClass(cls):
+		path = os.getcwd().split(os.sep)
+
+		for dir in reversed(path[:]):
+			if dir != 'andip':
+				path.pop()
+				continue
+
+			break
+
+		path.append('data')
+		path.append('polish')
+
+		cls.ad = AnDiP(FileProvider(os.sep.join(path)))
 
 	def testGetWordPronoun(self):
 		self.assertEqual(u'niej', self.ad.get_word(('zaimek', 'ja', {'przypadek': 'miejscownik', 'liczba': 'pojedyncza', 'osoba': 'trzecia', 'rodzaj': 'ż'})))

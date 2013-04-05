@@ -1,12 +1,27 @@
 # -*- coding: utf-8 -*-
 
+import os
 import unittest
+
 from andip import AnDiP
 from andip.provider import FileProvider
 
-class PolishTest(unittest.TestCase):
-	def setUp(self):
-		self.ad = AnDiP(FileProvider('../data/english'))
+class FileEnglishTest(unittest.TestCase):
+	@classmethod
+	def setUpClass(cls):
+		path = os.getcwd().split(os.sep)
+
+		for dir in reversed(path[:]):
+			if dir != 'andip':
+				path.pop()
+				continue
+
+			break
+
+		path.append('data')
+		path.append('english')
+
+		cls.ad = AnDiP(FileProvider(os.sep.join(path)))
 
 	def testGetWordVerb(self):
 		self.assertEqual(u'am',  self.ad.get_word(('verb', 'be', {'number': 'singular', 'person': 'first'})))
