@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 
 from andip import AnDiP
-from andip.provider import FileProvider, DatabaseProvider, PlWikiProvider    
+from andip.provider import FileProvider, DatabaseProvider, PlWikiProvider
 
 ad1 = AnDiP(FileProvider("../data/polish"))
-ad2 = AnDiP(DatabaseProvider("../data/polish"), ad1)
-ad3 = AnDiP(PlWikiProvider("../data/polish"), ad2)
+ad2 = AnDiP(DatabaseProvider("../data/polish"), backoff=ad1)
+ad3 = AnDiP(PlWikiProvider(), backoff=ad2)
 
 print ad3.get_word(("czasownik", "występować", {'aspekt': 'dokonane', 'forma': 'czas teraźniejszy', 'liczba': 'mnoga', 'osoba': 'trzecia'}))
 print ad3.get_word(('przymiotnik', 'żółty', {'przypadek' : 'dopełniacz', 'stopień' : 'wyższy', 'liczba': 'mnoga', 'rodzaj': 'm'}))
