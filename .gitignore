@@ -1,7 +1,5 @@
 *.py[cod]
 
-data/polish.fs.*
-
 # C extensions
 *.so
 
@@ -37,4 +35,4 @@ nosetests.xml
 .pydevproject
 .settings
 
-docs/_build
+doc/_build
