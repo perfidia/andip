@@ -96,7 +96,9 @@ class FileProvider(DataProvider):
             self._build_cache()
 
         retval = self.conf_cache.get(word, None)
-
+        if retval == None:
+            raise Exception('configuration not found')
+        
         return retval
 
     def save(self, conf):
