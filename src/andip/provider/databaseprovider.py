@@ -3,7 +3,7 @@ import re
 import copy
 
 from andip import DataProvider
-from andip.provider.database import Database
+from andip.database import Database
 
 class DatabaseProvider(DataProvider):
     def __init__(self, url):
@@ -27,7 +27,9 @@ class DatabaseProvider(DataProvider):
         if not self.database:
             raise IOError("Unable to access the database (closed?)")
 
-        return self.database.get_conf(word)
+        print 'aaa'
+
+        return self.database.get_conf_preview(word)
 
     def save(self, conf):
         if not self.database:

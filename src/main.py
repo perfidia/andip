@@ -19,6 +19,13 @@ print ad2.get_word(('przymiotnik', 'żółty', {'przypadek' : 'celownik', 'stopi
 print ad2.get_word(('przymiotnik', 'żółty', {'przypadek' : 'dopełniacz', 'stopień' : 'najwyższy', 'liczba': 'mnoga', 'rodzaj': 'm'}))
 print ad2.get_word(('przymiotnik', 'żółty', {'przypadek' : 'celownik', 'stopień' : 'najwyższy', 'liczba': 'mnoga', 'rodzaj': 'm'}))
 
+######################TESTY DLA GET_CONF###################################
+#ad = AnDiP(DatabaseProvider("../data/polish"))                           #
+#print ad.get_conf("żółtszym")                                            #
+#print ad.get_conf('występują')                                           #
+#print ad.get_conf('psie')                                                #
+##############################KONIEC#######################################
+
 #print ad.get_conf('najżółtszych')
 #print ad.get_conf('najżółtszym')
 #print ad.get_conf('żółtszych')
