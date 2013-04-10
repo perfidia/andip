@@ -34,6 +34,24 @@ class WikiPolishTest(unittest.TestCase):
         self.assertEquals('najżółtszych', self.ad.get_word(('przymiotnik', 'żółty', {'przypadek' : 'dopełniacz', 'stopień' : 'najwyższy', 'liczba': 'mnoga', 'rodzaj': 'm'})))
         self.assertEquals('najżółtszym',  self.ad.get_word(('przymiotnik', 'żółty', {'przypadek' : 'celownik', 'stopień' : 'najwyższy', 'liczba': 'mnoga', 'rodzaj': 'm'})))
 
+    def testGetWordNoun(self):
+        self.assertEqual(u'znak', self.ad.get_word(('rzeczownik', 'znak', {'przypadek': 'mianownik', 'liczba': 'pojedyncza'})))
+        self.assertEqual(u'znaku', self.ad.get_word(('rzeczownik', 'znak', {'przypadek': 'dopełniacz', 'liczba': 'pojedyncza'})))
+        self.assertEqual(u'znakowi', self.ad.get_word(('rzeczownik', 'znak', {'przypadek': 'celownik', 'liczba': 'pojedyncza'})))
+        self.assertEqual(u'znak', self.ad.get_word(('rzeczownik', 'znak', {'przypadek': 'biernik', 'liczba': 'pojedyncza'})))
+        self.assertEqual(u'znakiem', self.ad.get_word(('rzeczownik', 'znak', {'przypadek': 'narzędnik', 'liczba': 'pojedyncza'})))
+        self.assertEqual(u'znaku', self.ad.get_word(('rzeczownik', 'znak', {'przypadek': 'miejscownik', 'liczba': 'pojedyncza'})))
+        self.assertEqual(u'znaku', self.ad.get_word(('rzeczownik', 'znak', {'przypadek': 'wołacz', 'liczba': 'pojedyncza'})))
+        
+        self.assertEqual(u'znaki', self.ad.get_word(('rzeczownik', 'znak', {'przypadek': 'mianownik', 'liczba': 'mnoga'})))
+        self.assertEqual(u'znaków', self.ad.get_word(('rzeczownik', 'znak', {'przypadek': 'dopełniacz', 'liczba': 'mnoga'})))
+        self.assertEqual(u'znakom', self.ad.get_word(('rzeczownik', 'znak', {'przypadek': 'celownik', 'liczba': 'mnoga'})))
+        self.assertEqual(u'znaki', self.ad.get_word(('rzeczownik', 'znak', {'przypadek': 'biernik', 'liczba': 'mnoga'})))
+        self.assertEqual(u'znakami', self.ad.get_word(('rzeczownik', 'znak', {'przypadek': 'narzędnik', 'liczba': 'mnoga'})))
+        self.assertEqual(u'znakach', self.ad.get_word(('rzeczownik', 'znak', {'przypadek': 'miejscownik', 'liczba': 'mnoga'})))
+        self.assertEqual(u'znaki', self.ad.get_word(('rzeczownik', 'znak', {'przypadek': 'wołacz', 'liczba': 'mnoga'})))
+     
+
 if __name__ == '__main__':
     #import sys;sys.argv = ['', 'Test.test']
     unittest.main()
