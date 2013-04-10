@@ -363,7 +363,40 @@ conjugation = {
                                                                         'druga' : 'icie',
                                                                         'trzecia' : 'ią'
                                                                 }
-                                                       }
+                                },
+                                'czas przeszly' : {
+                                                   'pojedyncza' : {
+                                                                   'meski' : {
+                                                                                    'pierwsza' : 'iłem',
+                                                                                    'druga' : 'iłeś',
+                                                                                    'trzecia' : 'ił'
+                                                                              },
+                                                                   'zenski' : {
+                                                                                    'pierwsza' : 'iła',
+                                                                                    'druga' : 'iłaś',
+                                                                                    'trzecia' : 'iła'
+                                                                               },
+                                                                   'nijaki' : {
+                                                                                    'trzecia' : 'iło'
+                                                                               }
+                                                                  },
+                                                   'mnoga' : {
+                                                                    'meski' : {
+                                                                                    'pierwsza' : 'iliśmy',
+                                                                                    'druga' : 'iliście',
+                                                                                    'trzecia' : 'ili'
+                                                                              },
+                                                                   'zenski' : {
+                                                                                    'pierwsza' : 'iłyśmy',
+                                                                                    'druga' : 'iłyście',
+                                                                                    'trzecia' : 'iły'
+                                                                               },
+                                                                   'nijaki' : {
+                                                                                    'trzecia' : 'nęło'
+                                                                               
+                                                                  },
+                                                              }
+                                        }
                                 } 
                 },
                'VIb' : {

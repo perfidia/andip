@@ -14,6 +14,7 @@ print ad3.get_word(('rzeczownik', 'pies', {'przypadek':'wołacz', 'liczba': 'mno
 ad3.save() # save new items to database
 
 print ad3.get_word(("czasownik", "robić", {'aspekt': 'niedokonane', 'forma': 'czas terazniejszy', 'liczba': 'mnoga', 'osoba': 'trzecia'}))
+print ad3.get_word(("czasownik", "robić", {'aspekt': 'niedokonane', 'forma': 'czas przeszly', 'liczba': 'pojedyncza', 'osoba': 'trzecia', 'rodzaj' : 'meski'}))
 
 #print ad2.get_word(('rzeczownik', 'pies', {'przypadek':'wołacz', 'liczba': 'pojedyncza'}));
 #print ad2.get_word(("czasownik", "występować", {'aspekt': 'dokonane', 'forma': 'czas teraźniejszy', 'liczba': 'mnoga', 'osoba': 'trzecia'}))
