@@ -18,6 +18,8 @@ print ad2.get_word(("czasownik", "występować", {'aspekt': 'dokonane', 'forma':
 print ad2.get_word(('przymiotnik', 'żółty', {'przypadek' : 'celownik', 'stopień' : 'wyższy', 'liczba': 'mnoga', 'rodzaj': 'm'}))
 print ad2.get_word(('przymiotnik', 'żółty', {'przypadek' : 'dopełniacz', 'stopień' : 'najwyższy', 'liczba': 'mnoga', 'rodzaj': 'm'}))
 print ad2.get_word(('przymiotnik', 'żółty', {'przypadek' : 'celownik', 'stopień' : 'najwyższy', 'liczba': 'mnoga', 'rodzaj': 'm'}))
+print ad2.get_word(('czasownik', 'być', {'aspekt' : 'dokonane', 'forma': 'czas teraźniejszy', 'liczba': 'pojedyncza', 'osoba': 'trzecia'}))
+print ad2.get_word(('czasownik', 'być', {'aspekt': 'dokonane', 'forma': 'czas teraźniejszy', 'liczba': 'mnoga', 'osoba': 'trzecia'}))
 
 ######################TESTY DLA GET_CONF###################################
 #ad = AnDiP(DatabaseProvider("../data/polish"))                           #

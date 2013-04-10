@@ -70,6 +70,7 @@ class PlWikiProvider(WikiProvider):
         if len(data) == 0:
             raise Exception("verb error")
 
+        
         conf = data[0]
         config = dict()
         conf = conf.replace("| ", "").split("\n")
@@ -77,10 +78,14 @@ class PlWikiProvider(WikiProvider):
             tmp = element.split("=")
             config[tmp[0]] = tmp[1]
 
+
         if config['dokonany'] == 'tak':
             done = 'dokonane'
         else:
             done = 'niedokonane'
+        
+        if 'koniugacja' not in config.keys():
+            return self.__generate_from_wiki(config, base_word, done) 
 
         configuration = {}
         configuration[base_word] = {}
@@ -160,6 +165,7 @@ class PlWikiProvider(WikiProvider):
         '''
         word_about = self._get_data_api(conf[1])
 
+
         try:
             if conf[0] == 'przymiotnik':
                 fullconf = ('przymiotnik', conf[1], self.__get_conf_adjective(conf[1], re.findall("\{\{odmiana-przymiotnik-polski([^\}]*)}}", word_about)))
@@ -175,3 +181,42 @@ class PlWikiProvider(WikiProvider):
 
     def get_dump(self, word=None, conf=None):
         return self._get_dump(word, conf)
+    
+    def __generate_from_wiki(self, config, base_word, done):
+        
+        configuration = {}
+        configuration[base_word] = {}
+        configuration[base_word]['aspekt'] = {}
+        configuration[base_word]['aspekt'][done] = {}
+        configuration[base_word]['aspekt'][done]['forma'] = {}
+        for forma in ['czas terazniejszy', 'czas przeszly']:
+            configuration[base_word]['aspekt'][done]['forma'][forma] = {}
+            configuration[base_word]['aspekt'][done]['forma'][forma]['liczba'] = {}
+            for liczba in ['pojedyncza', 'mnoga']:
+                configuration[base_word]['aspekt'][done]['forma'][forma]['liczba'][liczba] = {}
+                configuration[base_word]['aspekt'][done]['forma'][forma]['liczba'][liczba]['osoba'] = {}
+                for osoba in ['pierwsza', 'druga', 'trzecia']:
+                    configuration[base_word]['aspekt'][done]['forma'][forma]['liczba'][liczba]['osoba'][osoba] = {}
+                    if forma == 'czas przeszly':
+                        for rodzaj in ['meski', 'zenski', 'nijaki']:
+                            configuration[base_word]['aspekt'][done]['forma'][forma]['liczba'][liczba]['osoba'][osoba][rodzaj] = ""
+                    else:
+                        configuration[base_word]['aspekt'][done]['forma'][forma]['liczba'][liczba]['osoba'][osoba] =  ""
+
+        for word in ['robię', 'robisz', 'robi', 'robimy', 'robicie', 'robią']:
+            if word in config.keys():
+                if word == 'robię':
+                    configuration[base_word]['aspekt'][done]['forma']['czas terazniejszy']['liczba']['pojedyncza']['osoba']['pierwsza'] = config[word]
+                elif word == 'robisz':
+                    configuration[base_word]['aspekt'][done]['forma']['czas terazniejszy']['liczba']['pojedyncza']['osoba']['druga'] = config[word]
+                elif word == 'robi':
+                    configuration[base_word]['aspekt'][done]['forma']['czas terazniejszy']['liczba']['pojedyncza']['osoba']['trzecia'] = config[word]
+                elif word == 'robimy':
+                    configuration[base_word]['aspekt'][done]['forma']['czas terazniejszy']['liczba']['mnoga']['osoba']['pierwsza'] = config[word]
+                elif word == 'robicie':
+                    configuration[base_word]['aspekt'][done]['forma']['czas terazniejszy']['liczba']['mnoga']['osoba']['druga'] = config[word]
+                else:
+                    configuration[base_word]['aspekt'][done]['forma']['czas terazniejszy']['liczba']['mnoga']['osoba']['trzecia'] = config[word]
+
+        return configuration[base_word]
+
