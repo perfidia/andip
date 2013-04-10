@@ -69,16 +69,14 @@ class PlWikiProvider(WikiProvider):
     def __get_conf_verb(self, base_word, data):
         if len(data) == 0:
             raise Exception("verb error")
-
-        
+                
         conf = data[0]
         config = dict()
-        conf = conf.replace("| ", "").split("\n")
+        conf = conf.replace("|", "").split("\n")
         for element in filter(None, conf):  # filter removes empty elements
-            tmp = element.split("=")
+            tmp = element.replace(" ", "").split("=")
             config[tmp[0]] = tmp[1]
-
-
+        
         if config['dokonany'] == 'tak':
             done = 'dokonane'
         else:
@@ -171,7 +169,9 @@ class PlWikiProvider(WikiProvider):
                 fullconf = ('przymiotnik', conf[1], self.__get_conf_adjective(conf[1], re.findall("\{\{odmiana-przymiotnik-polski([^\}]*)}}", word_about)))
                 return (fullconf[2]['stopień'][conf[2]['stopień']]['przypadek'][conf[2]['przypadek']]['liczba'][conf[2]['liczba']]['rodzaj'][conf[2]['rodzaj']], fullconf)
             elif conf[0] == 'czasownik':
+                print conf
                 fullconf = ('czasownik', conf[1], self.__get_conf_verb(conf[1], re.findall("\{\{odmiana-czasownik-polski([^\}]*)}}", word_about)))
+                print fullconf
                 return (fullconf[2]['aspekt'][conf[2]['aspekt']]['forma'][conf[2]['forma']]['liczba'][conf[2]['liczba']]['osoba'][conf[2]['osoba']], fullconf)
             elif conf[0] == 'rzeczownik':
                 fullconf = ('rzeczownik', conf[1], self.__get_conf_noun(conf[1], re.findall("\{\{odmiana-rzeczownik-polski([^\}]*)\}\}", word_about)))

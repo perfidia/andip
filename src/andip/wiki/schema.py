@@ -8,7 +8,9 @@ Created on 13-03-2013
 class Schema(object):
         
     def get_word_present(self,conj_type, forma, liczba, osoba, base_word):
+        print "dddd"
         new_end = conjugation[conj_type]['forma'][forma][liczba][osoba]
+        print new_end
         return base_word.replace(str(conjugation[conj_type]['koncowka']), str(new_end))
     
     def get_word_past(self,conj_type, forma, liczba, rodzaj, osoba, base_word):
@@ -354,14 +356,14 @@ conjugation = {
                        'forma' : {
                                 'czas terazniejszy' : {
                                                        'pojedyncza' : {
-                                                                       'pierwsza' : 'ę',
+                                                                       'pierwsza' : 'ię',
                                                                        'druga': 'isz',
                                                                        'trzecia': 'i'
                                                                        },
                                                        'mnoga' : {
                                                                         'pierwsza' : 'imy',
                                                                         'druga' : 'icie',
-                                                                        'trzecia' : 'ą'
+                                                                        'trzecia' : 'ią'
                                                                 }
                                                        }
                                 } 

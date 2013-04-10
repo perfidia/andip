@@ -354,14 +354,14 @@ conjugation = {
                        'forma' : {
                                 'czas terazniejszy' : {
                                                        'pojedyncza' : {
-                                                                       'pierwsza' : 'ę',
+                                                                       'pierwsza' : 'ię',
                                                                        'druga': 'isz',
                                                                        'trzecia': 'i'
                                                                        },
                                                        'mnoga' : {
                                                                         'pierwsza' : 'imy',
                                                                         'druga' : 'icie',
-                                                                        'trzecia' : 'ą'
+                                                                        'trzecia' : 'ią'
                                                                 }
                                                        }
                                 } 

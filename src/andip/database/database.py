@@ -36,26 +36,12 @@ class Database(object):
         self.root['przymiotnik']['word'] = PersistentMapping()
         self.root['rzeczownik']['word'] = PersistentMapping()
         transaction.commit()
-
-    def save_verb(self, dict, base_word):
+    
+    def save(self, dict, base_word, type):
         '''
-            Save verb to database in Bartosz Alchimowicz convention
+            Save object to database in Bartosz Alchimowicz convention
         '''
-        self.root['czasownik']['word'][base_word] = dict
-        transaction.commit()
-
-    def save_adjective(self, dict, base_word):
-        '''
-            Save verb to database in Bartosz Alchimowicz convention
-        '''
-        self.root['przymiotnik']['word'][base_word] = dict
-        transaction.commit()
-
-    def save_noun(self, dict, base_word):
-        '''
-            Save noun to database in Bartosz Alchimowicz convention
-        '''
-        self.root['rzeczownik']['word'][base_word] = dict
+        self.root[type]['word'][base_word] = dict
         transaction.commit()
         
     def get_conf(self, base_word):
@@ -69,9 +55,7 @@ class Database(object):
                 
         raise KeyError("There is no such a word in Database")
 
-
     def get_conf_preview(self, word):
-        print 'eeeeeeeeeee'
         
         # rzeczownik
         dictionary = self.root['rzeczownik']['word']
