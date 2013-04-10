@@ -4,7 +4,7 @@ import re
 import copy
 
 from andip import DataProvider
-from andip.provider.wiki import schema
+from andip.wiki import schema
 
 class WikiProvider(DataProvider):
     def __init__(self, url):
