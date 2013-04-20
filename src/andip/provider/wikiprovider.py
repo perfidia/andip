@@ -1,10 +1,7 @@
 # -*- coding: utf-8 -*-
-import urllib
-import re
-import copy
-
+import urllib, re, copy
 from andip import DataProvider
-from andip.wiki import schema
+from andip.wiki import Schema
 
 class WikiProvider(DataProvider):
     def __init__(self, url):
@@ -23,24 +20,14 @@ class WikiProvider(DataProvider):
 
         return urllib.urlopen(self.__url + 'w/api.php?format=xml&action=query&prop=revisions&rvprop=content&titles=' + word).read()
 
-    def _get_dump(self, word=None, conf=None):
-        """
-        Dump data of a specified word in a string recognazible by FileProvider.
-        @param word: a word to dump
-        @param conf: restric dump to a specified configuration
-        @return: string in a JSON format
-        """
-        pass
-
     def save(self):
         pass
 
-    def close(self):
-        pass
 
 class PlWikiProvider(WikiProvider):
     def __init__(self):
         WikiProvider.__init__(self, "http://pl.wiktionary.org/")
+        self.__schema = Schema()
 
     def __get_conf_noun(self, base_word, data):
         configuration = {}
@@ -98,7 +85,7 @@ class PlWikiProvider(WikiProvider):
                 configuration[base_word]['aspekt'][done]['forma'][forma]['liczba'][liczba]['osoba'] = {}
                 for osoba in ['pierwsza', 'druga', 'trzecia']:
                     configuration[base_word]['aspekt'][done]['forma'][forma]['liczba'][liczba]['osoba'][osoba] = {}
-                    conj = schema.Schema()
+                    conj = self.__schema
                     if forma == 'czas przeszly':
                         try:
                             for rodzaj in ['meski', 'zenski', 'nijaki']:
@@ -122,7 +109,7 @@ class PlWikiProvider(WikiProvider):
         word = words[0]
 
         # stopień podstawowy
-        configuration = copy.deepcopy(schema.adjective_schema[last_letter])
+        configuration = copy.deepcopy(self.__schema.adjective_schema[last_letter])
         for przypadek in configuration['przypadek']:
             for liczba in configuration['przypadek'][przypadek]['liczba']:
                 for rodzaj in configuration['przypadek'][przypadek]['liczba'][liczba]['rodzaj']:
@@ -133,7 +120,7 @@ class PlWikiProvider(WikiProvider):
             return { 'stopień' : { 'podstawowy' : configuration_basic } }
 
         # stopień wyższy
-        configuration = copy.deepcopy(schema.adjective_schema[last_letter])
+        configuration = copy.deepcopy(self.__schema.adjective_schema[last_letter])
         for przypadek in configuration['przypadek']:
             for liczba in configuration['przypadek'][przypadek]['liczba']:
                 for rodzaj in configuration['przypadek'][przypadek]['liczba'][liczba]['rodzaj']:

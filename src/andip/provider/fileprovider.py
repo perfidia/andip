@@ -1,9 +1,4 @@
-u'''
-Created on Apr 27, 2012
-
-@author: Bartosz Alchimowicz
-'''
-
+# -*- coding: utf-8 -*-
 import copy
 import collections
 
@@ -102,7 +97,4 @@ class FileProvider(DataProvider):
         return retval
 
     def save(self, conf):
-        pass
-
-    def close(self):
         pass

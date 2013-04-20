@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
-
 import os
 import unittest
-
 from andip import AnDiP
 from andip.provider import FileProvider
 
@@ -29,7 +27,7 @@ class FilePolishTest(unittest.TestCase):
 		self.assertEqual(u'nich', self.ad.get_word(('zaimek', 'ja', {'przypadek': 'miejscownik', 'liczba': 'mnoga', 'osoba': 'trzecia', 'rodzaj': 'm'})))
 
 		self.assertEqual(u'on',   self.ad.get_word(('zaimek', 'ja', {'przypadek': 'mianownik', 'liczba': 'pojedyncza', 'osoba': 'trzecia', 'rodzaj': 'm'})))
-		self.assertEqual(u'ona', self.ad.get_word(('zaimek', 'ja', {'przypadek': 'mianownik', 'liczba': 'pojedyncza', 'osoba': 'trzecia', 'rodzaj': 'ż'})))
+		self.assertEqual(u'ona',  self.ad.get_word(('zaimek', 'ja', {'przypadek': 'mianownik', 'liczba': 'pojedyncza', 'osoba': 'trzecia', 'rodzaj': 'ż'})))
 
 		self.assertEqual(u'której',  self.ad.get_word(('zaimek', 'który', {'przypadek': 'miejscownik', 'liczba': 'pojedyncza', 'rodzaj': 'ż'})))
 		self.assertEqual(u'którym',  self.ad.get_word(('zaimek', 'który', {'przypadek': 'miejscownik', 'liczba': 'pojedyncza', 'rodzaj': 'mos'})))

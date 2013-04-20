@@ -1,13 +1,10 @@
-import urllib
-import re
-import copy
-
+# -*- coding: utf-8 -*-
 from andip import DataProvider
 from andip.database import Database
 
 class DatabaseProvider(DataProvider):
-    def __init__(self, url):
-        self.database = Database(url)
+    def __init__(self, path):
+        self.database = Database(path)
 
     def get_word(self, conf):
         '''
@@ -39,5 +36,4 @@ class DatabaseProvider(DataProvider):
 
     def close(self):
         self.database.close()
-
         self.database = None

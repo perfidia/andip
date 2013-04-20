@@ -1,11 +1,5 @@
 # -*- coding: utf-8 -*-
 
-'''
-Created on Apr 27, 2012
-
-@author: Bartosz Alchimowicz
-'''
-
 class AnDiP(object):
     def __init__(self, provider, backoff = None):
         assert isinstance(provider, DataProvider)
@@ -61,9 +55,6 @@ class AnDiP(object):
             for item in items:
                 self.__provider.save(item)
 
-    def close(self):
-        self.__provider.close()
-
 class DataProvider(object):
     def get_word(self, conf):
         raise Exception("abstract method")
@@ -74,5 +65,3 @@ class DataProvider(object):
     def save(self):
         raise Exception("abstract method")
 
-    def close(self):
-        pass

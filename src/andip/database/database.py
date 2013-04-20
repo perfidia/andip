@@ -1,10 +1,4 @@
 # -*- coding: utf-8 -*-
-'''
-Created on Apr 27, 2012
-
-@author: Mateusz Dembski
-'''
-
 from ZODB.FileStorage import FileStorage
 from ZODB.DB import DB
 from persistent.mapping import PersistentMapping

@@ -1,9 +1,7 @@
 # -*- coding: utf-8 -*-
-
 import os
 import tempfile
 import unittest
-
 from andip import AnDiP
 from andip.provider import PlWikiProvider
 from andip.provider import DatabaseProvider
