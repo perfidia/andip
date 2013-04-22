@@ -57,11 +57,10 @@ class AnDiP(object):
 
 class DataProvider(object):
     def get_word(self, conf):
-        raise Exception("abstract method")
+        raise NotImplementedError("abstract method")
 
     def get_conf(self, word):
-        raise Exception("abstract method")
+        raise NotImplementedError("abstract method")
 
     def save(self):
-        raise Exception("abstract method")
-
+        raise NotImplementedError("abstract method")
