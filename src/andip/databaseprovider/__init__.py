@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from defaultprovider import DefaultProvider
+from andip import DefaultProvider
 from dbStorage import DbStorage
 
 class DatabaseProvider(DefaultProvider):
@@ -8,7 +8,7 @@ class DatabaseProvider(DefaultProvider):
         self.database = DbStorage(path)
         self.__backoff = backoff
 
-    def get_word(self, conf):
+    def _get_word(self, conf):
         '''
         Returns word or throw KeyError, if there is no information
         about word in database
@@ -18,7 +18,7 @@ class DatabaseProvider(DefaultProvider):
 
         return self.database.get_word(conf[2], conf[1])
 
-    def get_conf(self, word):
+    def _get_conf(self, word):
         '''
         Returns word configuration or KeyError, if there is no
         information about word in database

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from defaultprovider import DefaultProvider
+from andip import DefaultProvider
 from schema import Schema
 import urllib, re, copy
 
@@ -9,21 +9,10 @@ class WikiProvider(DefaultProvider):
         self.__url = url
         self.__backoff = backoff
 
-    def _get_word(self, conf):
-        assert isinstance(conf, tuple)
-        assert len(conf) == 3
-        assert isinstance(conf[0], basestring)
-        assert isinstance(conf[1], basestring)
-        assert isinstance(conf[2], dict)
-        #
-
     def _get_data_api(self, word):
         assert isinstance(word, str)
 
         return urllib.urlopen(self.__url + 'w/api.php?format=xml&action=query&prop=revisions&rvprop=content&titles=' + word).read()
-
-    def save(self):
-        pass
 
 
 class PlWikiProvider(WikiProvider):
@@ -140,10 +129,10 @@ class PlWikiProvider(WikiProvider):
                               'wyższy' : configuration_higher,
                               'najwyższy' : configuration_the_highest  } }
 
-    def get_conf(self, word):
+    def _get_conf(self, word):
         raise Exception('word not found') # use backoff to handle more providers
 
-    def get_word(self, conf):
+    def _get_word(self, conf):
         '''
             Conf is a configuration that user chose to get information about word.
             It's a touple, that first element determines type of word, second is the word alone,
