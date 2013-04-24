@@ -9,4 +9,3 @@ class DefaultProvider(object):
 
     def save(self):
         raise Exception("abstract method")
-
