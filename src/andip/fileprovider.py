@@ -64,15 +64,8 @@ class FileProvider(DefaultProvider):
                 self._build_cache_travel(self.data_set[part]['word'][word], [part, word, {}])
 
     def get_word(self, conf):
-        assert isinstance(conf, tuple)
-        assert len(conf) == 3
-        assert isinstance(conf[0], basestring)
-        assert isinstance(conf[1], basestring)
-        assert isinstance(conf[2], dict)
 
         part, base, properties = conf
-
-#		print self.data_set[part]['word']
         data = self.data_set[part]['word'][base]
 
         if isinstance(data, dict):

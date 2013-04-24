@@ -13,6 +13,18 @@ class DefaultProvider(object):
 
         @return word in a specified configuration
         """
+        try:
+            assert isinstance(conf, tuple)
+            assert len(conf) == 3
+            assert isinstance(conf[0], basestring)
+            assert isinstance(conf[1], basestring)
+            assert isinstance(conf[2], dict)
+        except AssertionError:
+            raise AttributeError("Configuration test failed!")
+        else:
+            return self._get_word(conf)
+
+    def _get_word(self, conf):
         raise NotImplementedError("abstract method")
 
     def get_conf(self, word):
@@ -26,18 +38,12 @@ class DefaultProvider(object):
 
         @return a list with configurations
         """
+        try:
+            assert isinstance(word, basestring)
+        except AssertionError:
+            raise AttributeError("Configuration test failed!")
+        else:
+            return self._get_conf
+
+    def _get_conf(self, word):
         raise NotImplementedError("abstract method")
-
-    def test_configuration_format(self, conf):
-        """
-        Function test whether the configuration dictionary is build well.
-
-        Each configuration should be a tuple build from three parts:
-        - part of a speech,
-        - base word,
-        - dict of properties.
-
-        @return a list with configurations
-        """
-
-        raise AttributeError("Configuration test failed!")
