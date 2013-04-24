@@ -1,3 +1,0 @@
-from databaseprovider import DatabaseProvider
-from fileprovider import FileProvider
-from wikiprovider import PlWikiProvider

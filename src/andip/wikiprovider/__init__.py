@@ -1,11 +1,13 @@
 # -*- coding: utf-8 -*-
-import urllib, re, copy
-from andip import DataProvider
-from andip.wiki import Schema
 
-class WikiProvider(DataProvider):
-    def __init__(self, url):
+from defaultprovider import DefaultProvider
+from schema import Schema
+import urllib, re, copy
+
+class WikiProvider(DefaultProvider):
+    def __init__(self, url, backoff):
         self.__url = url
+        self.__backoff = backoff
 
     def _get_word(self, conf):
         assert isinstance(conf, tuple)
@@ -25,8 +27,8 @@ class WikiProvider(DataProvider):
 
 
 class PlWikiProvider(WikiProvider):
-    def __init__(self):
-        WikiProvider.__init__(self, "http://pl.wiktionary.org/")
+    def __init__(self, backoff = None):
+        WikiProvider.__init__(self, "http://pl.wiktionary.org/", backoff)
         self.__schema = Schema()
 
     def __get_conf_noun(self, base_word, data):

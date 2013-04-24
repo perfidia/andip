@@ -1,10 +1,12 @@
 # -*- coding: utf-8 -*-
-from andip import DataProvider
-from andip.database import Database
 
-class DatabaseProvider(DataProvider):
-    def __init__(self, path):
-        self.database = Database(path)
+from defaultprovider import DefaultProvider
+from dbStorage import DbStorage
+
+class DatabaseProvider(DefaultProvider):
+    def __init__(self, path, backoff = None):
+        self.database = DbStorage(path)
+        self.__backoff = backoff
 
     def get_word(self, conf):
         '''

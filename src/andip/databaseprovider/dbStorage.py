@@ -1,10 +1,11 @@
 # -*- coding: utf-8 -*-
+
 from ZODB.FileStorage import FileStorage
 from ZODB.DB import DB
 from persistent.mapping import PersistentMapping
 import transaction
 
-class Database(object):
+class DbStorage(object):
     
     def __init__(self, name):
         self.storage = FileStorage(name + '.fs')

@@ -1,13 +1,13 @@
-# -*- coding: utf-8 -*-
+# -*- coding: utf-  8 -*-
+
+from defaultprovider import DefaultProvider
 import copy
-import collections
 
-from andip import DataProvider
-
-class FileProvider(DataProvider):
-    def __init__(self, filename):
+class FileProvider(DefaultProvider):
+    def __init__(self, filename, backoff = None):
         self.data_set = self._load(filename)
         self.conf_cache = None
+        self.__backoff = backoff
 
     def _load(self, data_set):
         return eval(open(data_set + ".txt").read())
