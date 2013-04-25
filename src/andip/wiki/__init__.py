@@ -1,8 +1,11 @@
 # -*- coding: utf-8 -*-
 
-from andip import DefaultProvider
+import urllib
+import re
+import copy
+
+from andip.default import DefaultProvider
 from schema import Schema
-import urllib, re, copy
 
 class WikiProvider(DefaultProvider):
     def __init__(self, url, backoff):
@@ -47,21 +50,21 @@ class PlWikiProvider(WikiProvider):
     def __get_conf_verb(self, base_word, data):
         if len(data) == 0:
             raise Exception("verb error")
-                
+
         conf = data[0]
         config = dict()
         conf = conf.replace("|", "").split("\n")
         for element in filter(None, conf):  # filter removes empty elements
             tmp = element.replace(" ", "").split("=")
             config[tmp[0]] = tmp[1]
-        
+
         if config['dokonany'] == 'tak':
             done = 'dokonane'
         else:
             done = 'niedokonane'
-        
+
         if 'koniugacja' not in config.keys():
-            return self.__generate_from_wiki(config, base_word, done) 
+            return self.__generate_from_wiki(config, base_word, done)
 
         configuration = {}
         configuration[base_word] = {}
@@ -160,9 +163,9 @@ class PlWikiProvider(WikiProvider):
 
     def get_dump(self, word=None, conf=None):
         return self._get_dump(word, conf)
-    
+
     def __generate_from_wiki(self, config, base_word, done):
-        
+
         configuration = {}
         configuration[base_word] = {}
         configuration[base_word]['aspekt'] = {}

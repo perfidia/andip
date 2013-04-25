@@ -1,7 +1,8 @@
 # -*- coding: utf-  8 -*-
 
-from andip import DefaultProvider
 import copy
+
+from andip.default import DefaultProvider
 
 class FileProvider(DefaultProvider):
     def __init__(self, filename, backoff = None):
@@ -86,5 +87,5 @@ class FileProvider(DefaultProvider):
         retval = self.conf_cache.get(word, None)
         if retval == None:
             raise Exception('configuration not found')
-        
+
         return retval

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from andip import DefaultProvider
+from andip.default import DefaultProvider
 from dbStorage import DbStorage
 
 class DatabaseProvider(DefaultProvider):
