@@ -23,7 +23,7 @@ class FileProvider(DefaultProvider):
         if data.has_key(val):
             data = data[val]
         else:
-            raise Exception("data not found, searched for = %s, available = %s" % (val, data))
+            raise LookupError("data not found, searched for = %s, available = %s" % (val, data))
 
         del properties[key]
 
@@ -86,6 +86,6 @@ class FileProvider(DefaultProvider):
 
         retval = self.conf_cache.get(word, None)
         if retval == None:
-            raise Exception('configuration not found')
+            raise LookupError('configuration not found')
 
         return retval

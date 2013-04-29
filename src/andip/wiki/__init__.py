@@ -49,7 +49,7 @@ class PlWikiProvider(WikiProvider):
 
     def __get_conf_verb(self, base_word, data):
         if len(data) == 0:
-            raise Exception("verb error")
+            raise LookupError("verb error")
 
         conf = data[0]
         config = dict()
@@ -96,7 +96,7 @@ class PlWikiProvider(WikiProvider):
 
         last_letter = base_word[len(base_word) - 1]
         if len(data) == 0 or (last_letter != 'y' and last_letter != 'i'):
-            raise Exception("adjective not found")
+            raise LookupError("adjective not found")
 
         words = data[0].replace("|", "").split("\n")
         assert len(words) > 0
@@ -133,7 +133,7 @@ class PlWikiProvider(WikiProvider):
                               'najwyższy' : configuration_the_highest  } }
 
     def _get_conf(self, word):
-        raise Exception('word not found') # use backoff to handle more providers
+        raise LookupError('word not found') # use backoff to handle more providers
 
     def _get_word(self, conf):
         '''
@@ -159,7 +159,7 @@ class PlWikiProvider(WikiProvider):
                 fullconf = ('rzeczownik', conf[1], self.__get_conf_noun(conf[1], re.findall("\{\{odmiana-rzeczownik-polski([^\}]*)\}\}", word_about)))
                 return (fullconf[2]['przypadek'][conf[2]['przypadek']]['liczba'][conf[2]['liczba']], fullconf)
         except Exception:
-            raise Exception('No information about this form')
+            raise LookupError('No information about this form')
 
     def get_dump(self, word=None, conf=None):
         return self._get_dump(word, conf)
