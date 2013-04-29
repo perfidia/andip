@@ -1,26 +1,50 @@
 # -*- coding: utf-8 -*-
 
+from andip.default import DefaultProvider
 from ZODB.FileStorage import FileStorage
 from ZODB.DB import DB
 from persistent.mapping import PersistentMapping
 import transaction
 
-class DbStorage(object):
-    
-    def __init__(self, name):
-        self.storage = FileStorage(name + '.fs')
+class DatabaseProvider(DefaultProvider):
+
+    def __init__(self, path, backoff = None):
+        DefaultProvider.__init__(self, backoff)
+
+        self.storage = FileStorage(path + '.fs')
         self.db = DB(self.storage)
         self.connection = self.db.open()
         self.root = self.connection.root()
         if not self.root:
-            self._dictionary_init()
+            self.__dictionary_init()
+
+    def save(self, conf):
+        self.__save(conf[2], conf[1], conf[0])
 
     def close(self):
         self.connection.close()
         self.db.close()
         self.storage.close()
+        self.database = None
 
-    def _dictionary_init(self):
+    def _get_word(self, conf):
+        '''
+        Returns word or throw KeyError, if there is no information
+        about word in database
+        '''
+
+        return self.__get_word(conf[2], conf[1])
+
+    def _get_conf(self, word):
+        '''
+        Returns word configuration or KeyError, if there is no
+        information about word in database
+        '''
+
+
+        return self.__get_conf_preview(word)
+
+    def __dictionary_init(self):
         '''
            Initialization of database dictionaries.
         '''
@@ -31,15 +55,15 @@ class DbStorage(object):
         self.root['przymiotnik']['word'] = PersistentMapping()
         self.root['rzeczownik']['word'] = PersistentMapping()
         transaction.commit()
-    
-    def save(self, dict, base_word, type):
+
+    def __save(self, dict, base_word, type):
         '''
             Save object to database in Bartosz Alchimowicz convention
         '''
         self.root[type]['word'][base_word] = dict
         transaction.commit()
-        
-    def get_conf(self, base_word):
+
+    def __get_conf(self, base_word):
         '''
             Get configuration of word whic is in database
         '''
@@ -47,14 +71,14 @@ class DbStorage(object):
             for word in self.root[word_type]['word'].keys():
                 if word == base_word:
                     return self.root[word_type]['word'][word]
-                
+
         raise KeyError("There is no such a word in Database")
 
-    def get_conf_preview(self, word):
-        
+    def __get_conf_preview(self, word):
+
         # rzeczownik
         dictionary = self.root['rzeczownik']['word']
-        
+
         for base_word in dictionary.keys():
             for przypadek in dictionary[base_word]['przypadek'].keys():
                 for liczba in dictionary[base_word]['przypadek'][przypadek]['liczba'].keys():
@@ -64,7 +88,7 @@ class DbStorage(object):
                                  'liczba' : liczba }
         # przymiotnik
         dictionary = self.root['przymiotnik']['word']
-        
+
         for base_word in dictionary.keys():
             for stopien in dictionary[base_word]['stopień'].keys():
                 for przypadek in dictionary[base_word]['stopień'][stopien]['przypadek'].keys():
@@ -77,8 +101,8 @@ class DbStorage(object):
                                          'rodzaj' : rodzaj}
         # czasownik
         dictionary = self.root['czasownik']['word']
-        
-        for base_word in dictionary.keys():             
+
+        for base_word in dictionary.keys():
             for aspekt in dictionary[base_word]['aspekt'].keys():
                 for forma in dictionary[base_word]['aspekt'][aspekt]['forma'].keys():
                     for liczba in dictionary[base_word]['aspekt'][aspekt]['forma'][forma]['liczba'].keys():
@@ -100,13 +124,12 @@ class DbStorage(object):
                                                 'liczba' : liczba,
                                                 'osoba' : osoba}
         raise LookupError("configuration not found")
-            
 
-    def get_word(self, conf, base_word):
+
+    def __get_word(self, conf, base_word):
         '''
             Search all database and get word
         '''
-        
         try:
             return self.root['rzeczownik']['word'][base_word]['przypadek'][conf['przypadek']]['liczba'][conf['liczba']]
         except KeyError:
@@ -120,9 +143,3 @@ class DbStorage(object):
                         return self.root['czasownik']['word'][base_word]['aspekt'][conf['aspekt']]['forma'][conf['forma']]['liczba'][conf['liczba']]['osoba'][conf['osoba']][conf['rodzaj']]
                 except KeyError:
                     raise KeyError("There is no such word in Database")
-                    
-        
-        
-        
-        
-        
