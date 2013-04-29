@@ -65,8 +65,6 @@ class DbStorage(object):
         # przymiotnik
         dictionary = self.root['przymiotnik']['word']
         
-        print dictionary
-        
         for base_word in dictionary.keys():
             for stopien in dictionary[base_word]['stopień'].keys():
                 for przypadek in dictionary[base_word]['stopień'][stopien]['przypadek'].keys():
@@ -79,8 +77,6 @@ class DbStorage(object):
                                          'rodzaj' : rodzaj}
         # czasownik
         dictionary = self.root['czasownik']['word']
-        
-        print dictionary
         
         for base_word in dictionary.keys():             
             for aspekt in dictionary[base_word]['aspekt'].keys():
@@ -103,7 +99,7 @@ class DbStorage(object):
                                                 'forma' : forma,
                                                 'liczba' : liczba,
                                                 'osoba' : osoba}
-                                
+        raise LookupError("configuration not found")
             
 
     def get_word(self, conf, base_word):

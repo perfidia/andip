@@ -9,8 +9,8 @@ from schema import Schema
 
 class WikiProvider(DefaultProvider):
     def __init__(self, url, backoff):
+        DefaultProvider.__init__(self, backoff)
         self.__url = url
-        self.__backoff = backoff
 
     def _get_data_api(self, word):
         assert isinstance(word, str)

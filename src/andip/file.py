@@ -6,9 +6,9 @@ from andip.default import DefaultProvider
 
 class FileProvider(DefaultProvider):
     def __init__(self, filename, backoff = None):
+        DefaultProvider.__init__(self, backoff)
         self.data_set = self.__load(filename)
         self.conf_cache = None
-        self.__backoff = backoff
 
     def __load(self, data_set):
         return eval(open(data_set + ".txt").read())

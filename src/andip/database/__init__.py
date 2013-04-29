@@ -5,8 +5,8 @@ from dbStorage import DbStorage
 
 class DatabaseProvider(DefaultProvider):
     def __init__(self, path, backoff = None):
+        DefaultProvider.__init__(self, backoff)
         self.database = DbStorage(path)
-        self.__backoff = backoff
 
     def _get_word(self, conf):
         '''
@@ -25,8 +25,6 @@ class DatabaseProvider(DefaultProvider):
         '''
         if not self.database:
             raise IOError("Unable to access the database (closed?)")
-
-        print 'aaa'
 
         return self.database.get_conf_preview(word)
 
