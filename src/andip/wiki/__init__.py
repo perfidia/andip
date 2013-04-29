@@ -12,6 +12,16 @@ class WikiProvider(DefaultProvider):
         DefaultProvider.__init__(self, backoff)
         self.__url = url
 
+    def get_model(self):
+        """
+        This function is supported only by WikiProvider.
+        Wikiprovider store data downloaded from wiktionary.org.
+
+        Use this function to get this data so you can add it to database using DatabaseProvider.
+        @return buffered data
+        """
+        pass
+
     def _get_data_api(self, word):
         assert isinstance(word, str)
 

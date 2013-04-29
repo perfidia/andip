@@ -18,14 +18,14 @@ class DatabaseProvider(DefaultProvider):
         if not self.root:
             self.__dictionary_init()
 
-    def save(self, conf):
-        self.__save(conf[2], conf[1], conf[0])
-
     def close(self):
         self.connection.close()
         self.db.close()
         self.storage.close()
         self.database = None
+
+    def save_model(self, conf):
+        self.__save(conf[2], conf[1], conf[0])
 
     def _get_word(self, conf):
         '''
