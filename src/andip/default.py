@@ -23,7 +23,7 @@ class DefaultProvider(object):
             assert isinstance(conf[1], basestring)
             assert isinstance(conf[2], dict)
         except AssertionError:
-            raise AttributeError("Configuration test failed!")
+            raise ValueError("check parameters!")
         else:
             try:
                 return self._get_word(conf)
@@ -32,11 +32,6 @@ class DefaultProvider(object):
                     return self.__backoff.get_word(conf)
                 else:
                     raise LookupError('word not found')
-
-            # if isinstance(retval, tuple):
-            #     return retval[0]
-            # else:
-            #     return retval
 
     def _get_word(self, conf):
         raise NotImplementedError("abstract method")
@@ -52,10 +47,8 @@ class DefaultProvider(object):
 
         @return a list with configurations
         """
-        try:
-            assert isinstance(word, basestring)
-        except AssertionError:
-            raise AttributeError("Configuration test failed!")
+        if isinstance(word, basestring) == False:
+            raise ValueError("check parameters!")
         else:
             try:
                 return self._get_conf(word)
@@ -67,3 +60,4 @@ class DefaultProvider(object):
 
     def _get_conf(self, word):
         raise NotImplementedError("abstract method")
+    

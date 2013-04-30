@@ -38,6 +38,8 @@ print ad2.get_conf('robię')
 print ad2.get_conf('robili')
 print ad2.get_conf('występowałam')
 print ad2.get_conf('występują')
+
+ad2.close()
 ######################TESTY DLA GET_CONF###################################
 #ad = AnDiP(DatabaseProvider("../data/polish"))                           #
                                              #
