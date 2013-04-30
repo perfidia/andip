@@ -34,7 +34,7 @@ class FileProvider(DefaultProvider):
             #raise Exception("incorrect path: %s", data)
             return data
 
-        return self._get_word(properties, data)
+        return self.__get_word(properties, data)
 
     def __build_cache_travel(self, data, past):
         if isinstance(data, basestring):
@@ -72,7 +72,7 @@ class FileProvider(DefaultProvider):
         if isinstance(data, dict):
             tmp = dict(properties) # copy, since _get_word removes fields
 
-            retval = self._get_word(tmp, data)
+            retval = self.__get_word(tmp, data)
         else:
             retval = data
 

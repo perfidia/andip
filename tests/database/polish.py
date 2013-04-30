@@ -2,17 +2,15 @@
 import os
 import tempfile
 import unittest
-from andip import AnDiP
-from andip.provider import PlWikiProvider
-from andip.provider import DatabaseProvider
+from andip import PlWikiProvider, DatabaseProvider
 
 class DatabasePolishTest(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.fd_tmp = tempfile.NamedTemporaryFile()
 
-        cls.ad_db = AnDiP(DatabaseProvider(cls.fd_tmp.name))
-        ad_wi = AnDiP(PlWikiProvider(), backoff=cls.ad_db)
+        cls.ad_db = DatabaseProvider(cls.fd_tmp.name)
+        ad_wi = PlWikiProvider(backoff=cls.ad_db)
 
         print cls.fd_tmp.name
 

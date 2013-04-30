@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
 import os
 import unittest
-from andip import AnDiP
-from andip.provider import FileProvider
+from andip import FileProvider
 
 class FileEnglishTest(unittest.TestCase):
 	@classmethod
@@ -19,7 +18,7 @@ class FileEnglishTest(unittest.TestCase):
 		path.append('data')
 		path.append('english')
 
-		cls.ad = AnDiP(FileProvider(os.sep.join(path)))
+		cls.ad = FileProvider(os.sep.join(path))
 
 	def testGetWordVerb(self):
 		self.assertEqual(u'am',  self.ad.get_word(('verb', 'be', {'number': 'singular', 'person': 'first'})))

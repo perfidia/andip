@@ -11,6 +11,7 @@ class WikiProvider(DefaultProvider):
     def __init__(self, url, backoff):
         DefaultProvider.__init__(self, backoff)
         self.__url = url
+        self.__buffered_data = dict()
 
     def get_model(self):
         """
@@ -20,9 +21,54 @@ class WikiProvider(DefaultProvider):
         Use this function to get this data so you can add it to database using DatabaseProvider.
         @return buffered data
         """
+        return self.__buffered_data
+
+    def _get_conf(self, word):
+        # from buffer
         pass
 
-    def _get_data_api(self, word):
+    def _get_word(self, conf):
+        if (self.__buffered_data.has_key(conf[1])):
+            # if conf[2].hasKey('forma') and conf[2]['forma'] == 'czas terazniejszy':
+            #     del conf[2]['rodzaj']
+            return self._get_word_from_buffer(conf[2], copy.deepcopy(self.__buffered_data[conf[1]]))
+        else:
+            return self._get_word_from_api(conf)[0]
+
+    def _get_word_from_api(self, conf):
+        raise NotImplementedError("abstract method")
+
+    def _get_word_from_buffer(self, properties, data):
+        # print properties
+        # print data
+        # print
+
+        assert len(data.keys()) == 1
+
+        key = data.keys()[0]
+        val = properties[key]
+        data = data[key]
+
+        if data.has_key(val):
+            data = data[val]
+        else:
+            raise LookupError("data not found")
+
+        del properties[key]
+
+        if isinstance(data, basestring):
+            return data
+
+        if len(properties.keys()) == 0:
+            #raise Exception("incorrect path: %s", data)
+            return data
+
+        return self._get_word_from_buffer(properties, data)
+
+    def _add_to_buffer(self, conf):
+        self.__buffered_data[conf[1]] = conf[2]
+
+    def _get_data_from_api(self, word):
         assert isinstance(word, str)
 
         return urllib.urlopen(self.__url + 'w/api.php?format=xml&action=query&prop=revisions&rvprop=content&titles=' + word).read()
@@ -91,9 +137,10 @@ class PlWikiProvider(WikiProvider):
                     configuration[base_word]['aspekt'][done]['forma'][forma]['liczba'][liczba]['osoba'][osoba] = {}
                     conj = self.__schema
                     if forma == 'czas przeszly':
+                        configuration[base_word]['aspekt'][done]['forma'][forma]['liczba'][liczba]['osoba'][osoba]['rodzaj'] = {}
                         try:
                             for rodzaj in ['meski', 'zenski', 'nijaki']:
-                                configuration[base_word]['aspekt'][done]['forma'][forma]['liczba'][liczba]['osoba'][osoba][rodzaj] = conj.get_word_past(config['koniugacja'], forma, liczba, rodzaj, osoba, base_word)
+                                configuration[base_word]['aspekt'][done]['forma'][forma]['liczba'][liczba]['osoba'][osoba]['rodzaj'][rodzaj] = conj.get_word_past(config['koniugacja'], forma, liczba, rodzaj, osoba, base_word)
                         except Exception:
                             pass
                     else:
@@ -142,37 +189,27 @@ class PlWikiProvider(WikiProvider):
                               'wyższy' : configuration_higher,
                               'najwyższy' : configuration_the_highest  } }
 
-    def _get_conf(self, word):
-        raise LookupError('word not found') # use backoff to handle more providers
+    def _get_word_from_api(self, conf):
+        word_about = self._get_data_from_api(conf[1])
 
-    def _get_word(self, conf):
-        '''
-            Conf is a configuration that user chose to get information about word.
-            It's a touple, that first element determines type of word, second is the word alone,
-            and the third is a dictionary that contains details about form of word we want to have
-
-        '''
-        word_about = self._get_data_api(conf[1])
-
-
-        try:
-            if conf[0] == 'przymiotnik':
-                fullconf = ('przymiotnik', conf[1], self.__get_conf_adjective(conf[1], re.findall("\{\{odmiana-przymiotnik-polski([^\}]*)}}", word_about)))
-                return (fullconf[2]['stopień'][conf[2]['stopień']]['przypadek'][conf[2]['przypadek']]['liczba'][conf[2]['liczba']]['rodzaj'][conf[2]['rodzaj']], fullconf)
-            elif conf[0] == 'czasownik':
-                fullconf = ('czasownik', conf[1], self.__get_conf_verb(conf[1], re.findall("\{\{odmiana-czasownik-polski([^\}]*)}}", word_about)))
-                if conf[2]['forma'] == 'czas terazniejszy':
-                    return (fullconf[2]['aspekt'][conf[2]['aspekt']]['forma'][conf[2]['forma']]['liczba'][conf[2]['liczba']]['osoba'][conf[2]['osoba']], fullconf)
-                else:
-                    return (fullconf[2]['aspekt'][conf[2]['aspekt']]['forma'][conf[2]['forma']]['liczba'][conf[2]['liczba']]['osoba'][conf[2]['osoba']][conf[2]['rodzaj']], fullconf)
-            elif conf[0] == 'rzeczownik':
-                fullconf = ('rzeczownik', conf[1], self.__get_conf_noun(conf[1], re.findall("\{\{odmiana-rzeczownik-polski([^\}]*)\}\}", word_about)))
-                return (fullconf[2]['przypadek'][conf[2]['przypadek']]['liczba'][conf[2]['liczba']], fullconf)
-        except Exception:
-            raise LookupError('No information about this form')
-
-    def get_dump(self, word=None, conf=None):
-        return self._get_dump(word, conf)
+        # try:
+        if conf[0] == 'przymiotnik':
+            fullconf = ('przymiotnik', conf[1], self.__get_conf_adjective(conf[1], re.findall("\{\{odmiana-przymiotnik-polski([^\}]*)}}", word_about)))
+            self._add_to_buffer(fullconf)
+            return (fullconf[2]['stopień'][conf[2]['stopień']]['przypadek'][conf[2]['przypadek']]['liczba'][conf[2]['liczba']]['rodzaj'][conf[2]['rodzaj']], fullconf)
+        elif conf[0] == 'czasownik':
+            fullconf = ('czasownik', conf[1], self.__get_conf_verb(conf[1], re.findall("\{\{odmiana-czasownik-polski([^\}]*)}}", word_about)))
+            self._add_to_buffer(fullconf)
+            if conf[2]['forma'] == 'czas terazniejszy':
+                return (fullconf[2]['aspekt'][conf[2]['aspekt']]['forma'][conf[2]['forma']]['liczba'][conf[2]['liczba']]['osoba'][conf[2]['osoba']], fullconf)
+            else:
+                return (fullconf[2]['aspekt'][conf[2]['aspekt']]['forma'][conf[2]['forma']]['liczba'][conf[2]['liczba']]['osoba'][conf[2]['osoba']]['rodzaj'][conf[2]['rodzaj']], fullconf)
+        elif conf[0] == 'rzeczownik':
+            fullconf = ('rzeczownik', conf[1], self.__get_conf_noun(conf[1], re.findall("\{\{odmiana-rzeczownik-polski([^\}]*)\}\}", word_about)))
+            self._add_to_buffer(fullconf)
+            return (fullconf[2]['przypadek'][conf[2]['przypadek']]['liczba'][conf[2]['liczba']], fullconf)
+        # except Exception:
+        raise LookupError('No information about this form')
 
     def __generate_from_wiki(self, config, base_word, done):
 
