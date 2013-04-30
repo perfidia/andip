@@ -25,9 +25,9 @@ class DefaultProvider(object):
         except AssertionError:
             raise AttributeError("Configuration test failed!")
         else:
-            try:
+            # try:
                 return self._get_word(conf)
-            except Exception:
+            # except Exception:
                 if (self.__backoff):
                     return self.__backoff._get_word(conf)
                 else:
@@ -57,9 +57,9 @@ class DefaultProvider(object):
         except AssertionError:
             raise AttributeError("Configuration test failed!")
         else:
-            try:
+            # try:
                 return self._get_conf(word)
-            except Exception:
+            # except Exception:
                 if (self.__backoff):
                     return self.__backoff._get_conf(word)
                 else:

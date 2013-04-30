@@ -9,9 +9,9 @@ from schema import Schema
 
 class WikiProvider(DefaultProvider):
     def __init__(self, url, backoff):
-        DefaultProvider.__init__(self, backoff)
+        DefaultProvider.__init__(self, backoff) 
         self.__url = url
-        self.__buffered_data = dict()
+        self._buffered_data = {}
 
     def get_model(self):
         """
@@ -21,17 +21,11 @@ class WikiProvider(DefaultProvider):
         Use this function to get this data so you can add it to database using DatabaseProvider.
         @return buffered data
         """
-        return self.__buffered_data
-
-    def _get_conf(self, word):
-        # from buffer
-        pass
+        return self._buffered_data
 
     def _get_word(self, conf):
-        if (self.__buffered_data.has_key(conf[1])):
-            # if conf[2].hasKey('forma') and conf[2]['forma'] == 'czas terazniejszy':
-            #     del conf[2]['rodzaj']
-            return self._get_word_from_buffer(conf[2], copy.deepcopy(self.__buffered_data[conf[1]]))
+        if (self._buffered_data[conf[0]].has_key(conf[1])):
+            return self._get_word_from_buffer(conf[2], copy.deepcopy(self._buffered_data[conf[0]][conf[1]]))
         else:
             return self._get_word_from_api(conf)[0]
 
@@ -39,10 +33,79 @@ class WikiProvider(DefaultProvider):
         raise NotImplementedError("abstract method")
 
     def _get_word_from_buffer(self, properties, data):
-        # print properties
-        # print data
-        # print
+        raise NotImplementedError("abstract method")
 
+    def _add_to_buffer(self, conf):
+        print conf[2]
+        self._buffered_data[conf[0]][conf[1]] = conf[2]
+
+    def _get_data_from_api(self, word):
+        assert isinstance(word, str)
+
+        return urllib.urlopen(self.__url + 'w/api.php?format=xml&action=query&prop=revisions&rvprop=content&titles=' + word).read()
+
+
+class PlWikiProvider(WikiProvider):
+    def __init__(self, backoff = None):
+        WikiProvider.__init__(self, "http://pl.wiktionary.org/", backoff)
+        self.__schema = Schema()
+        self._buffered_data['rzeczownik'] = {}
+        self._buffered_data['czasownik'] = {}
+        self._buffered_data['przymiotnik'] = {}
+
+    def _get_conf(self, word):
+        # rzeczownik
+        dictionary = self._buffered_data['rzeczownik']
+
+        for base_word in dictionary.keys():
+            for przypadek in dictionary[base_word]['przypadek'].keys():
+                for liczba in dictionary[base_word]['przypadek'][przypadek]['liczba'].keys():
+                    if dictionary[base_word]['przypadek'][przypadek]['liczba'][liczba] == word:
+                        return {'type': 'rzeczownik',
+                                'przypadek': przypadek,
+                                'liczba': liczba}
+
+        # przymiotnik
+        dictionary = self._buffered_data['przymiotnik']
+
+        for base_word in dictionary.keys():
+            for stopien in dictionary[base_word]['stopień'].keys():
+                for przypadek in dictionary[base_word]['stopień'][stopien]['przypadek'].keys():
+                    for liczba in dictionary[base_word]['stopień'][stopien]['przypadek'][przypadek]['liczba'].keys():
+                        for rodzaj in dictionary[base_word]['stopień'][stopien]['przypadek'][przypadek]['liczba'][liczba]['rodzaj'].keys():
+                            if dictionary[base_word]['stopień'][stopien]['przypadek'][przypadek]['liczba'][liczba]['rodzaj'][rodzaj] == word:
+                                return {'type': 'przymiotnik',
+                                        'stopień': stopien,
+                                        'liczba': liczba,
+                                        'rodzaj': rodzaj}
+        # czasownik
+        dictionary = self._buffered_data['czasownik']
+
+        for base_word in dictionary.keys():
+            for aspekt in dictionary[base_word]['aspekt'].keys():
+                for forma in dictionary[base_word]['aspekt'][aspekt]['forma'].keys():
+                    for liczba in dictionary[base_word]['aspekt'][aspekt]['forma'][forma]['liczba'].keys():
+                        for osoba in dictionary[base_word]['aspekt'][aspekt]['forma'][forma]['liczba'][liczba]['osoba'].keys():
+                            if forma == 'czas przeszly':
+                                for rodzaj in dictionary[base_word]['aspekt'][aspekt]['forma'][forma]['liczba'][liczba]['osoba'][osoba]['rodzaj'].keys():
+                                    if dictionary[base_word]['aspekt'][aspekt]['forma'][forma]['liczba'][liczba]['osoba'][osoba]['rodzaj'][rodzaj] == word:
+                                        return {'type': 'czasownik',
+                                                'aspekt': aspekt,
+                                                'forma': forma,
+                                                'liczba': liczba,
+                                                'osoba': osoba,
+                                                'rodzaj': rodzaj}
+                            else:
+                                if dictionary[base_word]['aspekt'][aspekt]['forma'][forma]['liczba'][liczba]['osoba'][osoba] == word:
+                                    return {'type': 'czasownik',
+                                            'aspekt': aspekt,
+                                            'forma': forma,
+                                            'liczba': liczba,
+                                            'osoba': osoba}
+        raise LookupError("configuration not found")
+
+
+    def _get_word_from_buffer(self, properties, data):
         assert len(data.keys()) == 1
 
         key = data.keys()[0]
@@ -64,20 +127,6 @@ class WikiProvider(DefaultProvider):
             return data
 
         return self._get_word_from_buffer(properties, data)
-
-    def _add_to_buffer(self, conf):
-        self.__buffered_data[conf[1]] = conf[2]
-
-    def _get_data_from_api(self, word):
-        assert isinstance(word, str)
-
-        return urllib.urlopen(self.__url + 'w/api.php?format=xml&action=query&prop=revisions&rvprop=content&titles=' + word).read()
-
-
-class PlWikiProvider(WikiProvider):
-    def __init__(self, backoff = None):
-        WikiProvider.__init__(self, "http://pl.wiktionary.org/", backoff)
-        self.__schema = Schema()
 
     def __get_conf_noun(self, base_word, data):
         configuration = {}
@@ -227,8 +276,9 @@ class PlWikiProvider(WikiProvider):
                 for osoba in ['pierwsza', 'druga', 'trzecia']:
                     configuration[base_word]['aspekt'][done]['forma'][forma]['liczba'][liczba]['osoba'][osoba] = {}
                     if forma == 'czas przeszly':
+                        configuration[base_word]['aspekt'][done]['forma'][forma]['liczba'][liczba]['osoba'][osoba]['rodzaj'] = {}
                         for rodzaj in ['meski', 'zenski', 'nijaki']:
-                            configuration[base_word]['aspekt'][done]['forma'][forma]['liczba'][liczba]['osoba'][osoba][rodzaj] = ""
+                            configuration[base_word]['aspekt'][done]['forma'][forma]['liczba'][liczba]['osoba'][osoba]['rodzaj'][rodzaj] = ""
                     else:
                         configuration[base_word]['aspekt'][done]['forma'][forma]['liczba'][liczba]['osoba'][osoba] =  ""
 

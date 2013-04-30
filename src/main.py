@@ -6,37 +6,41 @@ ad1 = PlWikiProvider()
 # ad2 = FileProvider("../data/polish")#, backoff = ad1)
 # ad3 = DatabaseProvider("../data/polish", backoff = ad2)
 
-# print ad2.get_word(('czasownik', 'być', {'aspekt': 'dokonane', 'forma': 'czas teraźniejszy', 'liczba': 'pojedyncza', 'osoba': 'trzecia'}))
-# print ad1.get_word(("czasownik", "występować", {'aspekt': 'dokonane', 'forma': 'czas teraźniejszy', 'liczba': 'mnoga', 'osoba': 'trzecia'}))
-# print ad1.get_word(("czasownik", "mieć", {'aspekt': 'niedokonane', 'forma': 'czas terazniejszy', 'liczba': 'mnoga', 'osoba': 'trzecia'}))
+print ad1.get_word(('czasownik', 'być', {'aspekt': 'niedokonane', 'forma': 'czas terazniejszy', 'liczba': 'pojedyncza', 'osoba': 'trzecia'}))
+print ad1.get_word(("czasownik", "występować", {'aspekt': 'niedokonane', 'forma': 'czas terazniejszy', 'liczba': 'mnoga', 'osoba': 'trzecia'}))
+print ad1.get_word(("czasownik", "mieć", {'aspekt': 'niedokonane', 'forma': 'czas terazniejszy', 'liczba': 'mnoga', 'osoba': 'trzecia'}))
 print ad1.get_word(("czasownik", "robić", {'aspekt': 'niedokonane', 'forma': 'czas terazniejszy', 'liczba': 'mnoga', 'osoba': 'trzecia'}))
 print ad1.get_word(("czasownik", "robić", {'aspekt': 'niedokonane', 'forma': 'czas przeszly', 'liczba': 'pojedyncza', 'osoba': 'trzecia', 'rodzaj' : 'meski'}))
 print ad1.get_word(("czasownik", "robić", {'aspekt': 'niedokonane', 'forma': 'czas terazniejszy', 'liczba': 'mnoga', 'osoba': 'trzecia'}))
+print ad1.get_word(("czasownik", "robić", {'aspekt': 'niedokonane', 'forma': 'czas terazniejszy', 'liczba': 'mnoga', 'osoba': 'trzecia'}))
 print ad1.get_word(("czasownik", "występować", {'aspekt': 'niedokonane', 'forma': 'czas przeszly', 'liczba': 'pojedyncza', 'osoba': 'trzecia', 'rodzaj' : 'meski'}))
-print ad1.get_word(("czasownik", "występować", {'aspekt': 'niedokonane', 'forma': 'czas przeszly', 'liczba': 'pojedyncza', 'osoba': 'trzecia', 'rodzaj' : 'meski'}))
+print ad1.get_conf('robiłem')
+print ad1.get_conf('robię')
+print ad1.get_conf('robili')
+print ad1.get_conf('występowałam')
+print ad1.get_conf('występują')
 
-# # print ad1.get_word(('przymiotnik', 'żółty', {'przypadek' : 'dopełniacz', 'stopień' : 'wyższy', 'liczba': 'mnoga', 'rodzaj': 'm'}))
-# print ad3.get_word(("czasownik", "występować", {'aspekt': 'dokonane', 'forma': 'czas teraźniejszy', 'liczba': 'mnoga', 'osoba': 'trzecia'}))
-# print ad3.get_word(('przymiotnik', 'żółty', {'przypadek' : 'dopełniacz', 'stopień' : 'wyższy', 'liczba': 'mnoga', 'rodzaj': 'm'}))
-# print ad3.get_word(('rzeczownik', 'pies', {'przypadek':'wołacz', 'liczba': 'mnoga'}));
+print ad1.get_word(("czasownik", "występować", {'aspekt': 'niedokonane', 'forma': 'czas przeszly', 'liczba': 'pojedyncza', 'osoba': 'trzecia', 'rodzaj' : 'meski'}))
+print ad1.get_word(('przymiotnik', 'żółty', {'przypadek' : 'dopełniacz', 'stopień' : 'wyższy', 'liczba': 'mnoga', 'rodzaj': 'm'}))
+print ad1.get_word(('rzeczownik', 'pies', {'przypadek':'wołacz', 'liczba': 'mnoga'}));
+print ad1.get_conf("żółtszym")                                            #
+print ad1.get_conf('występują')                                           #
+print ad1.get_conf('psie')
 #
-# print ad3.get_word(("czasownik", "być", {'aspekt': 'dokonane', 'forma': 'czas teraźniejszy', 'liczba': 'mnoga', 'osoba': 'trzecia'}))
+print ad1.get_word(("czasownik", "być", {'aspekt': 'niedokonane', 'forma': 'czas terazniejszy', 'liczba': 'mnoga', 'osoba': 'trzecia'}))
 # ad3.save() # save new items to database
-# print ad3.get_conf('byłem')
 
-#print ad2.get_word(('rzeczownik', 'pies', {'przypadek':'wołacz', 'liczba': 'pojedyncza'}));
-#print ad2.get_word(("czasownik", "występować", {'aspekt': 'dokonane', 'forma': 'czas teraźniejszy', 'liczba': 'mnoga', 'osoba': 'trzecia'}))
-#print ad2.get_word(('przymiotnik', 'żółty', {'przypadek' : 'celownik', 'stopień' : 'wyższy', 'liczba': 'mnoga', 'rodzaj': 'm'}))
-#print ad2.get_word(('przymiotnik', 'żółty', {'przypadek' : 'dopełniacz', 'stopień' : 'najwyższy', 'liczba': 'mnoga', 'rodzaj': 'm'}))
-#print ad2.get_word(('przymiotnik', 'żółty', {'przypadek' : 'celownik', 'stopień' : 'najwyższy', 'liczba': 'mnoga', 'rodzaj': 'm'}))
-#print ad2.get_word(('czasownik', 'być', {'aspekt' : 'dokonane', 'forma': 'czas teraźniejszy', 'liczba': 'pojedyncza', 'osoba': 'trzecia'}))
-#print ad2.get_word(('czasownik', 'być', {'aspekt': 'dokonane', 'forma': 'czas teraźniejszy', 'liczba': 'mnoga', 'osoba': 'trzecia'}))
+print ad1.get_word(('rzeczownik', 'pies', {'przypadek':'wołacz', 'liczba': 'pojedyncza'}));
+print ad1.get_word(("czasownik", "występować", {'aspekt': 'niedokonane', 'forma': 'czas terazniejszy', 'liczba': 'mnoga', 'osoba': 'trzecia'}))
+print ad1.get_word(('przymiotnik', 'żółty', {'przypadek' : 'celownik', 'stopień' : 'wyższy', 'liczba': 'mnoga', 'rodzaj': 'm'}))
+print ad1.get_word(('przymiotnik', 'żółty', {'przypadek' : 'dopełniacz', 'stopień' : 'najwyższy', 'liczba': 'mnoga', 'rodzaj': 'm'}))
+print ad1.get_word(('przymiotnik', 'żółty', {'przypadek' : 'celownik', 'stopień' : 'najwyższy', 'liczba': 'mnoga', 'rodzaj': 'm'}))
+print ad1.get_word(('czasownik', 'być', {'aspekt' : 'niedokonane', 'forma': 'czas terazniejszy', 'liczba': 'pojedyncza', 'osoba': 'trzecia'}))
+print ad1.get_word(('czasownik', 'być', {'aspekt': 'niedokonane', 'forma': 'czas terazniejszy', 'liczba': 'mnoga', 'osoba': 'trzecia'}))
 
 ######################TESTY DLA GET_CONF###################################
 #ad = AnDiP(DatabaseProvider("../data/polish"))                           #
-#print ad.get_conf("żółtszym")                                            #
-#print ad.get_conf('występują')                                           #
-#print ad.get_conf('psie')                                                #
+                                             #
 ##############################KONIEC#######################################
 
 #print ad.get_conf('najżółtszym')

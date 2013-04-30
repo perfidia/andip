@@ -47,6 +47,21 @@ class WikiPolishTest(unittest.TestCase):
         self.assertEqual(u'znakach', self.ad.get_word(('rzeczownik', 'znak', {'przypadek': 'miejscownik', 'liczba': 'mnoga'})))
         self.assertEqual(u'znaki', self.ad.get_word(('rzeczownik', 'znak', {'przypadek': 'wołacz', 'liczba': 'mnoga'})))
      
+    def testGetConfVerb(self):
+        # download and save in buffer
+        self.assertEqual('robią', self.ad.get_word(("czasownik", "robić",
+                            {'aspekt': 'niedokonane', 'forma': 'czas terazniejszy', 'liczba': 'mnoga',
+                             'osoba': 'trzecia'})))
+        self.assertEqual('występował', self.ad.get_word(("czasownik", "występować",
+                            {'aspekt': 'niedokonane', 'forma': 'czas przeszly', 'liczba': 'pojedyncza',
+                             'osoba': 'trzecia', 'rodzaj': 'meski'})))
+
+        # test
+        self.assertEqual(self.ad.get_conf('robiłem'), {'rodzaj': 'meski', 'forma': 'czas przeszly', 'liczba': 'pojedyncza', 'osoba': 'pierwsza', 'type': 'czasownik', 'aspekt': 'niedokonane'})
+        self.assertEqual(self.ad.get_conf('robię'), {'forma': 'czas terazniejszy', 'osoba': 'pierwsza', 'type': 'czasownik', 'aspekt': 'niedokonane', 'liczba': 'pojedyncza'})
+        self.assertEqual(self.ad.get_conf('robili'), {'rodzaj': 'meski', 'forma': 'czas przeszly', 'liczba': 'mnoga', 'osoba': 'trzecia', 'type': 'czasownik', 'aspekt': 'niedokonane'})
+        self.assertEqual(self.ad.get_conf('występowałam'), {'rodzaj': 'zenski', 'forma': 'czas przeszly', 'liczba': 'pojedyncza', 'osoba': 'pierwsza', 'type': 'czasownik', 'aspekt': 'niedokonane'})
+        self.assertEqual(self.ad.get_conf('występują'), {'forma': 'czas terazniejszy', 'osoba': 'trzecia', 'type': 'czasownik', 'aspekt': 'niedokonane', 'liczba': 'mnoga'})
 
 if __name__ == '__main__':
     #import sys;sys.argv = ['', 'Test.test']
