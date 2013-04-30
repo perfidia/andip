@@ -60,4 +60,12 @@ class DefaultProvider(object):
 
     def _get_conf(self, word):
         raise NotImplementedError("abstract method")
-    
+
+    def get_model(self):
+        raise NameError("function is not supported by this provider")
+
+    def save_model(self):
+        raise NameError("function is not supported by this provider")
+
+    def close(self):
+        raise NameError("function is not supported by this provider")
