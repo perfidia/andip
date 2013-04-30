@@ -36,7 +36,6 @@ class WikiProvider(DefaultProvider):
         raise NotImplementedError("abstract method")
 
     def _add_to_buffer(self, conf):
-        print conf[2]
         self._buffered_data[conf[0]][conf[1]] = conf[2]
 
     def _get_data_from_api(self, word):

@@ -25,7 +25,9 @@ class DatabaseProvider(DefaultProvider):
         self.database = None
 
     def save_model(self, conf):
-        self.__save(conf[2], conf[1], conf[0])
+        for type in conf:
+            for baseword in  conf[type]:
+                self.__save(conf[type][baseword], baseword, type)
 
     def _get_word(self, conf):
         '''
@@ -140,6 +142,6 @@ class DatabaseProvider(DefaultProvider):
                     if conf['forma'] == 'czas terazniejszy':
                         return self.root['czasownik']['word'][base_word]['aspekt'][conf['aspekt']]['forma'][conf['forma']]['liczba'][conf['liczba']]['osoba'][conf['osoba']]
                     else:
-                        return self.root['czasownik']['word'][base_word]['aspekt'][conf['aspekt']]['forma'][conf['forma']]['liczba'][conf['liczba']]['osoba'][conf['osoba']][conf['rodzaj']]
+                        return self.root['czasownik']['word'][base_word]['aspekt'][conf['aspekt']]['forma'][conf['forma']]['liczba'][conf['liczba']]['osoba'][conf['osoba']]['rodzaj'][conf['rodzaj']]
                 except KeyError:
                     raise KeyError("There is no such word in Database")
