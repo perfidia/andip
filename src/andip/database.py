@@ -9,6 +9,14 @@ import transaction
 class DatabaseProvider(DefaultProvider):
 
     def __init__(self, path, backoff = None):
+        """
+        Initializes DatabaseProvider.
+
+        This provider requires closing database after using (call close function).
+
+        :param path: path to database file
+        :param backoff: (optional) backoff provider
+        """
         DefaultProvider.__init__(self, backoff)
 
         self.storage = FileStorage(path + '.fs')
@@ -19,12 +27,24 @@ class DatabaseProvider(DefaultProvider):
             self.__dictionary_init()
 
     def close(self):
+        """
+        Function close connection to database.
+
+        Call this before destroying DatabaseProvider object to avoid issues with database file access.
+        """
         self.connection.close()
         self.db.close()
         self.storage.close()
         self.database = None
 
     def save_model(self, conf):
+        """
+        Inserts new data into database.
+
+        Get new data using WikiProvider and get it using get_model method.
+
+        :param conf: new data returned by WikiProvider get_model method
+        """
         for type in conf:
             for baseword in  conf[type]:
                 self.__save(conf[type][baseword], baseword, type)
