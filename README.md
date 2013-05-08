@@ -23,7 +23,14 @@ Installation
 Getting started
 ---------------
 
-TBD
+    from andip import *
+
+    ad1 = PlWikiProvider()
+    ad2 = DatabaseProvider("../data/polish", backoff = ad1)
+    ad3 = FileProvider("../data/polish", backoff = ad2)
+
+    print ad3.get_word(('czasownik', 'być', {'aspekt': 'niedokonane', 'forma': 'czas terazniejszy', 'liczba': 'pojedyncza', 'osoba': 'trzecia'}))
+    print ad3.get_conf('jestem')
 
 Authors
 -------
