@@ -1,0 +1,10 @@
+Tests
+============
+
+Tests are located in 3 folders (diffient data providers) and divided into polish and english packs.
+
+To run tests just type the following command
+
+   .. code-block:: bash
+
+        python test_filename.py

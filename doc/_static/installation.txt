@@ -1,0 +1,12 @@
+Installation
+============
+
+The following libraries are required:
+
+    * python 2.7 (tested on python 2.7.3)
+    * python-setuptools
+    * ZODB3
+       .. code-block:: bash
+
+                easy_install ZODB3
+

@@ -1,0 +1,90 @@
+Usage
+=====
+
+AnDiP implemets 3 data providers:
+
+    * FileProvider - simple provider which reads data from txt file,
+    * DatabaseProvider - provider which uses Zope Database to store and gets data,
+    * WikiProvider - the most important, downloads necessary data from web (using wiktionary.org API) and store it locally.
+
+Default provider API
+----------------------
+
+Each provider is an extension of DefaultProvider which provide two basic functions:
+
+    **get_conf** *(word)* which takes as parameter a word and returns it's configuration,
+
+    **get_word** *(conf)* which returns a word in specified configuration.
+
+
+Each configuration is a tuple build from three parts:
+
+    #. part of a speech e.g. 'czasownik',
+    #. base word e.g. 'występują',
+    #. dictionary of properties e.g. {'aspekt': 'niedokonane', 'forma': 'czas terazniejszy', 'liczba': 'mnoga', 'osoba': 'trzecia'}.
+
+Simple example using FileProvider
+----------------------
+
+The code below shows how to create a simple application which gets configuration of word 'występują' using FileProvider.
+
+.. code-block:: python
+
+    from andip import FileProvider
+
+    ad1 = FileProvider("../data/polish")
+    print ad1.get_conf('występują')
+
+The result is actually in data/polish.txt file so it will be returned, otherwise exception.
+
+**Note** that we don't specify extension of file or database (in case of DatabaseProvider).
+
+Backoff mechanism
+----------------------
+
+If we want to search data using multiple providers we can simple do it using backoff process.
+To do it just create provider with optional backoff parameter.
+
+.. code-block:: python
+
+    from andip import FileProvider, DatabaseProvider
+
+    ad1 = DatabaseProvider("../data/polish")
+    ad2 = FileProvider("../data/polish", backoff = ad1)
+
+    print ad2.get_conf('występują')
+
+This code will try to find verb 'występują' using FileProvider. In case of failure, backoff mechanism will continue processing using backoff - DatabaseProvider.
+
+**Remember** to close connection to database.
+
+WikiProvider
+----------------------
+
+WikiProvider is a special provider which connects to wiktionary.org API.
+For now, AnDiP provides only PlWikiProvider which extends WikiProvider to handle polish language.
+
+**Note** that WikiProvider won't find data if you call **get_conf** *(word)* method. This inconvenience is due to fact that wiktionary.org API requires specifying the base form of the word which in case of **get_word** *(conf)* method is passed as second parameter of dictionary.
+
+Saving new data
+----------------------
+
+WikiProvider first look for given word in locally buffered data. If that succeed, the result is returned. If not, WikiProvider looks for data using wiktionary API. Downloaded data is stored in buffer so it can be reused next time without connecting to wiktionary.org.
+Before terminating your program you can save buffered data into database using DatabaseProvider.
+
+.. code-block:: python
+
+    from andip import *
+
+    ad1 = PlWikiProvider()
+    ad2 = DatabaseProvider("../data/polish", backoff = ad1)
+    ad3 = FileProvider("../data/polish", backoff = ad2)
+
+    print ad3.get_word(('czasownik', 'być', {'aspekt': 'niedokonane', 'forma': 'czas terazniejszy', 'liczba': 'pojedyncza', 'osoba': 'trzecia'}))
+    print ad3.get_word(("czasownik", "występować", {'aspekt': 'niedokonane', 'forma': 'czas terazniejszy', 'liczba': 'mnoga', 'osoba': 'trzecia'}))
+    print ad3.get_word(("czasownik", "robić", {'aspekt': 'niedokonane', 'forma': 'czas terazniejszy', 'liczba': 'mnoga', 'osoba': 'trzecia'}))
+
+    ad2.save_model(ad1.get_model())
+    ad2.close()
+
+In this case, only configuration of word "robić" will be saved into database. PlWikiProvider will download and buffer only configuration for 'robić' because word 'być' and 'występować' is already accessible from FileProvider.
