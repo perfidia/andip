@@ -29,8 +29,11 @@ Getting started
     ad2 = DatabaseProvider("../data/polish", backoff = ad1)
     ad3 = FileProvider("../data/polish", backoff = ad2)
 
-    print ad3.get_word(('czasownik', 'być', {'aspekt': 'niedokonane', 'forma': 'czas terazniejszy', 'liczba': 'pojedyncza', 'osoba': 'trzecia'}))
-    print ad3.get_conf('jestem')
+    print ad3.get_word(('czasownik', 'robić', {'aspekt': 'niedokonane', 'forma': 'czas terazniejszy', 'liczba': 'pojedyncza', 'osoba': 'trzecia'}))
+    print ad3.get_conf('robiła')
+
+    ad2.save_model(ad1.get_model())
+    ad2.close()
 
 Authors
 -------
