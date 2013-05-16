@@ -129,7 +129,7 @@ class DatabaseProvider(DefaultProvider):
                 for forma in dictionary[base_word]['aspekt'][aspekt]['forma'].keys():
                     for liczba in dictionary[base_word]['aspekt'][aspekt]['forma'][forma]['liczba'].keys():
                         for osoba in dictionary[base_word]['aspekt'][aspekt]['forma'][forma]['liczba'][liczba]['osoba'].keys():
-                            if forma == 'czas przeszly':
+                            if forma == 'czas przeszły':
                                 for rodzaj in dictionary[base_word]['aspekt'][aspekt]['forma'][forma]['liczba'][liczba]['osoba'][osoba]['rodzaj'].keys():
                                     if dictionary[base_word]['aspekt'][aspekt]['forma'][forma]['liczba'][liczba]['osoba'][osoba]['rodzaj'][rodzaj] == word:
                                         return { 'type' : 'czasownik',
@@ -159,7 +159,7 @@ class DatabaseProvider(DefaultProvider):
                 return self.root['przymiotnik']['word'][base_word]['stopień'][conf['stopień']]['przypadek'][conf['przypadek']]['liczba'][conf['liczba']]['rodzaj'][conf['rodzaj']]
             except KeyError:
                 try:
-                    if conf['forma'] == 'czas terazniejszy':
+                    if conf['forma'] == 'czas teraźniejszy':
                         return self.root['czasownik']['word'][base_word]['aspekt'][conf['aspekt']]['forma'][conf['forma']]['liczba'][conf['liczba']]['osoba'][conf['osoba']]
                     else:
                         return self.root['czasownik']['word'][base_word]['aspekt'][conf['aspekt']]['forma'][conf['forma']]['liczba'][conf['liczba']]['osoba'][conf['osoba']]['rodzaj'][conf['rodzaj']]
