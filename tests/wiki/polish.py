@@ -57,11 +57,11 @@ class WikiPolishTest(unittest.TestCase):
                              'osoba': 'trzecia', 'rodzaj': 'm'})))
 
         # test
-        self.assertEqual(self.ad.get_conf('robiłem'), {'rodzaj': 'm', 'forma': 'czas przeszły', 'liczba': 'pojedyńcza', 'osoba': 'pierwsza', 'type': 'czasownik', 'aspekt': 'niedokonane'})
-        self.assertEqual(self.ad.get_conf('robię'), {'forma': 'czas teraźniejszy', 'osoba': 'pierwsza', 'type': 'czasownik', 'aspekt': 'niedokonane', 'liczba': 'pojedyńcza'})
-        self.assertEqual(self.ad.get_conf('robili'), {'rodzaj': 'm', 'forma': 'czas przeszły', 'liczba': 'mnoga', 'osoba': 'trzecia', 'type': 'czasownik', 'aspekt': 'niedokonane'})
-        self.assertEqual(self.ad.get_conf('występowałam'), {'rodzaj': 'ż', 'forma': 'czas przeszły', 'liczba': 'pojedyńcza', 'osoba': 'pierwsza', 'type': 'czasownik', 'aspekt': 'niedokonane'})
-        self.assertEqual(self.ad.get_conf('występują'), {'forma': 'czas teraźniejszy', 'osoba': 'trzecia', 'type': 'czasownik', 'aspekt': 'niedokonane', 'liczba': 'mnoga'})
+        self.assertEqual(self.ad.get_conf('robiłem'), [('czasownik', 'robi\xc4\x87', {'rodzaj': 'm', 'forma': 'czas przesz\xc5\x82y', 'osoba': 'pierwsza', 'aspekt': 'niedokonane', 'liczba': 'pojedy\xc5\x84cza'})])
+        self.assertEqual(self.ad.get_conf('robię'), [('czasownik', 'robi\xc4\x87', {'forma': 'czas tera\xc5\xbaniejszy', 'osoba': 'pierwsza', 'aspekt': 'niedokonane', 'liczba': 'pojedy\xc5\x84cza'})])
+        self.assertEqual(self.ad.get_conf('robili'), [('czasownik', 'robi\xc4\x87', {'rodzaj': 'm', 'forma': 'czas przesz\xc5\x82y', 'osoba': 'trzecia', 'aspekt': 'niedokonane', 'liczba': 'mnoga'})])
+        self.assertEqual(self.ad.get_conf('występowałam'), [('czasownik', 'wyst\xc4\x99powa\xc4\x87', {'rodzaj': '\xc5\xbc', 'forma': 'czas przesz\xc5\x82y', 'osoba': 'pierwsza', 'aspekt': 'niedokonane', 'liczba': 'pojedy\xc5\x84cza'})])
+        self.assertEqual(self.ad.get_conf('występują'), [('czasownik', 'wyst\xc4\x99powa\xc4\x87', {'forma': 'czas tera\xc5\xbaniejszy', 'osoba': 'trzecia', 'aspekt': 'niedokonane', 'liczba': 'mnoga'})])
 
 if __name__ == '__main__':
     #import sys;sys.argv = ['', 'Test.test']

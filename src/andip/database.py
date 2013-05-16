@@ -105,9 +105,9 @@ class DatabaseProvider(DefaultProvider):
             for przypadek in dictionary[base_word]['przypadek'].keys():
                 for liczba in dictionary[base_word]['przypadek'][przypadek]['liczba'].keys():
                     if dictionary[base_word]['przypadek'][przypadek]['liczba'][liczba] == word:
-                        return {'type' : 'rzeczownik',
-                                 'przypadek' : przypadek,
-                                 'liczba' : liczba }
+                        return [('rzeczownik', base_word,
+                                {'przypadek' : przypadek,
+                                 'liczba' : liczba })]
         # przymiotnik
         dictionary = self.root['przymiotnik']['word']
 
@@ -117,10 +117,10 @@ class DatabaseProvider(DefaultProvider):
                     for liczba in dictionary[base_word]['stopień'][stopien]['przypadek'][przypadek]['liczba'].keys():
                         for rodzaj in dictionary[base_word]['stopień'][stopien]['przypadek'][przypadek]['liczba'][liczba]['rodzaj'].keys():
                             if dictionary[base_word]['stopień'][stopien]['przypadek'][przypadek]['liczba'][liczba]['rodzaj'][rodzaj] == word:
-                                return { 'type' : 'przymiotnik',
-                                         'stopień' : stopien,
+                                return [('przymiotnik', base_word,
+                                        {'stopień' : stopien,
                                          'liczba' : liczba,
-                                         'rodzaj' : rodzaj}
+                                         'rodzaj' : rodzaj})]
         # czasownik
         dictionary = self.root['czasownik']['word']
 
@@ -132,19 +132,19 @@ class DatabaseProvider(DefaultProvider):
                             if forma == 'czas przeszły':
                                 for rodzaj in dictionary[base_word]['aspekt'][aspekt]['forma'][forma]['liczba'][liczba]['osoba'][osoba]['rodzaj'].keys():
                                     if dictionary[base_word]['aspekt'][aspekt]['forma'][forma]['liczba'][liczba]['osoba'][osoba]['rodzaj'][rodzaj] == word:
-                                        return { 'type' : 'czasownik',
-                                                'aspekt' : aspekt,
+                                        return [('czasownik', base_word,
+                                                {'aspekt' : aspekt,
                                                 'forma' : forma,
                                                 'liczba' : liczba,
                                                 'osoba' : osoba,
-                                                'rodzaj' : rodzaj}
+                                                'rodzaj' : rodzaj})]
                             else:
                                 if dictionary[base_word]['aspekt'][aspekt]['forma'][forma]['liczba'][liczba]['osoba'][osoba] == word:
-                                        return { 'type' : 'czasownik',
-                                                'aspekt' : aspekt,
+                                        return [('czasownik', base_word,
+                                                {'aspekt' : aspekt,
                                                 'forma' : forma,
                                                 'liczba' : liczba,
-                                                'osoba' : osoba}
+                                                'osoba' : osoba})]
         raise LookupError("configuration not found")
 
 

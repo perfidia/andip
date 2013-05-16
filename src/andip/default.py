@@ -54,7 +54,7 @@ class DefaultProvider(object):
                 return self._get_conf(word)
             except Exception:
                 if (self.__backoff):
-                    return self.__backoff._get_conf(word)
+                    return self.__backoff.get_conf(word)
                 else:
                     raise LookupError('configuration not found')
 
