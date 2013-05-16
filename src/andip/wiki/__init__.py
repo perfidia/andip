@@ -85,7 +85,7 @@ class PlWikiProvider(WikiProvider):
                 for forma in dictionary[base_word]['aspekt'][aspekt]['forma'].keys():
                     for liczba in dictionary[base_word]['aspekt'][aspekt]['forma'][forma]['liczba'].keys():
                         for osoba in dictionary[base_word]['aspekt'][aspekt]['forma'][forma]['liczba'][liczba]['osoba'].keys():
-                            if forma == 'czas przeszly':
+                            if forma == 'czas przeszły':
                                 for rodzaj in dictionary[base_word]['aspekt'][aspekt]['forma'][forma]['liczba'][liczba]['osoba'][osoba]['rodzaj'].keys():
                                     if dictionary[base_word]['aspekt'][aspekt]['forma'][forma]['liczba'][liczba]['osoba'][osoba]['rodzaj'][rodzaj] == word:
                                         return {'type': 'czasownik',
@@ -145,7 +145,7 @@ class PlWikiProvider(WikiProvider):
                 liczba = tmp[0].lower().split(' ')[1]
                 tmp[1] = tmp[1].replace(" ", "")
                 if liczba == 'lp':
-                    liczba = "pojedyncza"
+                    liczba = "pojedyńcza"
                 else:
                     liczba = "mnoga"
                 configuration[base_word]['przypadek'][przypadek]['liczba'][liczba] = tmp[1]
@@ -175,19 +175,19 @@ class PlWikiProvider(WikiProvider):
         configuration[base_word]['aspekt'] = {}
         configuration[base_word]['aspekt'][done] = {}
         configuration[base_word]['aspekt'][done]['forma'] = {}
-        for forma in ['czas terazniejszy', 'czas przeszly']:
+        for forma in ['czas teraźniejszy', 'czas przeszły']:
             configuration[base_word]['aspekt'][done]['forma'][forma] = {}
             configuration[base_word]['aspekt'][done]['forma'][forma]['liczba'] = {}
-            for liczba in ['pojedyncza', 'mnoga']:
+            for liczba in ['pojedyńcza', 'mnoga']:
                 configuration[base_word]['aspekt'][done]['forma'][forma]['liczba'][liczba] = {}
                 configuration[base_word]['aspekt'][done]['forma'][forma]['liczba'][liczba]['osoba'] = {}
                 for osoba in ['pierwsza', 'druga', 'trzecia']:
                     configuration[base_word]['aspekt'][done]['forma'][forma]['liczba'][liczba]['osoba'][osoba] = {}
                     conj = self.__schema
-                    if forma == 'czas przeszly':
+                    if forma == 'czas przeszły':
                         configuration[base_word]['aspekt'][done]['forma'][forma]['liczba'][liczba]['osoba'][osoba]['rodzaj'] = {}
                         try:
-                            for rodzaj in ['meski', 'zenski', 'nijaki']:
+                            for rodzaj in ['m', 'ż', 'n']:
                                 configuration[base_word]['aspekt'][done]['forma'][forma]['liczba'][liczba]['osoba'][osoba]['rodzaj'][rodzaj] = conj.get_word_past(config['koniugacja'], forma, liczba, rodzaj, osoba, base_word)
                         except Exception:
                             pass
@@ -248,7 +248,7 @@ class PlWikiProvider(WikiProvider):
         elif conf[0] == 'czasownik':
             fullconf = ('czasownik', conf[1], self.__get_conf_verb(conf[1], re.findall("\{\{odmiana-czasownik-polski([^\}]*)}}", word_about)))
             self._add_to_buffer(fullconf)
-            if conf[2]['forma'] == 'czas terazniejszy':
+            if conf[2]['forma'] == 'czas teraźniejszy':
                 return (fullconf[2]['aspekt'][conf[2]['aspekt']]['forma'][conf[2]['forma']]['liczba'][conf[2]['liczba']]['osoba'][conf[2]['osoba']], fullconf)
             else:
                 return (fullconf[2]['aspekt'][conf[2]['aspekt']]['forma'][conf[2]['forma']]['liczba'][conf[2]['liczba']]['osoba'][conf[2]['osoba']]['rodzaj'][conf[2]['rodzaj']], fullconf)
@@ -266,17 +266,17 @@ class PlWikiProvider(WikiProvider):
         configuration[base_word]['aspekt'] = {}
         configuration[base_word]['aspekt'][done] = {}
         configuration[base_word]['aspekt'][done]['forma'] = {}
-        for forma in ['czas terazniejszy', 'czas przeszly']:
+        for forma in ['czas teraźniejszy', 'czas przeszły']:
             configuration[base_word]['aspekt'][done]['forma'][forma] = {}
             configuration[base_word]['aspekt'][done]['forma'][forma]['liczba'] = {}
-            for liczba in ['pojedyncza', 'mnoga']:
+            for liczba in ['pojedyńcza', 'mnoga']:
                 configuration[base_word]['aspekt'][done]['forma'][forma]['liczba'][liczba] = {}
                 configuration[base_word]['aspekt'][done]['forma'][forma]['liczba'][liczba]['osoba'] = {}
                 for osoba in ['pierwsza', 'druga', 'trzecia']:
                     configuration[base_word]['aspekt'][done]['forma'][forma]['liczba'][liczba]['osoba'][osoba] = {}
-                    if forma == 'czas przeszly':
+                    if forma == 'czas przeszły':
                         configuration[base_word]['aspekt'][done]['forma'][forma]['liczba'][liczba]['osoba'][osoba]['rodzaj'] = {}
-                        for rodzaj in ['meski', 'zenski', 'nijaki']:
+                        for rodzaj in ['m', 'ż', 'n']:
                             configuration[base_word]['aspekt'][done]['forma'][forma]['liczba'][liczba]['osoba'][osoba]['rodzaj'][rodzaj] = ""
                     else:
                         configuration[base_word]['aspekt'][done]['forma'][forma]['liczba'][liczba]['osoba'][osoba] =  ""
@@ -284,17 +284,17 @@ class PlWikiProvider(WikiProvider):
         for word in ['robię', 'robisz', 'robi', 'robimy', 'robicie', 'robią']:
             if word in config.keys():
                 if word == 'robię':
-                    configuration[base_word]['aspekt'][done]['forma']['czas terazniejszy']['liczba']['pojedyncza']['osoba']['pierwsza'] = config[word]
+                    configuration[base_word]['aspekt'][done]['forma']['czas teraźniejszy']['liczba']['pojedyńcza']['osoba']['pierwsza'] = config[word]
                 elif word == 'robisz':
-                    configuration[base_word]['aspekt'][done]['forma']['czas terazniejszy']['liczba']['pojedyncza']['osoba']['druga'] = config[word]
+                    configuration[base_word]['aspekt'][done]['forma']['czas teraźniejszy']['liczba']['pojedyńcza']['osoba']['druga'] = config[word]
                 elif word == 'robi':
-                    configuration[base_word]['aspekt'][done]['forma']['czas terazniejszy']['liczba']['pojedyncza']['osoba']['trzecia'] = config[word]
+                    configuration[base_word]['aspekt'][done]['forma']['czas teraźniejszy']['liczba']['pojedyńcza']['osoba']['trzecia'] = config[word]
                 elif word == 'robimy':
-                    configuration[base_word]['aspekt'][done]['forma']['czas terazniejszy']['liczba']['mnoga']['osoba']['pierwsza'] = config[word]
+                    configuration[base_word]['aspekt'][done]['forma']['czas teraźniejszy']['liczba']['mnoga']['osoba']['pierwsza'] = config[word]
                 elif word == 'robicie':
-                    configuration[base_word]['aspekt'][done]['forma']['czas terazniejszy']['liczba']['mnoga']['osoba']['druga'] = config[word]
+                    configuration[base_word]['aspekt'][done]['forma']['czas teraźniejszy']['liczba']['mnoga']['osoba']['druga'] = config[word]
                 else:
-                    configuration[base_word]['aspekt'][done]['forma']['czas terazniejszy']['liczba']['mnoga']['osoba']['trzecia'] = config[word]
+                    configuration[base_word]['aspekt'][done]['forma']['czas teraźniejszy']['liczba']['mnoga']['osoba']['trzecia'] = config[word]
 
         return configuration[base_word]
 

@@ -15,8 +15,8 @@ class Schema(object):
                    'I' : {
                           'koncowka' : 'ać',
                           'forma' : {
-                                    'czas terazniejszy' : {
-                                                           'pojedyncza' : {
+                                    'czas teraźniejszy' : {
+                                                           'pojedyńcza' : {
                                                                            'pierwsza' : 'am',
                                                                            'druga': 'asz',
                                                                            'trzecia': 'a'
@@ -28,36 +28,36 @@ class Schema(object):
                                                                     }
                                                            }
                                     },
-                                    'czas przeszly' : {
-                                                       'pojedyncza' : {
-                                                                       'meski' : {
+                                    'czas przeszły' : {
+                                                       'pojedyńcza' : {
+                                                                       'm' : {
                                                                                         'pierwsza' : 'ałem',
                                                                                         'druga' : 'ałeś',
                                                                                         'trzecia' : 'ał'
                                                                                   },
-                                                                       'zenski' : {
+                                                                       'ż' : {
                                                                                         'pierwsza' : 'ałam',
                                                                                         'druga' : 'ałaś',
                                                                                         'trzecia' : 'ała'
                                                                                    },
-                                                                       'nijaki' : {
+                                                                       'n' : {
                                                                                         'pierwsza' : 'ałom',
                                                                                         'druga' : 'ałoś',
                                                                                         'trzecia' : 'ało'
                                                                                    }
                                                                       },
                                                        'mnoga' : {
-                                                                        'meski' : {
+                                                                        'm' : {
                                                                                         'pierwsza' : 'aliśmy',
                                                                                         'druga' : 'aliście',
                                                                                         'trzecia' : 'ali'
                                                                                   },
-                                                                       'zenski' : {
+                                                                       'ż' : {
                                                                                         'pierwsza' : 'ałyśmy',
                                                                                         'druga' : 'ałyście',
                                                                                         'trzecia' : 'ały'
                                                                                    },
-                                                                       'nijaki' : {
+                                                                       'n' : {
                                                                                         'pierwsza' : 'ałyśmy',
                                                                                         'druga' : 'ałyście',
                                                                                         'trzecia' : 'ały'
@@ -68,8 +68,8 @@ class Schema(object):
                    'II' : {
                            'koncowka' : 'eć',
                            'forma' : {
-                                    'czas terazniejszy' : {
-                                                           'pojedyncza' : {
+                                    'czas teraźniejszy' : {
+                                                           'pojedyńcza' : {
                                                                            'pierwsza' : 'em',
                                                                            'druga': 'esz',
                                                                            'trzecia': 'e'
@@ -81,36 +81,36 @@ class Schema(object):
                                                                     }
                                                            }
                                     },
-                                    'czas przeszly' : {
-                                                       'pojedyncza' : {
-                                                                       'meski' : {
+                                    'czas przeszły' : {
+                                                       'pojedyńcza' : {
+                                                                       'm' : {
                                                                                         'pierwsza' : 'ałem',
                                                                                         'druga' : 'ałeś',
                                                                                         'trzecia' : 'ał'
                                                                                   },
-                                                                       'zenski' : {
+                                                                       'ż' : {
                                                                                         'pierwsza' : 'ałam',
                                                                                         'druga' : 'ałaś',
                                                                                         'trzecia' : 'ała'
                                                                                    },
-                                                                       'nijaki' : {
+                                                                       'n' : {
                                                                                         'pierwsza' : 'ałom',
                                                                                         'druga' : 'ałoś',
                                                                                         'trzecia' : 'ało'
                                                                                    }
                                                                       },
                                                        'mnoga' : {
-                                                                        'meski' : {
+                                                                        'm' : {
                                                                                         'pierwsza' : 'eliśmy',
                                                                                         'druga' : 'eliście',
                                                                                         'trzecia' : 'eli'
                                                                                   },
-                                                                       'zenski' : {
+                                                                       'ż' : {
                                                                                         'pierwsza' : 'ałyśmy',
                                                                                         'druga' : 'ałyście',
                                                                                         'trzecia' : 'ały'
                                                                                    },
-                                                                       'nijaki' : {
+                                                                       'n' : {
                                                                                         'pierwsza' : 'ałyśmy',
                                                                                         'druga' : 'ałyście',
                                                                                         'trzecia' : 'ały'
@@ -121,8 +121,8 @@ class Schema(object):
                    'III' : {
                             'koncowka' : 'eć',
                             'forma' : {
-                                    'czas terazniejszy' : {
-                                                           'pojedyncza' : {
+                                    'czas teraźniejszy' : {
+                                                           'pojedyńcza' : {
                                                                            'pierwsza' : 'eję',
                                                                            'druga': 'ejesz',
                                                                            'trzecia': 'eje'
@@ -134,36 +134,36 @@ class Schema(object):
                                                                     }
                                                            }
                                     },
-                                    'czas przeszly' : {
-                                                       'pojedyncza' : {
-                                                                       'meski' : {
+                                    'czas przeszły' : {
+                                                       'pojedyńcza' : {
+                                                                       'm' : {
                                                                                         'pierwsza' : 'ałem',
                                                                                         'druga' : 'ałeś',
                                                                                         'trzecia' : 'ał'
                                                                                   },
-                                                                       'zenski' : {
+                                                                       'ż' : {
                                                                                         'pierwsza' : 'ałam',
                                                                                         'druga' : 'ałaś',
                                                                                         'trzecia' : 'ała'
                                                                                    },
-                                                                       'nijaki' : {
+                                                                       'n' : {
                                                                                         'pierwsza' : 'ałom',
                                                                                         'druga' : 'ałoś',
                                                                                         'trzecia' : 'ało'
                                                                                    }
                                                                       },
                                                        'mnoga' : {
-                                                                        'meski' : {
+                                                                        'm' : {
                                                                                         'pierwsza' : 'liśmy',
                                                                                         'druga' : 'eliście',
                                                                                         'trzecia' : 'eli'
                                                                                   },
-                                                                       'zenski' : {
+                                                                       'ż' : {
                                                                                         'pierwsza' : 'ałyśmy',
                                                                                         'druga' : 'ałyście',
                                                                                         'trzecia' : 'ały'
                                                                                    },
-                                                                       'nijaki' : {
+                                                                       'n' : {
                                                                                         'pierwsza' : 'ałyśmy',
                                                                                         'druga' : 'ałyście',
                                                                                         'trzecia' : 'ały'
@@ -174,8 +174,8 @@ class Schema(object):
                    'IV' : {
                            'koncowka' : 'ować',
                            'forma' : {
-                                    'czas terazniejszy' : {
-                                                           'pojedyncza' : {
+                                    'czas teraźniejszy' : {
+                                                           'pojedyńcza' : {
                                                                            'pierwsza' : 'uję',
                                                                            'druga': 'ujesz',
                                                                            'trzecia': 'uje'
@@ -187,36 +187,36 @@ class Schema(object):
                                                                     }
                                                            }
                                     ,
-                                    'czas przeszly' : {
-                                                       'pojedyncza' : {
-                                                                       'meski' : {
+                                    'czas przeszły' : {
+                                                       'pojedyńcza' : {
+                                                                       'm' : {
                                                                                         'pierwsza' : 'owałem',
                                                                                         'druga' : 'owałeś',
                                                                                         'trzecia' : 'ował'
                                                                                   },
-                                                                       'zenski' : {
+                                                                       'ż' : {
                                                                                         'pierwsza' : 'owałam',
                                                                                         'druga' : 'owałaś',
                                                                                         'trzecia' : 'owała'
                                                                                    },
-                                                                       'nijaki' : {
+                                                                       'n' : {
                                                                                         'pierwsza' : 'owałom',
                                                                                         'druga' : 'owałoś',
                                                                                         'trzecia' : 'owało'
                                                                                    }
                                                                       },
                                                        'mnoga' : {
-                                                                        'meski' : {
+                                                                        'm' : {
                                                                                         'pierwsza' : 'owaliśmy',
                                                                                         'druga' : 'owaliście',
                                                                                         'trzecia' : 'owali'
                                                                                   },
-                                                                       'zenski' : {
+                                                                       'ż' : {
                                                                                         'pierwsza' : 'owałyśmy',
                                                                                         'druga' : 'owałyście',
                                                                                         'trzecia' : 'owały'
                                                                                    },
-                                                                       'nijaki' : {
+                                                                       'n' : {
                                                                                         'pierwsza' : 'owałyśmy',
                                                                                         'druga' : 'owałyście',
                                                                                         'trzecia' : 'owały'
@@ -228,8 +228,8 @@ class Schema(object):
                     'Va' : {
                             'koncowka' : 'nąć',
                             'forma' : {
-                                    'czas terazniejszy' : {
-                                                           'pojedyncza' : {
+                                    'czas teraźniejszy' : {
+                                                           'pojedyńcza' : {
                                                                            'pierwsza' : 'nę',
                                                                            'druga': 'niesz',
                                                                            'trzecia': 'nie'
@@ -241,34 +241,34 @@ class Schema(object):
                                                                     }
                                                            }
                                     },
-                                    'czas przeszly' : {
-                                                       'pojedyncza' : {
-                                                                       'meski' : {
+                                    'czas przeszły' : {
+                                                       'pojedyńcza' : {
+                                                                       'm' : {
                                                                                         'pierwsza' : 'nąłem',
                                                                                         'druga' : 'nąłeś',
                                                                                         'trzecia' : 'nął'
                                                                                   },
-                                                                       'zenski' : {
+                                                                       'ż' : {
                                                                                         'pierwsza' : 'nęłam',
                                                                                         'druga' : 'nęłaś',
                                                                                         'trzecia' : 'nęła'
                                                                                    },
-                                                                       'nijaki' : {
+                                                                       'n' : {
                                                                                         'trzecia' : 'nęło'
                                                                                    }
                                                                       },
                                                        'mnoga' : {
-                                                                        'meski' : {
+                                                                        'm' : {
                                                                                         'pierwsza' : 'nęliśmy',
                                                                                         'druga' : 'nęliście',
                                                                                         'trzecia' : 'nęli'
                                                                                   },
-                                                                       'zenski' : {
+                                                                       'ż' : {
                                                                                         'pierwsza' : 'nęłyśmy',
                                                                                         'druga' : 'nęłyście',
                                                                                         'trzecia' : 'nęły'
                                                                                    },
-                                                                       'nijaki' : {
+                                                                       'n' : {
                                                                                         'pierwsza' : 'nęłyśmy',
                                                                                         'druga' : 'nęłyście',
                                                                                         'trzecia' : 'nęły'
@@ -279,8 +279,8 @@ class Schema(object):
                     'Vb' : {
                             'koncowka' : 'nąć',
                             'forma' : {
-                                    'czas terazniejszy' : {
-                                                           'pojedyncza' : {
+                                    'czas teraźniejszy' : {
+                                                           'pojedyńcza' : {
                                                                            'pierwsza' : 'nę',
                                                                            'druga': 'niesz',
                                                                            'trzecia': 'nie'
@@ -292,34 +292,34 @@ class Schema(object):
                                                                     }
                                                            }
                                     },
-                                    'czas przeszly' : {
-                                                       'pojedyncza' : {
-                                                                       'meski' : {
+                                    'czas przeszły' : {
+                                                       'pojedyńcza' : {
+                                                                       'm' : {
                                                                                         'pierwsza' : 'nąłem',
                                                                                         'druga' : 'nąłeś',
                                                                                         'trzecia' : 'nął'
                                                                                   },
-                                                                       'zenski' : {
+                                                                       'ż' : {
                                                                                         'pierwsza' : 'nęłam',
                                                                                         'druga' : 'nęłaś',
                                                                                         'trzecia' : 'nęła'
                                                                                    },
-                                                                       'nijaki' : {
+                                                                       'n' : {
                                                                                         'trzecia' : 'nęło'
                                                                                    }
                                                                       },
                                                        'mnoga' : {
-                                                                        'meski' : {
+                                                                        'm' : {
                                                                                         'pierwsza' : 'nęliśmy',
                                                                                         'druga' : 'nęliście',
                                                                                         'trzecia' : 'nęli'
                                                                                   },
-                                                                       'zenski' : {
+                                                                       'ż' : {
                                                                                         'pierwsza' : 'nęłyśmy',
                                                                                         'druga' : 'nęłyście',
                                                                                         'trzecia' : 'nęły'
                                                                                    },
-                                                                       'nijaki' : {
+                                                                       'n' : {
                                                                                         'pierwsza' : 'nęłyśmy',
                                                                                         'druga' : 'nęłyście',
                                                                                         'trzecia' : 'nęły'
@@ -330,8 +330,8 @@ class Schema(object):
                     'Vc' : {
                             'koncowka' : 'nąć',
                             'forma' : {
-                                    'czas terazniejszy' : {
-                                                           'pojedyncza' : {
+                                    'czas teraźniejszy' : {
+                                                           'pojedyńcza' : {
                                                                            'pierwsza' : 'nę',
                                                                            'druga': 'niesz',
                                                                            'trzecia': 'nie'
@@ -347,8 +347,8 @@ class Schema(object):
                    'VIa' : {
                            'koncowka' : 'ić',
                            'forma' : {
-                                    'czas terazniejszy' : {
-                                                           'pojedyncza' : {
+                                    'czas teraźniejszy' : {
+                                                           'pojedyńcza' : {
                                                                            'pierwsza' : 'ię',
                                                                            'druga': 'isz',
                                                                            'trzecia': 'i'
@@ -359,34 +359,34 @@ class Schema(object):
                                                                             'trzecia' : 'ią'
                                                                     }
                                     },
-                                    'czas przeszly' : {
-                                                       'pojedyncza' : {
-                                                                       'meski' : {
+                                    'czas przeszły' : {
+                                                       'pojedyńcza' : {
+                                                                       'm' : {
                                                                                         'pierwsza' : 'iłem',
                                                                                         'druga' : 'iłeś',
                                                                                         'trzecia' : 'ił'
                                                                                   },
-                                                                       'zenski' : {
+                                                                       'ż' : {
                                                                                         'pierwsza' : 'iła',
                                                                                         'druga' : 'iłaś',
                                                                                         'trzecia' : 'iła'
                                                                                    },
-                                                                       'nijaki' : {
+                                                                       'n' : {
                                                                                         'trzecia' : 'iło'
                                                                                    }
                                                                       },
                                                        'mnoga' : {
-                                                                        'meski' : {
+                                                                        'm' : {
                                                                                         'pierwsza' : 'iliśmy',
                                                                                         'druga' : 'iliście',
                                                                                         'trzecia' : 'ili'
                                                                                   },
-                                                                       'zenski' : {
+                                                                       'ż' : {
                                                                                         'pierwsza' : 'iłyśmy',
                                                                                         'druga' : 'iłyście',
                                                                                         'trzecia' : 'iły'
                                                                                    },
-                                                                       'nijaki' : {
+                                                                       'n' : {
                                                                                         'trzecia' : 'nęło'
 
                                                                       },
@@ -397,8 +397,8 @@ class Schema(object):
                    'VIb' : {
                            'koncowka' : 'yć',
                            'forma' : {
-                                    'czas terazniejszy' : {
-                                                           'pojedyncza' : {
+                                    'czas teraźniejszy' : {
+                                                           'pojedyńcza' : {
                                                                            'pierwsza' : 'ę',
                                                                            'druga': 'ysz',
                                                                            'trzecia': 'y'
@@ -414,8 +414,8 @@ class Schema(object):
                    'VIIa' : {
                            'koncowka' : 'eć',
                            'forma' : {
-                                    'czas terazniejszy' : {
-                                                           'pojedyncza' : {
+                                    'czas teraźniejszy' : {
+                                                           'pojedyńcza' : {
                                                                            'pierwsza' : 'ę',
                                                                            'druga': 'isz',
                                                                            'trzecia': 'i'
@@ -431,8 +431,8 @@ class Schema(object):
                    'VIIb' : {
                            'koncowka' : 'eć',
                            'forma' : {
-                                    'czas terazniejszy' : {
-                                                           'pojedyncza' : {
+                                    'czas teraźniejszy' : {
+                                                           'pojedyńcza' : {
                                                                            'pierwsza' : 'ę',
                                                                            'druga': 'ysz',
                                                                            'trzecia': 'y'
@@ -448,8 +448,8 @@ class Schema(object):
                    'VIIIa' : {
                            'koncowka' : 'ywać',
                            'forma' : {
-                                    'czas terazniejszy' : {
-                                                           'pojedyncza' : {
+                                    'czas teraźniejszy' : {
+                                                           'pojedyńcza' : {
                                                                            'pierwsza' : 'uję',
                                                                            'druga': 'ujesz',
                                                                            'trzecia': 'uje'
@@ -465,8 +465,8 @@ class Schema(object):
                    'VIIIb' : {
                            'koncowka' : 'iwać',
                            'forma' : {
-                                    'czas terazniejszy' : {
-                                                           'pojedyncza' : {
+                                    'czas teraźniejszy' : {
+                                                           'pojedyńcza' : {
                                                                            'pierwsza' : 'uję',
                                                                            'druga': 'ujesz',
                                                                            'trzecia': 'uje'
@@ -482,8 +482,8 @@ class Schema(object):
                    'IX' : {
                            'koncowka' : 'ać',
                            'forma' : {
-                                    'czas terazniejszy' : {
-                                                           'pojedyncza' : {
+                                    'czas teraźniejszy' : {
+                                                           'pojedyńcza' : {
                                                                            'pierwsza' : 'ę',
                                                                            'druga': 'esz',
                                                                            'trzecia': 'e'
@@ -499,8 +499,8 @@ class Schema(object):
                    'Xa' : {
                            'koncowka' : 'ć',
                            'forma' : {
-                                    'czas terazniejszy' : {
-                                                           'pojedyncza' : {
+                                    'czas teraźniejszy' : {
+                                                           'pojedyńcza' : {
                                                                            'pierwsza' : 'ję',
                                                                            'druga': 'jesz',
                                                                            'trzecia': 'je'
@@ -516,8 +516,8 @@ class Schema(object):
                    'Xb' : {
                            'koncowka' : 'ać',
                            'forma' : {
-                                    'czas terazniejszy' : {
-                                                           'pojedyncza' : {
+                                    'czas teraźniejszy' : {
+                                                           'pojedyńcza' : {
                                                                            'pierwsza' : 'eję',
                                                                            'druga': 'ejesz',
                                                                            'trzecia': 'eje'
@@ -533,8 +533,8 @@ class Schema(object):
                    'Xc' : {
                            'koncowka' : 'ać',
                            'forma' : {
-                                    'czas terazniejszy' : {
-                                                           'pojedyncza' : {
+                                    'czas teraźniejszy' : {
+                                                           'pojedyńcza' : {
                                                                            'pierwsza' : 'mę',
                                                                            'druga': 'miesz',
                                                                            'trzecia': 'mie'
@@ -550,8 +550,8 @@ class Schema(object):
                    'XI' : {
                            'koncowka' : 'ć',
                            'forma' : {
-                                    'czas terazniejszy' : {
-                                                           'pojedyncza' : {
+                                    'czas teraźniejszy' : {
+                                                           'pojedyńcza' : {
                                                                            'pierwsza' : 'ę',
                                                                            'druga': 'esz',
                                                                            'trzecia': 'e'

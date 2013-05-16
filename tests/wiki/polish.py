@@ -8,14 +8,14 @@ class WikiPolishTest(unittest.TestCase):
         cls.ad = PlWikiProvider()
 
     def testGetWordVerb(self):
-        self.assertEquals('występują',    self.ad.get_word(('czasownik', 'występować', {'aspekt' : 'niedokonane', 'forma' : 'czas terazniejszy', 'liczba' : 'mnoga', 'osoba': 'trzecia'})))
-        self.assertEquals('występuje',    self.ad.get_word(('czasownik', 'występować', {'aspekt' : 'niedokonane', 'forma' : 'czas terazniejszy', 'liczba' : 'pojedyncza', 'osoba': 'trzecia'})))
-        self.assertEquals('występujemy',  self.ad.get_word(('czasownik', 'występować', {'aspekt' : 'niedokonane', 'forma' : 'czas terazniejszy', 'liczba' : 'mnoga', 'osoba': 'pierwsza'})))
-        self.assertEquals('występujecie', self.ad.get_word(('czasownik', 'występować', {'aspekt' : 'niedokonane', 'forma' : 'czas terazniejszy', 'liczba' : 'mnoga', 'osoba': 'druga'})))
-        self.assertEquals('występujesz',  self.ad.get_word(('czasownik', 'występować', {'aspekt' : 'niedokonane', 'forma' : 'czas terazniejszy', 'liczba' : 'pojedyncza', 'osoba': 'druga'})))
+        self.assertEquals('występują',    self.ad.get_word(('czasownik', 'występować', {'aspekt' : 'niedokonane', 'forma' : 'czas teraźniejszy', 'liczba' : 'mnoga', 'osoba': 'trzecia'})))
+        self.assertEquals('występuje',    self.ad.get_word(('czasownik', 'występować', {'aspekt' : 'niedokonane', 'forma' : 'czas teraźniejszy', 'liczba' : 'pojedyńcza', 'osoba': 'trzecia'})))
+        self.assertEquals('występujemy',  self.ad.get_word(('czasownik', 'występować', {'aspekt' : 'niedokonane', 'forma' : 'czas teraźniejszy', 'liczba' : 'mnoga', 'osoba': 'pierwsza'})))
+        self.assertEquals('występujecie', self.ad.get_word(('czasownik', 'występować', {'aspekt' : 'niedokonane', 'forma' : 'czas teraźniejszy', 'liczba' : 'mnoga', 'osoba': 'druga'})))
+        self.assertEquals('występujesz',  self.ad.get_word(('czasownik', 'występować', {'aspekt' : 'niedokonane', 'forma' : 'czas teraźniejszy', 'liczba' : 'pojedyńcza', 'osoba': 'druga'})))
 
-        self.assertEqual(u'jest', self.ad.get_word(('czasownik', 'być', {'aspekt' : 'niedokonane', 'forma': 'czas terazniejszy', 'liczba': 'pojedyncza', 'osoba': 'trzecia'})))
-        # self.assertEqual(u'są',   self.ad.get_word(('czasownik', 'być', {'aspekt': 'niedokonane', 'forma': 'czas terazniejszy', 'liczba': 'mnoga', 'osoba': 'trzecia'})))
+        self.assertEqual(u'jest', self.ad.get_word(('czasownik', 'być', {'aspekt' : 'niedokonane', 'forma': 'czas teraźniejszy', 'liczba': 'pojedyńcza', 'osoba': 'trzecia'})))
+        # self.assertEqual(u'są',   self.ad.get_word(('czasownik', 'być', {'aspekt': 'niedokonane', 'forma': 'czas teraźniejszy', 'liczba': 'mnoga', 'osoba': 'trzecia'})))
 
     def testGetWordAdjective(self):
         self.assertEquals('zachodnich',  self.ad.get_word(('przymiotnik', 'zachodni', {'stopień': 'podstawowy', 'przypadek' : 'dopełniacz', 'liczba': 'mnoga', 'rodzaj': 'm'})))
@@ -31,13 +31,13 @@ class WikiPolishTest(unittest.TestCase):
         self.assertEquals('najżółtszym',  self.ad.get_word(('przymiotnik', 'żółty', {'przypadek' : 'celownik', 'stopień' : 'najwyższy', 'liczba': 'mnoga', 'rodzaj': 'm'})))
 
     def testGetWordNoun(self):
-        self.assertEqual(u'znak', self.ad.get_word(('rzeczownik', 'znak', {'przypadek': 'mianownik', 'liczba': 'pojedyncza'})))
-        self.assertEqual(u'znaku', self.ad.get_word(('rzeczownik', 'znak', {'przypadek': 'dopełniacz', 'liczba': 'pojedyncza'})))
-        self.assertEqual(u'znakowi', self.ad.get_word(('rzeczownik', 'znak', {'przypadek': 'celownik', 'liczba': 'pojedyncza'})))
-        self.assertEqual(u'znak', self.ad.get_word(('rzeczownik', 'znak', {'przypadek': 'biernik', 'liczba': 'pojedyncza'})))
-        self.assertEqual(u'znakiem', self.ad.get_word(('rzeczownik', 'znak', {'przypadek': 'narzędnik', 'liczba': 'pojedyncza'})))
-        self.assertEqual(u'znaku', self.ad.get_word(('rzeczownik', 'znak', {'przypadek': 'miejscownik', 'liczba': 'pojedyncza'})))
-        self.assertEqual(u'znaku', self.ad.get_word(('rzeczownik', 'znak', {'przypadek': 'wołacz', 'liczba': 'pojedyncza'})))
+        self.assertEqual(u'znak', self.ad.get_word(('rzeczownik', 'znak', {'przypadek': 'mianownik', 'liczba': 'pojedyńcza'})))
+        self.assertEqual(u'znaku', self.ad.get_word(('rzeczownik', 'znak', {'przypadek': 'dopełniacz', 'liczba': 'pojedyńcza'})))
+        self.assertEqual(u'znakowi', self.ad.get_word(('rzeczownik', 'znak', {'przypadek': 'celownik', 'liczba': 'pojedyńcza'})))
+        self.assertEqual(u'znak', self.ad.get_word(('rzeczownik', 'znak', {'przypadek': 'biernik', 'liczba': 'pojedyńcza'})))
+        self.assertEqual(u'znakiem', self.ad.get_word(('rzeczownik', 'znak', {'przypadek': 'narzędnik', 'liczba': 'pojedyńcza'})))
+        self.assertEqual(u'znaku', self.ad.get_word(('rzeczownik', 'znak', {'przypadek': 'miejscownik', 'liczba': 'pojedyńcza'})))
+        self.assertEqual(u'znaku', self.ad.get_word(('rzeczownik', 'znak', {'przypadek': 'wołacz', 'liczba': 'pojedyńcza'})))
         
         self.assertEqual(u'znaki', self.ad.get_word(('rzeczownik', 'znak', {'przypadek': 'mianownik', 'liczba': 'mnoga'})))
         # self.assertEqual(u'znaków', self.ad.get_word(('rzeczownik', 'znak', {'przypadek': 'dopełniacz', 'liczba': 'mnoga'})))
@@ -50,18 +50,18 @@ class WikiPolishTest(unittest.TestCase):
     def testGetConfVerb(self):
         # download and save in buffer
         self.assertEqual('robią', self.ad.get_word(("czasownik", "robić",
-                            {'aspekt': 'niedokonane', 'forma': 'czas terazniejszy', 'liczba': 'mnoga',
+                            {'aspekt': 'niedokonane', 'forma': 'czas teraźniejszy', 'liczba': 'mnoga',
                              'osoba': 'trzecia'})))
         self.assertEqual('występował', self.ad.get_word(("czasownik", "występować",
-                            {'aspekt': 'niedokonane', 'forma': 'czas przeszly', 'liczba': 'pojedyncza',
-                             'osoba': 'trzecia', 'rodzaj': 'meski'})))
+                            {'aspekt': 'niedokonane', 'forma': 'czas przeszły', 'liczba': 'pojedyńcza',
+                             'osoba': 'trzecia', 'rodzaj': 'm'})))
 
         # test
-        self.assertEqual(self.ad.get_conf('robiłem'), {'rodzaj': 'meski', 'forma': 'czas przeszly', 'liczba': 'pojedyncza', 'osoba': 'pierwsza', 'type': 'czasownik', 'aspekt': 'niedokonane'})
-        self.assertEqual(self.ad.get_conf('robię'), {'forma': 'czas terazniejszy', 'osoba': 'pierwsza', 'type': 'czasownik', 'aspekt': 'niedokonane', 'liczba': 'pojedyncza'})
-        self.assertEqual(self.ad.get_conf('robili'), {'rodzaj': 'meski', 'forma': 'czas przeszly', 'liczba': 'mnoga', 'osoba': 'trzecia', 'type': 'czasownik', 'aspekt': 'niedokonane'})
-        self.assertEqual(self.ad.get_conf('występowałam'), {'rodzaj': 'zenski', 'forma': 'czas przeszly', 'liczba': 'pojedyncza', 'osoba': 'pierwsza', 'type': 'czasownik', 'aspekt': 'niedokonane'})
-        self.assertEqual(self.ad.get_conf('występują'), {'forma': 'czas terazniejszy', 'osoba': 'trzecia', 'type': 'czasownik', 'aspekt': 'niedokonane', 'liczba': 'mnoga'})
+        self.assertEqual(self.ad.get_conf('robiłem'), {'rodzaj': 'm', 'forma': 'czas przeszły', 'liczba': 'pojedyńcza', 'osoba': 'pierwsza', 'type': 'czasownik', 'aspekt': 'niedokonane'})
+        self.assertEqual(self.ad.get_conf('robię'), {'forma': 'czas teraźniejszy', 'osoba': 'pierwsza', 'type': 'czasownik', 'aspekt': 'niedokonane', 'liczba': 'pojedyńcza'})
+        self.assertEqual(self.ad.get_conf('robili'), {'rodzaj': 'm', 'forma': 'czas przeszły', 'liczba': 'mnoga', 'osoba': 'trzecia', 'type': 'czasownik', 'aspekt': 'niedokonane'})
+        self.assertEqual(self.ad.get_conf('występowałam'), {'rodzaj': 'ż', 'forma': 'czas przeszły', 'liczba': 'pojedyńcza', 'osoba': 'pierwsza', 'type': 'czasownik', 'aspekt': 'niedokonane'})
+        self.assertEqual(self.ad.get_conf('występują'), {'forma': 'czas teraźniejszy', 'osoba': 'trzecia', 'type': 'czasownik', 'aspekt': 'niedokonane', 'liczba': 'mnoga'})
 
 if __name__ == '__main__':
     #import sys;sys.argv = ['', 'Test.test']
