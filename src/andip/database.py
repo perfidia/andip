@@ -26,6 +26,10 @@ class DatabaseProvider(DefaultProvider):
         if not self.root:
             self.__dictionary_init()
 
+    def __check_connection(self):
+        if self.root == None:
+            raise LookupError("Database connection is closed!")
+
     def close(self):
         """
         Function close connection to database.
@@ -35,7 +39,7 @@ class DatabaseProvider(DefaultProvider):
         self.connection.close()
         self.db.close()
         self.storage.close()
-        self.database = None
+        self.root = None
 
     def save_model(self, conf):
         """
@@ -45,6 +49,8 @@ class DatabaseProvider(DefaultProvider):
 
         :param conf: new data returned by WikiProvider get_model method
         """
+        self.__check_connection();
+
         for type in conf:
             for baseword in  conf[type]:
                 self.__save(conf[type][baseword], baseword, type)
@@ -54,7 +60,7 @@ class DatabaseProvider(DefaultProvider):
         Returns word or throw KeyError, if there is no information
         about word in database
         '''
-
+        self.__check_connection();
         return self.__get_word(conf[2], conf[1])
 
     def _get_conf(self, word):
@@ -62,8 +68,7 @@ class DatabaseProvider(DefaultProvider):
         Returns word configuration or KeyError, if there is no
         information about word in database
         '''
-
-
+        self.__check_connection();
         return self.__get_conf_preview(word)
 
     def __dictionary_init(self):

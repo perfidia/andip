@@ -25,13 +25,13 @@ class DefaultProvider(object):
         except AssertionError:
             raise ValueError("check parameters!")
         else:
-            try:
-                return self._get_word(conf)
-            except Exception:
-                if (self.__backoff):
+            if (self.__backoff):
+                try:
+                    return self._get_word(conf)
+                except Exception:
                     return self.__backoff.get_word(conf)
-                else:
-                    raise LookupError('word not found')
+            else:
+                return self._get_word(conf)
 
     def _get_word(self, conf):
         raise NotImplementedError("abstract method")
@@ -50,13 +50,13 @@ class DefaultProvider(object):
         if isinstance(word, basestring) == False:
             raise ValueError("check parameters!")
         else:
-            try:
-                return self._get_conf(word)
-            except Exception:
-                if (self.__backoff):
+            if (self.__backoff):
+                try:
+                    return self._get_conf(word)
+                except Exception:
                     return self.__backoff.get_conf(word)
-                else:
-                    raise LookupError('configuration not found')
+            else:
+                return self._get_conf(word)
 
     def _get_conf(self, word):
         raise NotImplementedError("abstract method")
