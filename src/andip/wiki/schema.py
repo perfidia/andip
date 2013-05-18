@@ -567,6 +567,163 @@ class Schema(object):
 
     }
 
+
+    irregular_conjugation = {
+        'aspekt': {
+            'niedokonane': {
+                'forma': {
+                    'czas przeszły': {
+                        'liczba': {
+                            'pojedyńcza': {
+                                'osoba': {
+                                    'pierwsza': {
+                                        'rodzaj': {
+                                            'm': 'robiłem',
+                                            'ż': 'robiłam',
+                                            'n': 'robiłom'
+                                        }
+                                    },
+                                    'druga': {
+                                        'rodzaj': {
+                                            'm': 'robiłeś',
+                                            'ż': 'robiłaś',
+                                            'n': 'robiłoś'
+                                        }
+                                    },
+                                    'trzecia': {
+                                        'rodzaj': {
+                                            'm': 'robił',
+                                            'ż': 'robiła',
+                                            'n': 'robiło'
+                                        }
+                                    }
+                                }
+                            },
+                            'mnoga': {
+                                'osoba': {
+                                    'pierwsza': {
+                                        'rodzaj': {
+                                            'm': 'robiliśmy',
+                                            'ż': 'robiłyśmy',
+                                            'n': 'robiłyśmy'
+                                        }
+                                    },
+                                    'druga': {
+                                        'rodzaj': {
+                                            'm': 'robiliście',
+                                            'ż': 'robiłyście',
+                                            'n': 'robiłyście'
+                                        }
+                                    },
+                                    'trzecia': {
+                                        'rodzaj': {
+                                            'm': 'robili',
+                                            'ż': 'robiły',
+                                            'n': 'robiły'
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    'czas teraźniejszy': {
+                        'liczba': {
+                            'pojedyńcza': {
+                                'osoba': {
+                                    'pierwsza': 'robię',
+                                    'druga': 'robisz',
+                                    'trzecia': 'robi'
+                                }
+                            },
+                            'mnoga': {
+                                'osoba': {
+                                    'pierwsza': 'robimy',
+                                    'druga': 'robicie',
+                                    'trzecia': 'robią'
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            'dokonane': {
+                'forma': {
+                    'czas przesz\xc5\x82y': {
+                        'liczba': {
+                            'pojedy\xc5\x84cza': {
+                                'osoba': {
+                                    'pierwsza': {
+                                        'rodzaj': {
+                                            '\xc5\xbc': 'wyst\xc4\x99powa\xc5\x82am',
+                                            'm': 'wyst\xc4\x99powa\xc5\x82em',
+                                            'n': 'wyst\xc4\x99powa\xc5\x82om'
+                                        }
+                                    },
+                                    'druga': {
+                                        'rodzaj': {
+                                            '\xc5\xbc': 'wyst\xc4\x99powa\xc5\x82a\xc5\x9b',
+                                            'm': 'wyst\xc4\x99powa\xc5\x82e\xc5\x9b',
+                                            'n': 'wyst\xc4\x99powa\xc5\x82o\xc5\x9b'
+                                        }
+                                    },
+                                    'trzecia': {
+                                        'rodzaj': {
+                                            '\xc5\xbc': 'wyst\xc4\x99powa\xc5\x82a',
+                                            'm': 'wyst\xc4\x99powa\xc5\x82',
+                                            'n': 'wyst\xc4\x99powa\xc5\x82o'
+                                        }
+                                    }
+                                }
+                            },
+                            'mnoga': {
+                                'osoba': {
+                                    'pierwsza': {
+                                        'rodzaj': {
+                                            '\xc5\xbc': 'wyst\xc4\x99powa\xc5\x82y\xc5\x9bmy',
+                                            'm': 'wyst\xc4\x99powali\xc5\x9bmy',
+                                            'n': 'wyst\xc4\x99powa\xc5\x82y\xc5\x9bmy'
+                                        }
+                                    },
+                                    'druga': {
+                                        'rodzaj': {
+                                            '\xc5\xbc': 'wyst\xc4\x99powa\xc5\x82y\xc5\x9bcie',
+                                            'm': 'wyst\xc4\x99powali\xc5\x9bcie',
+                                            'n': 'wyst\xc4\x99powa\xc5\x82y\xc5\x9bcie'
+                                        }
+                                    },
+                                    'trzecia': {
+                                        'rodzaj': {
+                                            '\xc5\xbc': 'wyst\xc4\x99powa\xc5\x82y',
+                                            'm': 'wyst\xc4\x99powali',
+                                            'n': 'wyst\xc4\x99powa\xc5\x82y'
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    'czas tera\xc5\xbaniejszy': {
+                        'liczba': {
+                            'pojedy\xc5\x84cza': {
+                                'osoba': {
+                                    'pierwsza': 'wyst\xc4\x99puj\xc4\x99',
+                                    'druga': 'wyst\xc4\x99pujesz',
+                                    'trzecia': 'wyst\xc4\x99puje'
+                                }
+                            },
+                            'mnoga': {
+                                'osoba': {
+                                    'pierwsza': 'wyst\xc4\x99pujemy',
+                                    'druga': 'wyst\xc4\x99pujecie',
+                                    'trzecia': 'wyst\xc4\x99puj\xc4\x85'
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
     adjective_schema = {
         'exceptions': {
             'k': 'c',

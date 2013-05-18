@@ -168,7 +168,7 @@ class PlWikiProvider(WikiProvider):
             done = 'niedokonane'
 
         if 'koniugacja' not in config.keys():
-            return self.__generate_from_wiki(config, base_word, done)
+            return self.__get_conf_verb_irregular(config, base_word, done)
 
         configuration = {}
         configuration[base_word] = {}
@@ -259,42 +259,31 @@ class PlWikiProvider(WikiProvider):
         # except Exception:
         raise LookupError('No information about this form')
 
-    def __generate_from_wiki(self, config, base_word, done):
+    def __get_conf_verb_irregular(self, config, base_word, done):
 
         configuration = {}
         configuration[base_word] = {}
         configuration[base_word]['aspekt'] = {}
-        configuration[base_word]['aspekt'][done] = {}
-        configuration[base_word]['aspekt'][done]['forma'] = {}
+        configuration[base_word]['aspekt'][done] = copy.deepcopy(self.__schema.irregular_conjugation['aspekt'][done])
         for forma in ['czas teraźniejszy', 'czas przeszły']:
-            configuration[base_word]['aspekt'][done]['forma'][forma] = {}
-            configuration[base_word]['aspekt'][done]['forma'][forma]['liczba'] = {}
             for liczba in ['pojedyńcza', 'mnoga']:
-                configuration[base_word]['aspekt'][done]['forma'][forma]['liczba'][liczba] = {}
-                configuration[base_word]['aspekt'][done]['forma'][forma]['liczba'][liczba]['osoba'] = {}
                 for osoba in ['pierwsza', 'druga', 'trzecia']:
-                    configuration[base_word]['aspekt'][done]['forma'][forma]['liczba'][liczba]['osoba'][osoba] = {}
                     if forma == 'czas przeszły':
-                        configuration[base_word]['aspekt'][done]['forma'][forma]['liczba'][liczba]['osoba'][osoba]['rodzaj'] = {}
                         for rodzaj in ['m', 'ż', 'n']:
-                            configuration[base_word]['aspekt'][done]['forma'][forma]['liczba'][liczba]['osoba'][osoba]['rodzaj'][rodzaj] = ""
+                            translation =  configuration[base_word]['aspekt'][done]['forma'][forma]['liczba'][liczba]['osoba'][osoba]['rodzaj'][rodzaj]
+                            if translation in config.keys():
+                                translation = config[translation]
+                            else :
+                                translation = "form unknown"
+                            configuration[base_word]['aspekt'][done]['forma'][forma]['liczba'][liczba]['osoba'][osoba]['rodzaj'][rodzaj] = translation
                     else:
-                        configuration[base_word]['aspekt'][done]['forma'][forma]['liczba'][liczba]['osoba'][osoba] =  ""
+                        translation = configuration[base_word]['aspekt'][done]['forma'][forma]['liczba'][liczba]['osoba'][osoba]
+                        if translation in config.keys():
+                            translation = config[translation]
+                        else:
+                            translation = "form unknown"
+                        configuration[base_word]['aspekt'][done]['forma'][forma]['liczba'][liczba]['osoba'][osoba] = translation
 
-        for word in ['robię', 'robisz', 'robi', 'robimy', 'robicie', 'robią']:
-            if word in config.keys():
-                if word == 'robię':
-                    configuration[base_word]['aspekt'][done]['forma']['czas teraźniejszy']['liczba']['pojedyńcza']['osoba']['pierwsza'] = config[word]
-                elif word == 'robisz':
-                    configuration[base_word]['aspekt'][done]['forma']['czas teraźniejszy']['liczba']['pojedyńcza']['osoba']['druga'] = config[word]
-                elif word == 'robi':
-                    configuration[base_word]['aspekt'][done]['forma']['czas teraźniejszy']['liczba']['pojedyńcza']['osoba']['trzecia'] = config[word]
-                elif word == 'robimy':
-                    configuration[base_word]['aspekt'][done]['forma']['czas teraźniejszy']['liczba']['mnoga']['osoba']['pierwsza'] = config[word]
-                elif word == 'robicie':
-                    configuration[base_word]['aspekt'][done]['forma']['czas teraźniejszy']['liczba']['mnoga']['osoba']['druga'] = config[word]
-                else:
-                    configuration[base_word]['aspekt'][done]['forma']['czas teraźniejszy']['liczba']['mnoga']['osoba']['trzecia'] = config[word]
 
         return configuration[base_word]
 

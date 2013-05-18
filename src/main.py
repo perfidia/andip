@@ -3,17 +3,6 @@
 from andip import *
 
 ad1 = PlWikiProvider()
-ad2 = DatabaseProvider("../data/polish")#, backoff = ad1)
-
-print ad2.get_word(("czasownik", "robić", {'aspekt': 'niedokonane', 'forma': 'czas teraźniejszy', 'liczba': 'mnoga', 'osoba': 'trzecia'}))
-
-ad2.save_model(ad1.get_model())
-ad2.close()
-
-print ad2.get_word(("czasownik", "robić", {'aspekt': 'niedokonane', 'forma': 'czas teraźniejszy', 'liczba': 'mnoga', 'osoba': 'trzecia'}))
-
-
-ad1 = PlWikiProvider()
 ad2 = DatabaseProvider("../data/polish", backoff = ad1)
 ad3 = FileProvider("../data/polish", backoff = ad2)
 
@@ -48,6 +37,7 @@ ad1.get_conf('robili')
 ad1.get_conf('występowałam')
 ad1.get_conf('występują')
 
+print "model", ad1.get_model()
 ad2.save_model(ad1.get_model())
 print ad2.get_word(('czasownik', 'być', {'aspekt': 'niedokonane', 'forma': 'czas teraźniejszy', 'liczba': 'pojedyńcza', 'osoba': 'trzecia'}))
 print ad2.get_word(("czasownik", "występować", {'aspekt': 'niedokonane', 'forma': 'czas teraźniejszy', 'liczba': 'mnoga', 'osoba': 'trzecia'}))
