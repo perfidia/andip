@@ -409,7 +409,42 @@ class Schema(object):
                                                                             'trzecia' : 'ą'
                                                                     }
                                                            }
-                                    }
+                                    },
+                                    'czas przeszly' : {
+                                                       'pojedyncza' : {
+                                                                       'meski' : {
+                                                                                        'pierwsza' : 'ałem',
+                                                                                        'druga' : 'ałeś',
+                                                                                        'trzecia' : 'ał'
+                                                                                  },
+                                                                       'zenski' : {
+                                                                                        'pierwsza' : 'ała',
+                                                                                        'druga' : 'ałaś',
+                                                                                        'trzecia' : 'ała'
+                                                                                   },
+                                                                       'nijaki' : {
+                                                                                        'trzecia' : 'ało'
+                                                                                   }
+                                                                      },
+                                                       'mnoga' : {
+                                                                        'meski' : {
+                                                                                        'pierwsza' : 'eliśmy',
+                                                                                        'druga' : 'eliście',
+                                                                                        'trzecia' : 'eli'
+                                                                                  },
+                                                                       'zenski' : {
+                                                                                        'pierwsza' : 'ałyśmy',
+                                                                                        'druga' : 'ałyście',
+                                                                                        'trzecia' : 'ały'
+                                                                                   },
+                                                                       'nijaki' : {
+                                                                                        'pierwsza' : 'ałyśmy',
+                                                                                        'druga' : 'ałyście',
+                                                                                        'trzecia' : 'ały'
+
+                                                                      },
+                                                                  }
+                                            }
                     },
                    'VIIa' : {
                            'koncowka' : 'eć',
