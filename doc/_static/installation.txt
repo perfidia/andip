@@ -10,3 +10,6 @@ The following libraries are required:
 
                 easy_install ZODB3
 
+                ... or ...
+
+                apt-get install python-zodb
