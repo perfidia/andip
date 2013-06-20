@@ -76,7 +76,31 @@ zrobiwszy
 robienie
 ================ ================= ========== ======== ======
 
-Source
-------
+Examples
+********
 
-https://pl.wiktionary.org/wiki/Szablon:odmiana-czasownik-polski
+`być <http://pl.wiktionary.org/wiki/by%C4%87>`_,
+ciąć,
+dojść,
+gnieść,
+iść,
+jeść,
+mieć,
+móc,
+nieść,
+pachnieć,
+pomóc,
+spiąć,
+siąść,
+trzeć,
+usiąść,
+wejść,
+wiedzieć,
+wziąć,
+zebrać,
+znaleźć.
+
+.. rubric:: References
+
+.. [#] https://pl.wiktionary.org/wiki/Szablon:odmiana-czasownik-polski.
+.. [#] http://pl.wiktionary.org/wiki/Aneks:Czasowniki_nieregularne_w_j%C4%99zyku_polskim
