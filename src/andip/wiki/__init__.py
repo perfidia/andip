@@ -265,10 +265,10 @@ class PlWikiProvider(WikiProvider):
         configuration[base_word] = {}
         configuration[base_word]['aspekt'] = {}
         configuration[base_word]['aspekt'][done] = copy.deepcopy(self.__schema.irregular_conjugation['aspekt'][done])
-        for forma in ['czas teraźniejszy', 'czas przeszły']:
+        for forma in ['czas teraźniejszy', 'czas przeszły', 'czas przyszły']:
             for liczba in ['pojedyńcza', 'mnoga']:
                 for osoba in ['pierwsza', 'druga', 'trzecia']:
-                    if forma == 'czas przeszły':
+                    if forma != 'czas teraźniejszy':
                         for rodzaj in ['m', 'ż', 'n']:
                             translation =  configuration[base_word]['aspekt'][done]['forma'][forma]['liczba'][liczba]['osoba'][osoba]['rodzaj'][rodzaj]
                             if translation in config.keys():

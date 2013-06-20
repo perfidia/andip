@@ -661,6 +661,60 @@ class Schema(object):
                             }
                         }
                     },
+                    'czas przyszły': {
+                        'liczba': {
+                            'pojedyńcza': {
+                                'osoba': {
+                                    'pierwsza': {
+                                        'rodzaj': {
+                                            'm': 'będęrobił',
+                                            'ż': 'będęrobiła',
+                                            'n': 'będęrobiło'
+                                        }
+                                    },
+                                    'druga': {
+                                        'rodzaj': {
+                                            'm': 'będzieszrobił',
+                                            'ż': 'będzieszrobiła',
+                                            'n': 'będzieszrobiło'
+                                        }
+                                    },
+                                    'trzecia': {
+                                        'rodzaj': {
+                                            'm': 'będzierobił',
+                                            'ż': 'będzierobiła',
+                                            'n': 'będzierobiło'
+                                        }
+                                    }
+                                }
+                            },
+                            'mnoga': {
+                                'osoba': {
+                                    'pierwsza': {
+                                        'rodzaj': {
+                                            'm': 'będziemyrobili',
+                                            'ż': 'będziemyrobiły',
+                                            'n': 'będziemyrobiły'
+                                        }
+                                    },
+                                    'druga': {
+                                        'rodzaj': {
+                                            'm': 'będziecierobili',
+                                            'ż': 'będziecierobiły',
+                                            'n': 'będziecierobiły'
+                                        }
+                                    },
+                                    'trzecia': {
+                                        'rodzaj': {
+                                            'm': 'będąrobili',
+                                            'ż': 'będąrobiły',
+                                            'n': 'będąrobiły'
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
                     'czas teraźniejszy': {
                         'liczba': {
                             'pojedyńcza': {

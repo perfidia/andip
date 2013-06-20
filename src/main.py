@@ -6,6 +6,10 @@ ad1 = PlWikiProvider()
 ad2 = DatabaseProvider("../data/polish", backoff = ad1)
 ad3 = FileProvider("../data/polish", backoff = ad2)
 
+
+print ad1.get_word(('czasownik', 'być', {'aspekt': 'niedokonane', 'forma': 'czas przyszły', 'liczba': 'pojedyńcza', 'osoba': 'pierwsza', 'rodzaj': 'm'}))
+
+
 print ad3.get_word(('czasownik', 'być', {'aspekt': 'niedokonane', 'forma': 'czas teraźniejszy', 'liczba': 'pojedyńcza', 'osoba': 'trzecia'}))
 print ad3.get_word(("czasownik", "występować", {'aspekt': 'niedokonane', 'forma': 'czas teraźniejszy', 'liczba': 'mnoga', 'osoba': 'trzecia'}))
 print ad3.get_word(("czasownik", "robić", {'aspekt': 'niedokonane', 'forma': 'czas teraźniejszy', 'liczba': 'mnoga', 'osoba': 'trzecia'}))

@@ -81,6 +81,7 @@ class WikiPolishTest(unittest.TestCase):
         self.assertEqual('będziecie',    self.ad.get_word(('czasownik', 'być', {'aspekt' : 'niedokonane', 'forma': forma, 'liczba': 'mnoga',          'osoba': 'druga',    'rodzaj': 'n'})))
         self.assertEqual('będą',         self.ad.get_word(('czasownik', 'być', {'aspekt' : 'niedokonane', 'forma': forma, 'liczba': 'mnoga',          'osoba': 'trzecia',  'rodzaj': 'n'})))
 
+
     def testGetWordAdjective(self):
         self.assertEquals('zachodnich',  self.ad.get_word(('przymiotnik', 'zachodni', {'stopień': 'podstawowy', 'przypadek' : 'dopełniacz', 'liczba': 'mnoga', 'rodzaj': 'm'})))
         self.assertEquals('zachodniego', self.ad.get_word(('przymiotnik', 'zachodni', {'stopień': 'podstawowy', 'przypadek' : 'biernik', 'liczba': 'pojedyńcza', 'rodzaj': 'm'})))
