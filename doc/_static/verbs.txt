@@ -1,0 +1,82 @@
+Verb mapping for wiktionary
+===========================
+
+Czasowniki niedokonane
+----------------------
+
+Czasowniki dokonane
+-------------------
+
+Czasowniki zwrotne
+------------------
+
+Czasowniki nieregularne
+-----------------------
+
+================ ================= ========== ======== ======
+Wyraz            Forma             Liczba     Osoba    Rodzaj
+================ ================= ========== ======== ======
+robię            czas teraźniejszy pojedyncza pierwsza
+robisz           czas teraźniejszy pojedyncza druga
+robi             czas teraźniejszy pojedyncza trzeca
+robimy           czas teraźniejszy mnoga      pierwsza
+robicie          czas teraźniejszy mnoga      druga
+robią            czas teraźniejszy mnoga      trzecia
+robiłem          czas przeszły     pojedyncza pierwsza m
+*N/A*            czas przeszły     pojedyncza druga    m
+robił            czas przeszły     pojedyncza trzecia  m
+*N/A*            czas przeszły     pojedyncza druga    ż
+*N/A*            czas przeszły     pojedyncza trzecia  ż
+robiła           czas przeszły     pojedyncza pierwsza ż
+*N/A*            czas przeszły     pojedyncza druga    n
+*N/A*            czas przeszły     pojedyncza trzecia  n
+*N/A*            czas przeszły     mnoga      pierwsza m
+*N/A*            czas przeszły     mnoga      druga    m
+robili           czas przeszły     mnoga      trzecia  m
+*N/A*            czas przeszły     mnoga      pierwsza ż, n
+*N/A*            czas przeszły     mnoga      druga    ż, n
+*N/A*            czas przeszły     mnoga      trzecia  ż, n
+robiono          ?
+będę robił
+będę robiła
+będę robiło
+będziesz robił
+będziesz robiła
+będziesz robiło
+będzie robił
+będzie robiła
+będzie robiło
+będziemy robili
+będziemy robiły
+będziecie robili
+będziecie robiły
+będą robili
+będą robiły
+robiłbym
+robiłbyś
+robiłby
+robilibyśmy
+robilibyście
+robiliby
+robiłabym
+robiłabyś
+robiłaby
+robiłobym
+robiłobyś
+robiłoby
+robiłybyśmy
+robiłybyście
+robiłyby
+niech robi
+niech robią
+robiono
+rób
+robiąc
+zrobiwszy
+robienie
+================ ================= ========== ======== ======
+
+Source
+------
+
+https://pl.wiktionary.org/wiki/Szablon:odmiana-czasownik-polski

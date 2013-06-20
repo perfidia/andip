@@ -8,6 +8,7 @@ Contents:
 
    _static/installation.txt
    _static/usage.txt
+   _static/verbs.txt
    _static/tests.txt
 
 
