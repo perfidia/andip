@@ -7,15 +7,15 @@ class WikiPolishTest(unittest.TestCase):
     def setUpClass(cls):
         cls.ad = PlWikiProvider()
 
-#    def testGetWordVerb(self):
-#        self.assertEquals('występują',    self.ad.get_word(('czasownik', 'występować', {'aspekt' : 'niedokonane', 'forma' : 'czas teraźniejszy', 'liczba' : 'mnoga', 'osoba': 'trzecia'})))
-#        self.assertEquals('występuje',    self.ad.get_word(('czasownik', 'występować', {'aspekt' : 'niedokonane', 'forma' : 'czas teraźniejszy', 'liczba' : 'pojedyńcza', 'osoba': 'trzecia'})))
-#        self.assertEquals('występujemy',  self.ad.get_word(('czasownik', 'występować', {'aspekt' : 'niedokonane', 'forma' : 'czas teraźniejszy', 'liczba' : 'mnoga', 'osoba': 'pierwsza'})))
-#        self.assertEquals('występujecie', self.ad.get_word(('czasownik', 'występować', {'aspekt' : 'niedokonane', 'forma' : 'czas teraźniejszy', 'liczba' : 'mnoga', 'osoba': 'druga'})))
-#        self.assertEquals('występujesz',  self.ad.get_word(('czasownik', 'występować', {'aspekt' : 'niedokonane', 'forma' : 'czas teraźniejszy', 'liczba' : 'pojedyńcza', 'osoba': 'druga'})))
-#
-#        self.assertEqual(u'jest', self.ad.get_word(('czasownik', 'być', {'aspekt' : 'niedokonane', 'forma': 'czas teraźniejszy', 'liczba': 'pojedyńcza', 'osoba': 'trzecia'})))
-#        # self.assertEqual(u'są',   self.ad.get_word(('czasownik', 'być', {'aspekt': 'niedokonane', 'forma': 'czas teraźniejszy', 'liczba': 'mnoga', 'osoba': 'trzecia'})))
+    def testGetWordVerb(self):
+        self.assertEquals('występują',    self.ad.get_word(('czasownik', 'występować', {'aspekt' : 'niedokonane', 'forma' : 'czas teraźniejszy', 'liczba' : 'mnoga', 'osoba': 'trzecia'})))
+        self.assertEquals('występuje',    self.ad.get_word(('czasownik', 'występować', {'aspekt' : 'niedokonane', 'forma' : 'czas teraźniejszy', 'liczba' : 'pojedyńcza', 'osoba': 'trzecia'})))
+        self.assertEquals('występujemy',  self.ad.get_word(('czasownik', 'występować', {'aspekt' : 'niedokonane', 'forma' : 'czas teraźniejszy', 'liczba' : 'mnoga', 'osoba': 'pierwsza'})))
+        self.assertEquals('występujecie', self.ad.get_word(('czasownik', 'występować', {'aspekt' : 'niedokonane', 'forma' : 'czas teraźniejszy', 'liczba' : 'mnoga', 'osoba': 'druga'})))
+        self.assertEquals('występujesz',  self.ad.get_word(('czasownik', 'występować', {'aspekt' : 'niedokonane', 'forma' : 'czas teraźniejszy', 'liczba' : 'pojedyńcza', 'osoba': 'druga'})))
+
+        self.assertEqual(u'jest', self.ad.get_word(('czasownik', 'być', {'aspekt' : 'niedokonane', 'forma': 'czas teraźniejszy', 'liczba': 'pojedyńcza', 'osoba': 'trzecia'})))
+        # self.assertEqual(u'są',   self.ad.get_word(('czasownik', 'być', {'aspekt': 'niedokonane', 'forma': 'czas teraźniejszy', 'liczba': 'mnoga', 'osoba': 'trzecia'})))
 
     def testGetWordVerbIrregularByc(self):
         # source: http://pl.wiktionary.org/wiki/by%C4%87
