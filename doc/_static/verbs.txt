@@ -115,11 +115,11 @@ będę robiło      czas przyszły     pojedyncza pierwsza n
 będziesz robiło  czas przyszły     pojedyncza druga    n
 będzie robiło    czas przyszły     pojedyncza trzecia  n
 będziemy robili  czas przyszły     mnoga      pierwsza m
-będziecie robiły czas przyszły     mnoga      druga    m
-będziemy robiły  czas przyszły     mnoga      pierwsza ż
-będą robili      czas przyszły     mnoga      druga    ż
-będziecie robili czas przyszły     mnoga      pierwsza n
-będą robiły      czas przyszły     mnoga      druga    n
+będziecie robili czas przyszły     mnoga      druga    m
+będą robili      czas przyszły     mnoga      trzecia  m
+będziemy robiły  czas przyszły     mnoga      pierwsza ż, n
+będziecie robiły czas przyszły     mnoga      druga    ż, n
+będą robiły      czas przyszły     mnoga      trzecia  ż, n
 robiłbym
 robiłbyś
 robiłby
