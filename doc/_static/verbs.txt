@@ -4,6 +4,54 @@ Verb mapping for wiktionary
 Czasowniki niedokonane
 ----------------------
 
+================ ================= ========== ======== ======
+Wyraz            Forma             Liczba     Osoba    Rodzaj
+================ ================= ========== ======== ======
+dokonany
+koniugacja
+robię            czas teraźniejszy pojedyncza pierwsza
+*N/A*            czas teraźniejszy pojedyncza druga
+robi             czas teraźniejszy pojedyncza trzeca
+*N/A*            czas teraźniejszy mnoga      pierwsza
+*N/A*            czas teraźniejszy mnoga      druga
+robią            czas teraźniejszy mnoga      trzecia
+robiłem          czas przeszły     pojedyncza pierwsza m
+*N/A*            czas przeszły     pojedyncza druga    m
+robił            czas przeszły     pojedyncza trzecia  m
+*N/A*            czas przeszły     pojedyncza druga    ż
+*N/A*            czas przeszły     pojedyncza trzecia  ż
+robiła           czas przeszły     pojedyncza pierwsza ż
+*N/A*            czas przeszły     pojedyncza druga    n
+*N/A*            czas przeszły     pojedyncza trzecia  n
+*N/A*            czas przeszły     mnoga      pierwsza m
+*N/A*            czas przeszły     mnoga      druga    m
+robili           czas przeszły     mnoga      trzecia  m
+*N/A*            czas przeszły     mnoga      pierwsza ż, n
+*N/A*            czas przeszły     mnoga      druga    ż, n
+*N/A*            czas przeszły     mnoga      trzecia  ż, n
+*N/A*            czas przyszły     pojedyncza pierwsza m
+*N/A*            czas przyszły     pojedyncza pierwsza ż
+*N/A*            czas przyszły     pojedyncza pierwsza n
+*N/A*            czas przyszły     pojedyncza druga    m
+*N/A*            czas przyszły     pojedyncza druga    ż
+*N/A*            czas przyszły     pojedyncza druga    n
+*N/A*            czas przyszły     pojedyncza trzecia  m
+*N/A*            czas przyszły     pojedyncza trzecia  ż
+*N/A*            czas przyszły     pojedyncza trzecia  n
+*N/A*            czas przyszły     mnoga      pierwsza m
+*N/A*            czas przyszły     mnoga      pierwsza ż
+*N/A*            czas przyszły     mnoga      pierwsza n
+*N/A*            czas przyszły     mnoga      druga    m
+*N/A*            czas przyszły     mnoga      druga    ż
+*N/A*            czas przyszły     mnoga      druga    n
+robiono          
+rób
+robiąc
+robiony
+robieni
+robienie
+================ ================= ========== ======== ======
+
 Czasowniki dokonane
 -------------------
 
@@ -36,22 +84,22 @@ robili           czas przeszły     mnoga      trzecia  m
 *N/A*            czas przeszły     mnoga      pierwsza ż, n
 *N/A*            czas przeszły     mnoga      druga    ż, n
 *N/A*            czas przeszły     mnoga      trzecia  ż, n
-robiono          ?
-będę robił
-będę robiła
-będę robiło
-będziesz robił
-będziesz robiła
-będziesz robiło
-będzie robił
-będzie robiła
-będzie robiło
-będziemy robili
-będziemy robiły
-będziecie robili
-będziecie robiły
-będą robili
-będą robiły
+robiono
+będę robił       czas przyszły     pojedyncza pierwsza m
+będę robiła      czas przyszły     pojedyncza pierwsza ż
+będę robiło      czas przyszły     pojedyncza pierwsza n
+będziesz robił   czas przyszły     pojedyncza druga    m
+będziesz robiła  czas przyszły     pojedyncza druga    ż
+będziesz robiło  czas przyszły     pojedyncza druga    n
+będzie robił     czas przyszły     pojedyncza trzecia  m
+będzie robiła    czas przyszły     pojedyncza trzecia  ż
+będzie robiło    czas przyszły     pojedyncza trzecia  n
+będziemy robili  czas przyszły     mnoga      pierwsza m
+będziemy robiły  czas przyszły     mnoga      pierwsza ż
+będziecie robili czas przyszły     mnoga      pierwsza n
+będziecie robiły czas przyszły     mnoga      druga    m
+będą robili      czas przyszły     mnoga      druga    ż
+będą robiły      czas przyszły     mnoga      druga    n
 robiłbym
 robiłbyś
 robiłby
