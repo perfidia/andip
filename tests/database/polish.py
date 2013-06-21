@@ -31,8 +31,8 @@ class DatabasePolishTest(unittest.TestCase):
         cls.fd_tmp.close()
 
     def testGetWord(self):
-        self.assertEquals(self.ad_db.get_word(('rzeczownik', 'pies', {'przypadek':'mianownik', 'liczba': 'pojedyńcza'})), 'pies')
-        self.assertEquals(self.ad_db.get_word(('przymiotnik', 'żółty', {'przypadek' : 'dopełniacz', 'stopień' : 'podstawowy', 'liczba': 'pojedyńcza', 'rodzaj': 'm'})), 'żółtego')
+        self.assertEquals(self.ad_db.get_word(('rzeczownik', 'pies', {'przypadek':'mianownik', 'liczba': 'pojedyncza'})), 'pies')
+        self.assertEquals(self.ad_db.get_word(('przymiotnik', 'żółty', {'przypadek' : 'dopełniacz', 'stopień' : 'podstawowy', 'liczba': 'pojedyncza', 'rodzaj': 'm'})), 'żółtego')
 
         self.assertEquals(self.ad_db.get_word(("czasownik", "występować", {'aspekt': 'niedokonane', 'forma': 'czas teraźniejszy', 'liczba': 'mnoga', 'osoba': 'trzecia'})), 'występują')
         self.assertEquals(self.ad_db.get_word(("czasownik", "występować", {'aspekt': 'niedokonane', 'forma': 'czas przeszły', 'liczba': 'mnoga', 'osoba': 'trzecia', 'rodzaj':'m'})), "występowali")

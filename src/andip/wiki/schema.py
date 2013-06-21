@@ -16,7 +16,7 @@ class Schema(object):
                           'koncowka' : 'ać',
                           'forma' : {
                                     'czas teraźniejszy' : {
-                                                           'pojedyńcza' : {
+                                                           'pojedyncza' : {
                                                                            'pierwsza' : 'am',
                                                                            'druga': 'asz',
                                                                            'trzecia': 'a'
@@ -29,7 +29,7 @@ class Schema(object):
                                                            }
                                     },
                                     'czas przeszły' : {
-                                                       'pojedyńcza' : {
+                                                       'pojedyncza' : {
                                                                        'm' : {
                                                                                         'pierwsza' : 'ałem',
                                                                                         'druga' : 'ałeś',
@@ -69,7 +69,7 @@ class Schema(object):
                            'koncowka' : 'eć',
                            'forma' : {
                                     'czas teraźniejszy' : {
-                                                           'pojedyńcza' : {
+                                                           'pojedyncza' : {
                                                                            'pierwsza' : 'em',
                                                                            'druga': 'esz',
                                                                            'trzecia': 'e'
@@ -82,7 +82,7 @@ class Schema(object):
                                                            }
                                     },
                                     'czas przeszły' : {
-                                                       'pojedyńcza' : {
+                                                       'pojedyncza' : {
                                                                        'm' : {
                                                                                         'pierwsza' : 'ałem',
                                                                                         'druga' : 'ałeś',
@@ -122,7 +122,7 @@ class Schema(object):
                             'koncowka' : 'eć',
                             'forma' : {
                                     'czas teraźniejszy' : {
-                                                           'pojedyńcza' : {
+                                                           'pojedyncza' : {
                                                                            'pierwsza' : 'eję',
                                                                            'druga': 'ejesz',
                                                                            'trzecia': 'eje'
@@ -135,7 +135,7 @@ class Schema(object):
                                                            }
                                     },
                                     'czas przeszły' : {
-                                                       'pojedyńcza' : {
+                                                       'pojedyncza' : {
                                                                        'm' : {
                                                                                         'pierwsza' : 'ałem',
                                                                                         'druga' : 'ałeś',
@@ -175,7 +175,7 @@ class Schema(object):
                            'koncowka' : 'ować',
                            'forma' : {
                                     'czas teraźniejszy' : {
-                                                           'pojedyńcza' : {
+                                                           'pojedyncza' : {
                                                                            'pierwsza' : 'uję',
                                                                            'druga': 'ujesz',
                                                                            'trzecia': 'uje'
@@ -188,7 +188,7 @@ class Schema(object):
                                                            }
                                     ,
                                     'czas przeszły' : {
-                                                       'pojedyńcza' : {
+                                                       'pojedyncza' : {
                                                                        'm' : {
                                                                                         'pierwsza' : 'owałem',
                                                                                         'druga' : 'owałeś',
@@ -229,7 +229,7 @@ class Schema(object):
                             'koncowka' : 'nąć',
                             'forma' : {
                                     'czas teraźniejszy' : {
-                                                           'pojedyńcza' : {
+                                                           'pojedyncza' : {
                                                                            'pierwsza' : 'nę',
                                                                            'druga': 'niesz',
                                                                            'trzecia': 'nie'
@@ -242,7 +242,7 @@ class Schema(object):
                                                            }
                                     },
                                     'czas przeszły' : {
-                                                       'pojedyńcza' : {
+                                                       'pojedyncza' : {
                                                                        'm' : {
                                                                                         'pierwsza' : 'nąłem',
                                                                                         'druga' : 'nąłeś',
@@ -280,7 +280,7 @@ class Schema(object):
                             'koncowka' : 'nąć',
                             'forma' : {
                                     'czas teraźniejszy' : {
-                                                           'pojedyńcza' : {
+                                                           'pojedyncza' : {
                                                                            'pierwsza' : 'nę',
                                                                            'druga': 'niesz',
                                                                            'trzecia': 'nie'
@@ -293,7 +293,7 @@ class Schema(object):
                                                            }
                                     },
                                     'czas przeszły' : {
-                                                       'pojedyńcza' : {
+                                                       'pojedyncza' : {
                                                                        'm' : {
                                                                                         'pierwsza' : 'nąłem',
                                                                                         'druga' : 'nąłeś',
@@ -331,7 +331,7 @@ class Schema(object):
                             'koncowka' : 'nąć',
                             'forma' : {
                                     'czas teraźniejszy' : {
-                                                           'pojedyńcza' : {
+                                                           'pojedyncza' : {
                                                                            'pierwsza' : 'nę',
                                                                            'druga': 'niesz',
                                                                            'trzecia': 'nie'
@@ -348,7 +348,7 @@ class Schema(object):
                            'koncowka' : 'ić',
                            'forma' : {
                                     'czas teraźniejszy' : {
-                                                           'pojedyńcza' : {
+                                                           'pojedyncza' : {
                                                                            'pierwsza' : 'ię',
                                                                            'druga': 'isz',
                                                                            'trzecia': 'i'
@@ -360,7 +360,7 @@ class Schema(object):
                                                                     }
                                     },
                                     'czas przeszły' : {
-                                                       'pojedyńcza' : {
+                                                       'pojedyncza' : {
                                                                        'm' : {
                                                                                         'pierwsza' : 'iłem',
                                                                                         'druga' : 'iłeś',
@@ -398,7 +398,7 @@ class Schema(object):
                            'koncowka' : 'yć',
                            'forma' : {
                                     'czas teraźniejszy' : {
-                                                           'pojedyńcza' : {
+                                                           'pojedyncza' : {
                                                                            'pierwsza' : 'ę',
                                                                            'druga': 'ysz',
                                                                            'trzecia': 'y'
@@ -450,7 +450,7 @@ class Schema(object):
                            'koncowka' : 'eć',
                            'forma' : {
                                     'czas teraźniejszy' : {
-                                                           'pojedyńcza' : {
+                                                           'pojedyncza' : {
                                                                            'pierwsza' : 'ę',
                                                                            'druga': 'isz',
                                                                            'trzecia': 'i'
@@ -467,7 +467,7 @@ class Schema(object):
                            'koncowka' : 'eć',
                            'forma' : {
                                     'czas teraźniejszy' : {
-                                                           'pojedyńcza' : {
+                                                           'pojedyncza' : {
                                                                            'pierwsza' : 'ę',
                                                                            'druga': 'ysz',
                                                                            'trzecia': 'y'
@@ -484,7 +484,7 @@ class Schema(object):
                            'koncowka' : 'ywać',
                            'forma' : {
                                     'czas teraźniejszy' : {
-                                                           'pojedyńcza' : {
+                                                           'pojedyncza' : {
                                                                            'pierwsza' : 'uję',
                                                                            'druga': 'ujesz',
                                                                            'trzecia': 'uje'
@@ -501,7 +501,7 @@ class Schema(object):
                            'koncowka' : 'iwać',
                            'forma' : {
                                     'czas teraźniejszy' : {
-                                                           'pojedyńcza' : {
+                                                           'pojedyncza' : {
                                                                            'pierwsza' : 'uję',
                                                                            'druga': 'ujesz',
                                                                            'trzecia': 'uje'
@@ -518,7 +518,7 @@ class Schema(object):
                            'koncowka' : 'ać',
                            'forma' : {
                                     'czas teraźniejszy' : {
-                                                           'pojedyńcza' : {
+                                                           'pojedyncza' : {
                                                                            'pierwsza' : 'ę',
                                                                            'druga': 'esz',
                                                                            'trzecia': 'e'
@@ -535,7 +535,7 @@ class Schema(object):
                            'koncowka' : 'ć',
                            'forma' : {
                                     'czas teraźniejszy' : {
-                                                           'pojedyńcza' : {
+                                                           'pojedyncza' : {
                                                                            'pierwsza' : 'ję',
                                                                            'druga': 'jesz',
                                                                            'trzecia': 'je'
@@ -552,7 +552,7 @@ class Schema(object):
                            'koncowka' : 'ać',
                            'forma' : {
                                     'czas teraźniejszy' : {
-                                                           'pojedyńcza' : {
+                                                           'pojedyncza' : {
                                                                            'pierwsza' : 'eję',
                                                                            'druga': 'ejesz',
                                                                            'trzecia': 'eje'
@@ -569,7 +569,7 @@ class Schema(object):
                            'koncowka' : 'ać',
                            'forma' : {
                                     'czas teraźniejszy' : {
-                                                           'pojedyńcza' : {
+                                                           'pojedyncza' : {
                                                                            'pierwsza' : 'mę',
                                                                            'druga': 'miesz',
                                                                            'trzecia': 'mie'
@@ -586,7 +586,7 @@ class Schema(object):
                            'koncowka' : 'ć',
                            'forma' : {
                                     'czas teraźniejszy' : {
-                                                           'pojedyńcza' : {
+                                                           'pojedyncza' : {
                                                                            'pierwsza' : 'ę',
                                                                            'druga': 'esz',
                                                                            'trzecia': 'e'
@@ -609,7 +609,7 @@ class Schema(object):
                 'forma': {
                     'czas przeszły': {
                         'liczba': {
-                            'pojedyńcza': {
+                            'pojedyncza': {
                                 'osoba': {
                                     'pierwsza': {
                                         'rodzaj': {
@@ -663,7 +663,7 @@ class Schema(object):
                     },
                     'czas przyszły': {
                         'liczba': {
-                            'pojedyńcza': {
+                            'pojedyncza': {
                                 'osoba': {
                                     'pierwsza': {
                                         'rodzaj': {
@@ -717,7 +717,7 @@ class Schema(object):
                     },
                     'czas teraźniejszy': {
                         'liczba': {
-                            'pojedyńcza': {
+                            'pojedyncza': {
                                 'osoba': {
                                     'pierwsza': 'robię',
                                     'druga': 'robisz',
@@ -739,7 +739,7 @@ class Schema(object):
                 'forma': {
                     'czas przesz\xc5\x82y': {
                         'liczba': {
-                            'pojedy\xc5\x84cza': {
+                            'pojedyncza': {
                                 'osoba': {
                                     'pierwsza': {
                                         'rodzaj': {
@@ -793,7 +793,7 @@ class Schema(object):
                     },
                     'czas tera\xc5\xbaniejszy': {
                         'liczba': {
-                            'pojedy\xc5\x84cza': {
+                            'pojedyncza': {
                                 'osoba': {
                                     'pierwsza': 'wyst\xc4\x99puj\xc4\x99',
                                     'druga': 'wyst\xc4\x99pujesz',
@@ -822,7 +822,7 @@ class Schema(object):
             'przypadek': {
                 'mianownik': {
                     'liczba': {
-                        'pojedyńcza': {
+                        'pojedyncza': {
                             'rodzaj': {
                                 'm': 'y',
                                 'ż': 'a',
@@ -839,7 +839,7 @@ class Schema(object):
                 }, # end mianownik
                 'dopełniacz': {
                     'liczba': {
-                        'pojedyńcza': {
+                        'pojedyncza': {
                             'rodzaj': {
                                 'm': 'ego',
                                 'ż': 'ej',
@@ -856,7 +856,7 @@ class Schema(object):
                 }, # end dopełniacz
                 'celownik': {
                     'liczba': {
-                        'pojedyńcza': {
+                        'pojedyncza': {
                             'rodzaj': {
                                 'm': 'emu',
                                 'ż': 'ej',
@@ -873,7 +873,7 @@ class Schema(object):
                 }, # end celownik
                 'biernik': {
                     'liczba': {
-                        'pojedyńcza': {
+                        'pojedyncza': {
                             'rodzaj': {
                                 'm': 'ego',
                                 'ż': 'ą',
@@ -890,7 +890,7 @@ class Schema(object):
                 }, # end biernik
                 'narzędnik': {
                     'liczba': {
-                        'pojedyńcza': {
+                        'pojedyncza': {
                             'rodzaj': {
                                 'm': 'ym',
                                 'ż': 'ą',
@@ -907,7 +907,7 @@ class Schema(object):
                 }, # end narzędnik
                 'miejscownik': {
                     'liczba': {
-                        'pojedyńcza': {
+                        'pojedyncza': {
                             'rodzaj': {
                                 'm': 'ym',
                                 'ż': 'ej',
@@ -924,7 +924,7 @@ class Schema(object):
                 }, # end miekscownik
                 'wołacz': {
                     'liczba': {
-                        'pojedyńcza': {
+                        'pojedyncza': {
                             'rodzaj': {
                                 'm': 'y',
                                 'ż': 'a',
@@ -945,7 +945,7 @@ class Schema(object):
             'przypadek': {
                 'mianownik': {
                     'liczba': {
-                        'pojedyńcza': {
+                        'pojedyncza': {
                             'rodzaj': {
                                 'm': 'i',
                                 'ż': 'a',
@@ -962,7 +962,7 @@ class Schema(object):
                 }, # end mianownik
                 'dopełniacz': {
                     'liczba': {
-                        'pojedyńcza': {
+                        'pojedyncza': {
                             'rodzaj': {
                                 'm': 'iego',
                                 'ż': 'a',
@@ -979,7 +979,7 @@ class Schema(object):
                 }, # end dopełniacz
                 'celownik': {
                     'liczba': {
-                        'pojedyńcza': {
+                        'pojedyncza': {
                             'rodzaj': {
                                 'm': 'iemu',
                                 'ż': 'iej',
@@ -996,7 +996,7 @@ class Schema(object):
                 }, # end celownik
                 'biernik': {
                     'liczba': {
-                        'pojedyńcza': {
+                        'pojedyncza': {
                             'rodzaj': {
                                 'm': 'iego',
                                 'ż': 'ą',
@@ -1013,7 +1013,7 @@ class Schema(object):
                 }, # end biernik
                 'narzędnik': {
                     'liczba': {
-                        'pojedyńcza': {
+                        'pojedyncza': {
                             'rodzaj': {
                                 'm': 'im',
                                 'ż': 'ą',
@@ -1030,7 +1030,7 @@ class Schema(object):
                 }, # end narzędnik
                 'miejscownik': {
                     'liczba': {
-                        'pojedyńcza': {
+                        'pojedyncza': {
                             'rodzaj': {
                                 'm': 'im',
                                 'ż': 'iej',
@@ -1047,7 +1047,7 @@ class Schema(object):
                 }, # end miekscownik
                 'wołacz': {
                     'liczba': {
-                        'pojedyńcza': {
+                        'pojedyncza': {
                             'rodzaj': {
                                 'm': 'i',
                                 'ż': 'a',

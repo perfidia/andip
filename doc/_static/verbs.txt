@@ -44,7 +44,7 @@ robili           czas przeszły     mnoga      trzecia  m
 *N/A*            czas przyszły     mnoga      druga    m
 *N/A*            czas przyszły     mnoga      druga    ż
 *N/A*            czas przyszły     mnoga      druga    n
-robiono          
+robiono
 rób
 robiąc
 robiony

@@ -6,7 +6,7 @@
 				'przypadek': {
 					'mianownik': {
 						'liczba': {
-							'pojedyńcza': {
+							'pojedyncza': {
 								'osoba': {
 									'pierwsza': 'ja',
 									'druga': 'ty',
@@ -35,7 +35,7 @@
 					}, # end mianownik
 					'celownik': {
 						'liczba': {
-							'pojedyńcza': {
+							'pojedyncza': {
 								'osoba': {
 									'trzecia': {
 										'rodzaj': {
@@ -60,7 +60,7 @@
 					}, # end celownik
 					'miejscownik': {
 						'liczba': {
-							'pojedyńcza': {
+							'pojedyncza': {
 								'osoba': {
 									'pierwsza': 'mnie',
 									'druga': 'tobie',
@@ -94,7 +94,7 @@
 				'przypadek': {
 					'mianownik': {
 						'liczba': {
-							'pojedyńcza': {
+							'pojedyncza': {
 								'rodzaj': {
 									'mos':  'który',
 									'mzw':  'który',
@@ -113,7 +113,7 @@
 					}, # end mianownik
 					'dopełniacz': {
 						'liczba': {
-							'pojedyńcza': {
+							'pojedyncza': {
 								'rodzaj': {
 									'mos':  'którego',
 									'mzw':  'którego',
@@ -132,7 +132,7 @@
 					}, # end dopełniacz
 					'miejscownik': {
 						'liczba': {
-							'pojedyńcza': {
+							'pojedyncza': {
 								'rodzaj': {
 									'mos':  'którym',
 									'mzw':  'którym',
@@ -161,7 +161,7 @@
 						'forma': {
 							'czas teraźniejszy': {
 								'liczba': {
-									'pojedyńcza': {
+									'pojedyncza': {
 										'osoba': {
 											'pierwsza': 'następuje',
 											'druga':    'następujesz',
@@ -187,7 +187,7 @@
 						'forma': {
 							'czas teraźniejszy': {
 								'liczba': {
-									'pojedyńcza': {
+									'pojedyncza': {
 										'osoba': {
 											'pierwsza': 'występuje',
 											'druga':    'występujesz',
@@ -205,7 +205,7 @@
 							},
 							'czas przeszły': {
 								'liczba': {
-									'pojedyńcza': {
+									'pojedyncza': {
 										'osoba': {
 											'pierwsza': {
 												'rodzaj': {
@@ -267,7 +267,7 @@
 						'forma': {
 							'czas teraźniejszy': {
 								'liczba': {
-									'pojedyńcza': {
+									'pojedyncza': {
 										'osoba': {
 											'pierwsza': 'mam',
 											'druga':    'masz',
@@ -285,7 +285,7 @@
 							},
 							'czas przeszły': {
 								'liczba': {
-									'pojedyńcza': {
+									'pojedyncza': {
 										'osoba': {
 											'pierwsza': {
 												'rodzaj': {
@@ -347,7 +347,7 @@
 						'forma': {
 							'czas teraźniejszy': {
 								'liczba': {
-									'pojedyńcza': {
+									'pojedyncza': {
 										'osoba': {
 											'pierwsza': 'jestem',
 											'druga': 'jesteś',
@@ -365,7 +365,7 @@
 							},
 							'czas przeszły': {
 								'liczba': {
-									'pojedyńcza': {
+									'pojedyncza': {
 										'osoba': {
 											'pierwsza': {
 												'rodzaj': {
@@ -427,7 +427,7 @@
 						'forma': {
 							'czas teraźniejszy': {
 								'liczba': {
-									'pojedyńcza': {
+									'pojedyncza': {
 										'osoba': {
 											'pierwsza': 'pozwolę',
 											'druga':    'pozwolisz',
@@ -445,7 +445,7 @@
 							},
 							'czas przeszły': {
 								'liczba': {
-									'pojedyńcza': {
+									'pojedyncza': {
 										'osoba': {
 											'pierwsza': {
 												'rodzaj': {
@@ -507,7 +507,7 @@
 						'forma': {
 							'czas teraźniejszy': {
 								'liczba': {
-									'pojedyńcza': {
+									'pojedyncza': {
 										'osoba': {
 											'pierwsza': 'stanowię',
 											'druga':    'stanowisz',
@@ -525,7 +525,7 @@
 							},
 							'czas przeszły': {
 								'liczba': {
-									'pojedyńcza': {
+									'pojedyncza': {
 										'osoba': {
 											'pierwsza': {
 												'rodzaj': {
@@ -587,7 +587,7 @@
 		'word': {
 			'opis': {
 				'liczba': {
-					'pojedyńcza': {
+					'pojedyncza': {
 						'rodzaj': {
 							'm': 'opisany',
 							'ż': 'opisana',
@@ -633,43 +633,43 @@
 				'przypadek': {
 					'mianownik': {
 						'liczba': {
-							'pojedyńcza': 'znak',
+							'pojedyncza': 'znak',
 							'mnoga': 'znaki'
 						}
 					},
 					'dopełniacz': {
 						'liczba': {
-							'pojedyńcza': 'znaku',
+							'pojedyncza': 'znaku',
 							'mnoga': 'znaków'
 						}
 					},
 					'celownik': {
 						'liczba': {
-							'pojedyńcza': 'znakowi',
+							'pojedyncza': 'znakowi',
 							'mnoga': 'znakom'
 						}
 					},
 					'biernik': {
 						'liczba': {
-							'pojedyńcza': 'znak',
+							'pojedyncza': 'znak',
 							'mnoga': 'znaki'
 						}
 					},
 					'narzędnik': {
 						'liczba': {
-							'pojedyńcza': 'znakiem',
+							'pojedyncza': 'znakiem',
 							'mnoga': 'znakami'
 						}
 					},
 					'miejscownik': {
 						'liczba': {
-							'pojedyńcza': 'znaku',
+							'pojedyncza': 'znaku',
 							'mnoga': 'znakach'
 						}
 					},
 					'wołacz': {
 						'liczba': {
-							'pojedyńcza': 'znaku',
+							'pojedyncza': 'znaku',
 							'mnoga': 'znaki'
 						}
 					}
@@ -679,43 +679,43 @@
 				'przypadek': {
 					'mianownik': {
 						'liczba': {
-							'pojedyńcza': 'cyfra',
+							'pojedyncza': 'cyfra',
 							'mnoga': 'cyfry'
 						}
 					},
 					'dopełniacz': {
 						'liczba': {
-							'pojedyńcza': 'cyfry',
+							'pojedyncza': 'cyfry',
 							'mnoga': 'cyfr'
 						}
 					},
 					'celownik': {
 						'liczba': {
-							'pojedyńcza': 'cyfrze',
+							'pojedyncza': 'cyfrze',
 							'mnoga': 'cyfrom'
 						}
 					},
 					'biernik': {
 						'liczba': {
-							'pojedyńcza': 'cyfrę',
+							'pojedyncza': 'cyfrę',
 							'mnoga': 'cyfry'
 						}
 					},
 					'narzędnik': {
 						'liczba': {
-							'pojedyńcza': 'cyfrą',
+							'pojedyncza': 'cyfrą',
 							'mnoga': 'cyframi'
 						}
 					},
 					'miejscownik': {
 						'liczba': {
-							'pojedyńcza': 'cyfrze',
+							'pojedyncza': 'cyfrze',
 							'mnoga': 'cyfrach'
 						}
 					},
 					'wołacz': {
 						'liczba': {
-							'pojedyńcza': 'cyfro',
+							'pojedyncza': 'cyfro',
 							'mnoga': 'cyfry'
 						}
 					}
@@ -725,43 +725,43 @@
 				'przypadek': {
 					'mianownik': {
 						'liczba': {
-							'pojedyńcza': 'kropka',
+							'pojedyncza': 'kropka',
 							'mnoga': 'kropki'
 						}
 					},
 					'dopełniacz': {
 						'liczba': {
-							'pojedyńcza': 'kropki',
+							'pojedyncza': 'kropki',
 							'mnoga': 'kropek'
 						}
 					},
 					'celownik': {
 						'liczba': {
-							'pojedyńcza': 'kropce',
+							'pojedyncza': 'kropce',
 							'mnoga': 'kropkom'
 						}
 					},
 					'biernik': {
 						'liczba': {
-							'pojedyńcza': 'kropkę',
+							'pojedyncza': 'kropkę',
 							'mnoga': 'kropki'
 						}
 					},
 					'narzędnik': {
 						'liczba': {
-							'pojedyńcza': 'kropką',
+							'pojedyncza': 'kropką',
 							'mnoga': 'kropkami'
 						}
 					},
 					'miejscownik': {
 						'liczba': {
-							'pojedyńcza': 'kropce',
+							'pojedyncza': 'kropce',
 							'mnoga': 'kropkach'
 						}
 					},
 					'wołacz': {
 						'liczba': {
-							'pojedyńcza': 'kropko',
+							'pojedyncza': 'kropko',
 							'mnoga': 'kropki'
 						}
 					}
@@ -771,43 +771,43 @@
 				'przypadek': {
 					'mianownik': {
 						'liczba': {
-							'pojedyńcza': 'dwukropek',
+							'pojedyncza': 'dwukropek',
 							'mnoga': 'dwukropki'
 						}
 					},
 					'dopełniacz': {
 						'liczba': {
-							'pojedyńcza': 'dwukropka',
+							'pojedyncza': 'dwukropka',
 							'mnoga': 'dwukropków'
 						}
 					},
 					'celownik': {
 						'liczba': {
-							'pojedyńcza': 'dwukropkowi',
+							'pojedyncza': 'dwukropkowi',
 							'mnoga': 'dwukropkom'
 						}
 					},
 					'biernik': {
 						'liczba': {
-							'pojedyńcza': 'dwukropek',
+							'pojedyncza': 'dwukropek',
 							'mnoga': 'dwukropki'
 						}
 					},
 					'narzędnik': {
 						'liczba': {
-							'pojedyńcza': 'dwukropkiem',
+							'pojedyncza': 'dwukropkiem',
 							'mnoga': 'dwukropkami'
 						}
 					},
 					'miejscownik': {
 						'liczba': {
-							'pojedyńcza': 'dwukropku',
+							'pojedyncza': 'dwukropku',
 							'mnoga': 'dwukropkach'
 						}
 					},
 					'wołacz': {
 						'liczba': {
-							'pojedyńcza': 'dwukropku',
+							'pojedyncza': 'dwukropku',
 							'mnoga': 'dwukropki'
 						}
 					}
@@ -817,43 +817,43 @@
 				'przypadek': {
 					'mianownik': {
 						'liczba': {
-							'pojedyńcza': 'liczba',
+							'pojedyncza': 'liczba',
 							'mnoga': 'liczby'
 						}
 					},
 					'dopełniacz': {
 						'liczba': {
-							'pojedyńcza': 'liczby',
+							'pojedyncza': 'liczby',
 							'mnoga': 'liczb'
 						}
 					},
 					'celownik': {
 						'liczba': {
-							'pojedyńcza': 'liczbie',
+							'pojedyncza': 'liczbie',
 							'mnoga': 'liczbom'
 						}
 					},
 					'biernik': {
 						'liczba': {
-							'pojedyńcza': 'liczbę',
+							'pojedyncza': 'liczbę',
 							'mnoga': 'liczby'
 						}
 					},
 					'narzędnik': {
 						'liczba': {
-							'pojedyńcza': 'liczbą',
+							'pojedyncza': 'liczbą',
 							'mnoga': 'liczbami'
 						}
 					},
 					'miejscownik': {
 						'liczba': {
-							'pojedyńcza': 'liczbie',
+							'pojedyncza': 'liczbie',
 							'mnoga': 'liczbach'
 						}
 					},
 					'wołacz': {
 						'liczba': {
-							'pojedyńcza': 'liczbo',
+							'pojedyncza': 'liczbo',
 							'mnoga': 'liczby'
 						}
 					}
@@ -863,43 +863,43 @@
 				'przypadek': {
 					'mianownik': {
 						'liczba': {
-							'pojedyńcza': 'wykonawca',
+							'pojedyncza': 'wykonawca',
 							'mnoga': 'wykonawcy'
 						}
 					},
 					'dopełniacz': {
 						'liczba': {
-							'pojedyńcza': 'wykonawcy',
+							'pojedyncza': 'wykonawcy',
 							'mnoga': 'wykonawców'
 						}
 					},
 					'celownik': {
 						'liczba': {
-							'pojedyńcza': 'wykonawcy',
+							'pojedyncza': 'wykonawcy',
 							'mnoga': 'wykonawcom'
 						}
 					},
 					'biernik': {
 						'liczba': {
-							'pojedyńcza': 'wykonawcę',
+							'pojedyncza': 'wykonawcę',
 							'mnoga': 'wykonawców'
 						}
 					},
 					'narzędnik': {
 						'liczba': {
-							'pojedyńcza': 'wykonawcą',
+							'pojedyncza': 'wykonawcą',
 							'mnoga': 'wykonawcami'
 						}
 					},
 					'miejscownik': {
 						'liczba': {
-							'pojedyńcza': 'wykonawcy',
+							'pojedyncza': 'wykonawcy',
 							'mnoga': 'wykonawcach'
 						}
 					},
 					'wołacz': {
 						'liczba': {
-							'pojedyńcza': 'wykonawco',
+							'pojedyncza': 'wykonawco',
 							'mnoga': 'wykonawcy'
 						}
 					}

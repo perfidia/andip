@@ -145,7 +145,7 @@ class PlWikiProvider(WikiProvider):
                 liczba = tmp[0].lower().split(' ')[1]
                 tmp[1] = tmp[1].replace(" ", "")
                 if liczba == 'lp':
-                    liczba = "pojedyńcza"
+                    liczba = "pojedyncza"
                 else:
                     liczba = "mnoga"
                 configuration[base_word]['przypadek'][przypadek]['liczba'][liczba] = tmp[1]
@@ -178,7 +178,7 @@ class PlWikiProvider(WikiProvider):
         for forma in ['czas teraźniejszy', 'czas przeszły']:
             configuration[base_word]['aspekt'][done]['forma'][forma] = {}
             configuration[base_word]['aspekt'][done]['forma'][forma]['liczba'] = {}
-            for liczba in ['pojedyńcza', 'mnoga']:
+            for liczba in ['pojedyncza', 'mnoga']:
                 configuration[base_word]['aspekt'][done]['forma'][forma]['liczba'][liczba] = {}
                 configuration[base_word]['aspekt'][done]['forma'][forma]['liczba'][liczba]['osoba'] = {}
                 for osoba in ['pierwsza', 'druga', 'trzecia']:
@@ -266,7 +266,7 @@ class PlWikiProvider(WikiProvider):
         configuration[base_word]['aspekt'] = {}
         configuration[base_word]['aspekt'][done] = copy.deepcopy(self.__schema.irregular_conjugation['aspekt'][done])
         for forma in ['czas teraźniejszy', 'czas przeszły', 'czas przyszły']:
-            for liczba in ['pojedyńcza', 'mnoga']:
+            for liczba in ['pojedyncza', 'mnoga']:
                 for osoba in ['pierwsza', 'druga', 'trzecia']:
                     if forma != 'czas teraźniejszy':
                         for rodzaj in ['m', 'ż', 'n']:
