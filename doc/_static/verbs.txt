@@ -7,8 +7,6 @@ Czasowniki niedokonane
 ================ ================= ========== ======== ======
 Wyraz            Forma             Liczba     Osoba    Rodzaj
 ================ ================= ========== ======== ======
-dokonany
-koniugacja
 robię            czas teraźniejszy pojedyncza pierwsza
 *N/A*            czas teraźniejszy pojedyncza druga
 robi             czas teraźniejszy pojedyncza trzeca
@@ -52,11 +50,33 @@ robieni
 robienie
 ================ ================= ========== ======== ======
 
+================= ==================
+Parametr          Dozwolone wartości
+================= ==================
+dokonany          nie
+koniugacja        *patrz Koniugacja*
+================= ==================
+
 Czasowniki dokonane
 -------------------
 
+================= ==================
+Parametr          Dozwolone wartości
+================= ==================
+dokonany          tak
+koniugacja        *patrz Koniugacja*
+================= ==================
+
 Czasowniki zwrotne
 ------------------
+
+================= ======================================
+Parametr          Dozwolone wartości
+================= ======================================
+dokonany          nie
+się               się
+zrobić            *dla czasowników zwrotnych dokonanych*
+================= ======================================
 
 Czasowniki nieregularne
 -----------------------
@@ -86,19 +106,19 @@ robili           czas przeszły     mnoga      trzecia  m
 *N/A*            czas przeszły     mnoga      trzecia  ż, n
 robiono
 będę robił       czas przyszły     pojedyncza pierwsza m
-będę robiła      czas przyszły     pojedyncza pierwsza ż
-będę robiło      czas przyszły     pojedyncza pierwsza n
 będziesz robił   czas przyszły     pojedyncza druga    m
-będziesz robiła  czas przyszły     pojedyncza druga    ż
-będziesz robiło  czas przyszły     pojedyncza druga    n
 będzie robił     czas przyszły     pojedyncza trzecia  m
+będę robiła      czas przyszły     pojedyncza pierwsza ż
+będziesz robiła  czas przyszły     pojedyncza druga    ż
 będzie robiła    czas przyszły     pojedyncza trzecia  ż
+będę robiło      czas przyszły     pojedyncza pierwsza n
+będziesz robiło  czas przyszły     pojedyncza druga    n
 będzie robiło    czas przyszły     pojedyncza trzecia  n
 będziemy robili  czas przyszły     mnoga      pierwsza m
-będziemy robiły  czas przyszły     mnoga      pierwsza ż
-będziecie robili czas przyszły     mnoga      pierwsza n
 będziecie robiły czas przyszły     mnoga      druga    m
+będziemy robiły  czas przyszły     mnoga      pierwsza ż
 będą robili      czas przyszły     mnoga      druga    ż
+będziecie robili czas przyszły     mnoga      pierwsza n
 będą robiły      czas przyszły     mnoga      druga    n
 robiłbym
 robiłbyś
@@ -124,6 +144,13 @@ zrobiwszy
 robienie
 ================ ================= ========== ======== ======
 
+================= ==================
+Parametr          Dozwolone wartości
+================= ==================
+dokonany          nie
+brak zaprzeszłego tak
+================= ==================
+
 Examples
 ********
 
@@ -148,7 +175,30 @@ wziąć,
 zebrać,
 znaleźć.
 
+Koniugacja
+----------
+
+`I <https://pl.wiktionary.org/wiki/Aneks:J%C4%99zyk_polski_-_koniugacja_I>`_,
+II,
+III,
+IV,
+Va,
+Vb,
+Vc,
+VIa,
+VIb,
+VIIa,
+VIIb,
+VIIIa,
+VIIIb,
+IX,
+Xa,
+Xb,
+Xc,
+XI.
+
 .. rubric:: References
 
-.. [#] https://pl.wiktionary.org/wiki/Szablon:odmiana-czasownik-polski.
+.. [#] https://pl.wiktionary.org/wiki/Aneks:J%C4%99zyk_polski_-_czasowniki
+.. [#] https://pl.wiktionary.org/wiki/Szablon:odmiana-czasownik-polski
 .. [#] http://pl.wiktionary.org/wiki/Aneks:Czasowniki_nieregularne_w_j%C4%99zyku_polskim
