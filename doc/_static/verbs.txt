@@ -221,9 +221,9 @@ niech robi       rozkazujący             pojedyncza trzecia
 *N/A*            rozkazujący             mnoga      druga
 niech robią      rozkazujący             mnoga      trzecia  
 robiono	         bezos. czasu przeszłego 
-robiąc           imiesłów przysłówkowy   
 robienie         rzecz. odczasownikowy   
-zrobiwszy		 ?
+robiąc           im. przys. współczesny   
+zrobiwszy        im. przys. uprzedni
 ================ ======================= ========== ======== ======
 
 ================= ==================
