@@ -71,12 +71,6 @@ Czasowniki dokonane
 ================ ========================= ========== ======== ======
 Wyraz            Forma                     Liczba     Osoba    Rodzaj
 ================ ========================= ========== ======== ======
-zrobię           czas teraźniejszy         pojedyncza pierwsza
-*N/A*            czas teraźniejszy         pojedyncza druga
-zrobi            czas teraźniejszy         pojedyncza trzeca
-*N/A*            czas teraźniejszy         mnoga      pierwsza
-*N/A*            czas teraźniejszy         mnoga      druga
-zrobią           czas teraźniejszy         mnoga      trzecia
 zrobiłem         czas przeszły             pojedyncza pierwsza m
 *N/A*            czas przeszły             pojedyncza druga    m
 zrobił           czas przeszły             pojedyncza trzecia  m
@@ -92,21 +86,12 @@ zrobili          czas przeszły             mnoga      trzecia  m
 *N/A*            czas przeszły             mnoga      pierwsza ż, n
 *N/A*            czas przeszły             mnoga      druga    ż, n
 *N/A*            czas przeszły             mnoga      trzecia  ż, n
-*N/A*            czas przyszły             pojedyncza pierwsza m
-*N/A*            czas przyszły             pojedyncza druga    m
-*N/A*            czas przyszły             pojedyncza trzecia  m
-*N/A*            czas przyszły             pojedyncza pierwsza ż
-*N/A*            czas przyszły             pojedyncza druga    ż
-*N/A*            czas przyszły             pojedyncza trzecia  ż
-*N/A*            czas przyszły             pojedyncza pierwsza n
-*N/A*            czas przyszły             pojedyncza druga    n
-*N/A*            czas przyszły             pojedyncza trzecia  n
-*N/A*            czas przyszły             mnoga      pierwsza m
-*N/A*            czas przyszły             mnoga      druga    m
-*N/A*            czas przyszły             mnoga      trzecia  m
-*N/A*            czas przyszły             mnoga      pierwsza ż, n
-*N/A*            czas przyszły             mnoga      druga    ż, n
-*N/A*            czas przyszły             mnoga      trzecia  ż, n
+zrobię           czas przyszły             pojedyncza pierwsza
+*N/A*            czas przyszły             pojedyncza druga
+zrobi            czas przyszły             pojedyncza trzeca
+*N/A*            czas przyszły             mnoga      pierwsza
+*N/A*            czas przyszły             mnoga      druga
+zrobią           czas przyszły             mnoga      trzecia
 zrób             rozkazujący  	           pojedyncza druga    
 *N/A*            rozkazujący               pojedyncza trzecia  
 *N/A*            rozkazujący               mnoga      pierwsza  
