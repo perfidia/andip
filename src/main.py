@@ -7,9 +7,19 @@ ad2 = DatabaseProvider("../data/polish", backoff = ad1)
 ad3 = FileProvider("../data/polish", backoff = ad2)
 
 
-print ad1.get_word(('czasownik', 'być', {'aspekt': 'niedokonane', 'forma': 'czas przyszły', 'liczba': 'pojedyncza', 'osoba': 'pierwsza', 'rodzaj': 'm'}))
+print ad1.get_word(("czasownik", "występować", {'aspekt': 'niedokonane', 'forma': 'czas przyszły', 'liczba': 'mnoga', 'osoba': 'trzecia', 'rodzaj': 'm'}))
 
 
+
+
+print ad1.get_word(('czasownik', 'narysować', {'aspekt': 'dokonane', 'forma': 'czas przyszły', 'liczba': 'pojedyncza', 'osoba': 'pierwsza'}))
+print ad1.get_conf('narysuję')		
+print ad1.get_conf('narysujesz') 	
+print ad1.get_conf('narysuje')		
+print ad1.get_conf('narysujemy') 	
+print ad1.get_conf('narysujecie') 	
+print ad1.get_conf('narysują')
+print ad1.get_conf('będą występowali')
 print ad3.get_word(('czasownik', 'być', {'aspekt': 'niedokonane', 'forma': 'czas teraźniejszy', 'liczba': 'pojedyncza', 'osoba': 'trzecia'}))
 print ad3.get_word(("czasownik", "występować", {'aspekt': 'niedokonane', 'forma': 'czas teraźniejszy', 'liczba': 'mnoga', 'osoba': 'trzecia'}))
 print ad3.get_word(("czasownik", "robić", {'aspekt': 'niedokonane', 'forma': 'czas teraźniejszy', 'liczba': 'mnoga', 'osoba': 'trzecia'}))

@@ -602,6 +602,60 @@ class Schema(object):
 
     }
 
+    byc_future = {
+        'liczba': {
+            'pojedyncza': {
+                'osoba': {
+                    'pierwsza': {
+                        'rodzaj': {
+                            'm': 'będę',
+                            'ż': 'będę',
+                            'n': 'będę'
+                        }
+                    },
+                    'druga': {
+                        'rodzaj': {
+                            'm': 'będziesz',
+                            'ż': 'będziesz',
+                            'n': 'będziesz'
+                        }
+                    },
+                    'trzecia': {
+                        'rodzaj': {
+                            'm': 'będzie',
+                            'ż': 'będzie',
+                            'n': 'będzie'
+                        }
+                    }
+                }
+            },
+            'mnoga': {
+                'osoba': {
+                    'pierwsza': {
+                        'rodzaj': {
+                            'm': 'będziemy',
+                            'ż': 'będziemy',
+                            'n': 'będziemy'
+                        }
+                    },
+                    'druga': {
+                        'rodzaj': {
+                            'm': 'będziecie',
+                            'ż': 'będziecie',
+                            'n': 'będziecie'
+                        }
+                    },
+                    'trzecia': {
+                        'rodzaj': {
+                            'm': 'będą',
+                            'ż': 'będą',
+                            'n': 'będą'
+                        }
+                    }
+                }
+            }
+        }
+    }
 
     irregular_conjugation = {
         'aspekt': {
