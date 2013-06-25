@@ -43,11 +43,11 @@ robili           czas przeszły             mnoga      trzecia  m
 *N/A*            czas przyszły             mnoga      pierwsza ż, n
 *N/A*            czas przyszły             mnoga      druga    ż, n
 *N/A*            czas przyszły             mnoga      trzecia  ż, n
-rób              rozkazujący  	           pojedyncza druga    
-*N/A*            rozkazujący               pojedyncza trzecia  
-*N/A*            rozkazujący               mnoga      pierwsza  
-*N/A*            rozkazujący               mnoga      druga
-*N/A*            rozkazujący               mnoga      trzecia  
+rób              tryb rozkazujący          pojedyncza druga    
+*N/A*            tryb rozkazujący          pojedyncza trzecia  
+*N/A*            tryb rozkazujący          mnoga      pierwsza  
+*N/A*            tryb rozkazujący          mnoga      druga
+*N/A*            tryb rozkazujący          mnoga      trzecia  
 robiony          imiesłów przym. bierny    pojedyncza \*        m
 *N/A*            imiesłów przym. bierny    pojedyncza \*        ż
 *N/A*            imiesłów przym. bierny    pojedyncza \*        n
@@ -92,11 +92,11 @@ zrobi            czas przyszły             pojedyncza trzeca
 *N/A*            czas przyszły             mnoga      pierwsza
 *N/A*            czas przyszły             mnoga      druga
 zrobią           czas przyszły             mnoga      trzecia
-zrób             rozkazujący  	           pojedyncza druga    
-*N/A*            rozkazujący               pojedyncza trzecia  
-*N/A*            rozkazujący               mnoga      pierwsza  
-*N/A*            rozkazujący               mnoga      druga
-*N/A*            rozkazujący               mnoga      trzecia  
+zrób             tryb rozkazujący          pojedyncza druga    
+*N/A*            tryb rozkazujący          pojedyncza trzecia  
+*N/A*            tryb rozkazujący          mnoga      pierwsza  
+*N/A*            tryb rozkazujący          mnoga      druga
+*N/A*            tryb rozkazujący          mnoga      trzecia  
 zrobiony         imiesłów przym. bierny    pojedyncza \*        m
 *N/A*            imiesłów przym. bierny    pojedyncza \*        ż
 *N/A*            imiesłów przym. bierny    pojedyncza \*        n
@@ -185,26 +185,26 @@ będą robili      czas przyszły           mnoga      trzecia  m
 będziemy robiły  czas przyszły           mnoga      pierwsza ż, n
 będziecie robiły czas przyszły           mnoga      druga    ż, n
 będą robiły      czas przyszły           mnoga      trzecia  ż, n
-robiłbym         przypuszczający         pojedyncza pierwsza m
-robiłabym        przypuszczający         pojedyncza pierwsza ż
-robiłobym        przypuszczający         pojedyncza pierwsza n
-robiłbyś         przypuszczający         pojedyncza druga    m
-robiłabyś        przypuszczający         pojedyncza druga    ż
-robiłobyś        przypuszczający         pojedyncza druga    n
-robiłby          przypuszczający         pojedyncza trzecia  m
-robiłaby         przypuszczający         pojedyncza trzecia  ż
-robiłoby         przypuszczający         pojedyncza trzecia  n
-robiłybyśmy      przypuszczający         mnoga      pierwsza m
-robiłybyśmy      przypuszczający         mnoga      pierwsza ż, n
-robiłybyście     przypuszczający         mnoga      druga    m
-robiłybyście     przypuszczający         mnoga      druga    ż, n
-robiłyby         przypuszczający         mnoga      trzecia  m
-robiłyby         przypuszczający         mnoga      trzecia  ż, n
-rób              rozkazujący	         pojedyncza druga    
-niech robi       rozkazujący             pojedyncza trzecia  
-*N/A*            rozkazujący             mnoga      pierwsza  
-*N/A*            rozkazujący             mnoga      druga
-niech robią      rozkazujący             mnoga      trzecia  
+robiłbym         tryb przypuszczający    pojedyncza pierwsza m
+robiłabym        tryb przypuszczający    pojedyncza pierwsza ż
+robiłobym        tryb przypuszczający    pojedyncza pierwsza n
+robiłbyś         tryb przypuszczający    pojedyncza druga    m
+robiłabyś        tryb przypuszczający    pojedyncza druga    ż
+robiłobyś        tryb przypuszczający    pojedyncza druga    n
+robiłby          tryb przypuszczający    pojedyncza trzecia  m
+robiłaby         tryb przypuszczający    pojedyncza trzecia  ż
+robiłoby         tryb przypuszczający    pojedyncza trzecia  n
+robiłybyśmy      tryb przypuszczający    mnoga      pierwsza m
+robiłybyśmy      tryb przypuszczający    mnoga      pierwsza ż, n
+robiłybyście     tryb przypuszczający    mnoga      druga    m
+robiłybyście     tryb przypuszczający    mnoga      druga    ż, n
+robiłyby         tryb przypuszczający    mnoga      trzecia  m
+robiłyby         tryb przypuszczający    mnoga      trzecia  ż, n
+rób              tryb rozkazujący        pojedyncza druga    
+niech robi       tryb rozkazujący        pojedyncza trzecia  
+*N/A*            tryb rozkazujący        mnoga      pierwsza  
+*N/A*            tryb rozkazujący        mnoga      druga
+niech robią      tryb rozkazujący        mnoga      trzecia  
 robiono	         bezos. czasu przeszłego 
 robienie         rzecz. odczasownikowy   
 robiąc           im. przys. współczesny   
