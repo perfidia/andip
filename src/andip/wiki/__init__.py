@@ -85,7 +85,7 @@ class PlWikiProvider(WikiProvider):
                 for forma in dictionary[base_word]['aspekt'][aspekt]['forma'].keys():
                     for liczba in dictionary[base_word]['aspekt'][aspekt]['forma'][forma]['liczba'].keys():
                         for osoba in dictionary[base_word]['aspekt'][aspekt]['forma'][forma]['liczba'][liczba]['osoba'].keys():
-                            if forma == 'czas przeszły':
+                            if forma == 'czas przeszły' or (forma == 'czas przyszły' and aspekt == 'niedokonane'):
                                 for rodzaj in dictionary[base_word]['aspekt'][aspekt]['forma'][forma]['liczba'][liczba]['osoba'][osoba]['rodzaj'].keys():
                                     if dictionary[base_word]['aspekt'][aspekt]['forma'][forma]['liczba'][liczba]['osoba'][osoba]['rodzaj'][rodzaj] == word:
                                         return [('czasownik', base_word,
@@ -175,7 +175,7 @@ class PlWikiProvider(WikiProvider):
         configuration[base_word]['aspekt'] = {}
         configuration[base_word]['aspekt'][done] = {}
         configuration[base_word]['aspekt'][done]['forma'] = {}
-        for forma in ['czas teraźniejszy', 'czas przeszły']:
+        for forma in ['czas przeszły', 'czas przyszły', 'czas teraźniejszy']:
             configuration[base_word]['aspekt'][done]['forma'][forma] = {}
             configuration[base_word]['aspekt'][done]['forma'][forma]['liczba'] = {}
             for liczba in ['pojedyncza', 'mnoga']:
@@ -191,8 +191,18 @@ class PlWikiProvider(WikiProvider):
                                 configuration[base_word]['aspekt'][done]['forma'][forma]['liczba'][liczba]['osoba'][osoba]['rodzaj'][rodzaj] = conj.get_word_past(config['koniugacja'], forma, liczba, rodzaj, osoba, base_word)
                         except Exception:
                             pass
-                    else:
-                        configuration[base_word]['aspekt'][done]['forma'][forma]['liczba'][liczba]['osoba'][osoba] =  conj.get_word_present(config['koniugacja'],forma, liczba, osoba, base_word)
+                    elif forma == 'czas teraźniejszy':
+                        if done == 'niedokonane':
+                            configuration[base_word]['aspekt'][done]['forma'][forma]['liczba'][liczba]['osoba'][osoba] =  conj.get_word_present(config['koniugacja'],forma, liczba, osoba, base_word)
+                        else:
+                            configuration[base_word]['aspekt'][done]['forma']['czas przyszły']['liczba'][liczba]['osoba'][osoba] = conj.get_word_present(config['koniugacja'],forma, liczba, osoba, base_word)
+                    elif done == 'niedokonane':
+                        configuration[base_word]['aspekt'][done]['forma'][forma]['liczba'][liczba]['osoba'][osoba]['rodzaj'] = {}
+                        try:
+                            for rodzaj in ['m', 'ż', 'n']:
+                                configuration[base_word]['aspekt'][done]['forma'][forma]['liczba'][liczba]['osoba'][osoba]['rodzaj'][rodzaj] = self.__schema.byc_future['liczba'][liczba]['osoba'][osoba]['rodzaj'][rodzaj] +  " " + configuration[base_word]['aspekt'][done]['forma']['czas przeszły']['liczba'][liczba]['osoba']['trzecia']['rodzaj'][rodzaj]
+                        except Exception:
+                            pass
 
         return configuration[base_word]
 
@@ -248,10 +258,11 @@ class PlWikiProvider(WikiProvider):
         elif conf[0] == 'czasownik':
             fullconf = ('czasownik', conf[1], self.__get_conf_verb(conf[1], re.findall("\{\{odmiana-czasownik-polski([^\}]*)}}", word_about)))
             self._add_to_buffer(fullconf)
-            if conf[2]['forma'] == 'czas teraźniejszy':
-                return (fullconf[2]['aspekt'][conf[2]['aspekt']]['forma'][conf[2]['forma']]['liczba'][conf[2]['liczba']]['osoba'][conf[2]['osoba']], fullconf)
-            else:
+            if conf[2]['forma'] == 'czas przeszły' or (conf[2]['forma'] == 'czas przyszły' and conf[2]['aspekt'] == 'niedokonane'):
                 return (fullconf[2]['aspekt'][conf[2]['aspekt']]['forma'][conf[2]['forma']]['liczba'][conf[2]['liczba']]['osoba'][conf[2]['osoba']]['rodzaj'][conf[2]['rodzaj']], fullconf)
+            else:
+                return (fullconf[2]['aspekt'][conf[2]['aspekt']]['forma'][conf[2]['forma']]['liczba'][conf[2]['liczba']]['osoba'][conf[2]['osoba']], fullconf)
+
         elif conf[0] == 'rzeczownik':
             fullconf = ('rzeczownik', conf[1], self.__get_conf_noun(conf[1], re.findall("\{\{odmiana-rzeczownik-polski([^\}]*)\}\}", word_about)))
             self._add_to_buffer(fullconf)
