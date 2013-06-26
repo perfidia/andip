@@ -43,18 +43,18 @@ robili           czas przeszły             mnoga      trzecia  m
 *N/A*            czas przyszły             mnoga      pierwsza ż, n
 *N/A*            czas przyszły             mnoga      druga    ż, n
 *N/A*            czas przyszły             mnoga      trzecia  ż, n
-rób              rozkazujący  	           pojedyncza druga    
-*N/A*            rozkazujący               pojedyncza trzecia  
-*N/A*            rozkazujący               mnoga      pierwsza  
+rób              rozkazujący  	           pojedyncza druga
+*N/A*            rozkazujący               pojedyncza trzecia
+*N/A*            rozkazujący               mnoga      pierwsza
 *N/A*            rozkazujący               mnoga      druga
-*N/A*            rozkazujący               mnoga      trzecia  
+*N/A*            rozkazujący               mnoga      trzecia
 robiony          imiesłów przym. bierny    pojedyncza \*        m
 *N/A*            imiesłów przym. bierny    pojedyncza \*        ż
 *N/A*            imiesłów przym. bierny    pojedyncza \*        n
 robieni          imiesłów przym. bierny    mnoga      \*        m
 *N/A*            imiesłów przym. bierny    mnoga      \*        ż, n
-robiąc           imiesłów przysłówkowy   
-robiono	         bezos. czasu przeszłego 
+robiąc           imiesłów przysłówkowy
+robiono	         bezos. czasu przeszłego
 robienie         rzeczownik odczasownikowy
 ================ ========================= ========== ======== ======
 
@@ -107,18 +107,18 @@ zrobili          czas przeszły             mnoga      trzecia  m
 *N/A*            czas przyszły             mnoga      pierwsza ż, n
 *N/A*            czas przyszły             mnoga      druga    ż, n
 *N/A*            czas przyszły             mnoga      trzecia  ż, n
-zrób             rozkazujący  	           pojedyncza druga    
-*N/A*            rozkazujący               pojedyncza trzecia  
-*N/A*            rozkazujący               mnoga      pierwsza  
+zrób             rozkazujący  	           pojedyncza druga
+*N/A*            rozkazujący               pojedyncza trzecia
+*N/A*            rozkazujący               mnoga      pierwsza
 *N/A*            rozkazujący               mnoga      druga
-*N/A*            rozkazujący               mnoga      trzecia  
+*N/A*            rozkazujący               mnoga      trzecia
 zrobiony         imiesłów przym. bierny    pojedyncza \*        m
 *N/A*            imiesłów przym. bierny    pojedyncza \*        ż
 *N/A*            imiesłów przym. bierny    pojedyncza \*        n
 zrobieni         imiesłów przym. bierny    mnoga      \*        m
 *N/A*            imiesłów przym. bierny    mnoga      \*        ż, n
-zrobiwszy        imiesłów przysłówkowy   
-zrobiono         bezos. czasu przeszłego 
+zrobiwszy        imiesłów przysłówkowy
+zrobiono         bezos. czasu przeszłego
 zrobienie        rzeczownik odczasownikowy
 ================ ========================= ========== ======== ======
 
@@ -133,7 +133,7 @@ Czasowniki zwrotne
 ------------------
 
 dokonane
-+++++++++++
+++++++++
 
 Mapowanie jak dla czasowników dokonanych.
 
@@ -215,14 +215,14 @@ robiłybyście     przypuszczający         mnoga      druga    m
 robiłybyście     przypuszczający         mnoga      druga    ż, n
 robiłyby         przypuszczający         mnoga      trzecia  m
 robiłyby         przypuszczający         mnoga      trzecia  ż, n
-rób              rozkazujący	         pojedyncza druga    
-niech robi       rozkazujący             pojedyncza trzecia  
-*N/A*            rozkazujący             mnoga      pierwsza  
+rób              rozkazujący	         pojedyncza druga
+niech robi       rozkazujący             pojedyncza trzecia
+*N/A*            rozkazujący             mnoga      pierwsza
 *N/A*            rozkazujący             mnoga      druga
-niech robią      rozkazujący             mnoga      trzecia  
-robiono	         bezos. czasu przeszłego 
-robienie         rzecz. odczasownikowy   
-robiąc           im. przys. współczesny   
+niech robią      rozkazujący             mnoga      trzecia
+robiono	         bezos. czasu przeszłego
+robienie         rzecz. odczasownikowy
+robiąc           im. przys. współczesny
 zrobiwszy        im. przys. uprzedni
 ================ ======================= ========== ======== ======
 
@@ -234,7 +234,7 @@ brak zaprzeszłego tak
 ================= ==================
 
 Examples
-********
+++++++++
 
 `być <http://pl.wiktionary.org/wiki/by%C4%87>`_,
 ciąć,
@@ -246,7 +246,9 @@ mieć,
 móc,
 nieść,
 pachnieć,
+pomrzeć,
 pomóc,
+powinien,
 spiąć,
 siąść,
 trzeć,
@@ -275,7 +277,7 @@ VIIIa,
 VIIIb,
 IX,
 Xa,
-Xb,
+`Xb <http://pl.wiktionary.org/wiki/Aneks:J%C4%99zyk_polski_-_koniugacja_Xb>`_,
 Xc,
 XI.
 
