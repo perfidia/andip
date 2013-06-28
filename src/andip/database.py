@@ -14,7 +14,8 @@ class DatabaseProvider(DefaultProvider):
 
         This provider requires closing database after using (call close function).
 
-        :param path: path to database file
+        :param path: path to a database file
+        :type path: str
         :param backoff: (optional) backoff provider
         """
         DefaultProvider.__init__(self, backoff)
@@ -23,6 +24,7 @@ class DatabaseProvider(DefaultProvider):
         self.db = DB(self.storage)
         self.connection = self.db.open()
         self.root = self.connection.root()
+
         if not self.root:
             self.__dictionary_init()
 

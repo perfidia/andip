@@ -1,49 +1,44 @@
 Usage
 =====
 
-AnDiP implemets 3 data providers:
+AnDiP supports the following data providers:
 
-    * FileProvider - simple provider which reads data from txt file,
-    * DatabaseProvider - provider which uses Zope Database to store and gets data,
-    * WikiProvider - the most important, downloads necessary data from web (using wiktionary.org API) and store it locally.
+* ``FileProvider`` - simple provider which reads data from txt file,
+* ``DatabaseProvider`` - provider which uses Zope Database to store and gets data,
+* ``WikiProvider`` - the most important, downloads necessary data from web (using wiktionary.org API) and store it locally.
 
-Default provider API
-----------------------
+API
+---
 
-Each provider is an extension of DefaultProvider which provide two basic functions:
+Each provider provides the following functions:
 
-    **get_conf** *(word)* which takes as parameter a word and returns it's configuration,
+.. automethod:: andip.default.DefaultProvider.get_word
+.. automethod:: andip.default.DefaultProvider.get_conf
 
-    **get_word** *(conf)* which returns a word in specified configuration.
+**Note** Extension of file or database should not be specified.
 
+FileProvider
+++++++++++++
 
-Each configuration is a tuple build from three parts:
+.. automethod:: andip.FileProvider.__init__
 
-    #. part of a speech e.g. 'czasownik',
-    #. base word e.g. 'występują',
-    #. dictionary of properties e.g. {'aspekt': 'niedokonane', 'forma': 'czas terazniejszy', 'liczba': 'mnoga', 'osoba': 'trzecia'}.
+DatabaseProvider
+++++++++++++++++
 
-Simple example using FileProvider
-----------------------
+.. automethod:: andip.DatabaseProvider.__init__
+.. automethod:: andip.DatabaseProvider.close
+.. automethod:: andip.DatabaseProvider.save_model
 
-The code below shows how to create a simple application which gets configuration of word 'występują' using FileProvider.
+WikiProvider
+++++++++++++
 
-.. code-block:: python
-
-    from andip import FileProvider
-
-    ad1 = FileProvider("../data/polish")
-    print ad1.get_conf('występują')
-
-The result is actually in data/polish.txt file so it will be returned, otherwise exception.
-
-**Note** that we don't specify extension of file or database (in case of DatabaseProvider).
+.. automethod:: andip.PlWikiProvider.__init__
 
 Backoff mechanism
-----------------------
+-----------------
 
-If we want to search data using multiple providers we can simple do it using backoff process.
-To do it just create provider with optional backoff parameter.
+To search for a given data from multiple providers the backoff option can be used.
+To do it just provide other provider in a backoff parameter.
 
 .. code-block:: python
 
@@ -59,17 +54,20 @@ This code will try to find verb 'występują' using FileProvider. In case of fai
 **Remember** to close connection to database.
 
 WikiProvider
-----------------------
+------------
 
-WikiProvider is a special provider which connects to wiktionary.org API.
-For now, AnDiP provides only PlWikiProvider which extends WikiProvider to handle polish language.
+``WikiProvider`` is a special provider which connects to `Wiktionary <www.wiktionary.org>`_ (by using its API).
+For now, AnDiP supports only polish language (``PlWikiProvider``).
 
-**Note** that WikiProvider won't find data if you call **get_conf** *(word)* method. This inconvenience is due to fact that wiktionary.org API requires specifying the base form of the word which in case of **get_word** *(conf)* method is passed as second parameter of dictionary.
+**Note** that ``get_conf`` won't find data unless method ``get_word`` was called previously.
+This inconvenience is due to fact that Wiktionary's API requires specifying the base form of the word which in the case of ``get_word(conf)`` method is passed as a second parameter in dictionary.
 
 Saving new data
 ----------------------
 
-WikiProvider first look for given word in locally buffered data. If that succeed, the result is returned. If not, WikiProvider looks for data using wiktionary API. Downloaded data is stored in buffer so it can be reused next time without connecting to wiktionary.org.
+``WikiProvider`` first look for given word in locally buffered data.
+If that succeed, the result is returned. If not, WikiProvider looks for data using Wiktionary's API.
+Downloaded data is stored in a buffer so it can be reused next time without connecting to web page.
 Before terminating your program you can save buffered data into database using DatabaseProvider.
 
 .. code-block:: python
@@ -87,4 +85,5 @@ Before terminating your program you can save buffered data into database using D
     ad2.save_model(ad1.get_model())
     ad2.close()
 
-In this case, only configuration of word "robić" will be saved into database. PlWikiProvider will download and buffer only configuration for 'robić' because word 'być' and 'występować' is already accessible from FileProvider.
+In this case, only configuration of word "robić" will be saved into database.
+``PlWikiProvider`` will download and buffer only configuration for 'robić' because word 'być' and 'występować' is already accessible from ``FileProvider``.

@@ -6,16 +6,27 @@ class DefaultProvider(object):
         self.__backoff = backoff
 
     def get_word(self, conf):
-        """
-        Get a specified word from a dictionary.
+        """Get a specified word from a dictionary.
 
-        @param conf a tuple build from three parts:
-        - part of a speech,
-        - base word,
-        - dict of properties.
+        Each configuration is a tuple build from three parts:
+        * part of a speech,
+        * base word,
+        * dict of properties.
 
-        @return word in a specified configuration
+        :param conf: configuration of a word
+        :type conf: tuple built from the following elements: part of a speech(str), base word(str), properties(dict)
+
+        :return: word in a specified configuration
+        :rtype: str
+
+        :raises LookupError: if word not found
+
+        >>> from andip import FileProvider
+        >>> p = FileProvider("../data/polish")
+        >>> print p.get_word(("czasownik", "następować", {'aspekt': 'dokonane', 'forma': 'czas teraźniejszy', 'liczba': 'mnoga', 'osoba': 'trzecia'}))
+        następują
         """
+
         try:
             assert isinstance(conf, tuple)
             assert len(conf) == 3
@@ -37,16 +48,22 @@ class DefaultProvider(object):
         raise NotImplementedError("abstract method")
 
     def get_conf(self, word):
-        """
-        Get the configuration for a given word.
+        """Get configurations for a given word.
 
-        Each configuration is a tuple build from three parts:
-        - part of a speech,
-        - base word,
-        - dict of properties.
+        :param word: item for which configuration is required
+        :type word: str
 
-        @return a list with configurations
+        :returns: a list with configurations, see :class:`DefaultProvider.get_word`
+        :rtype: list of tuples
+
+        :raises LookupError: if word not found
+
+        >>> from andip import FileProvider
+        >>> p = FileProvider("../data/polish")
+        >>> print p.get_conf('występują')
+        [('czasownik', 'wyst\xc4\x99powa\xc4\x87', {'forma': 'czas tera\xc5\xbaniejszy', 'osoba': 'trzecia', 'aspekt': 'niedokonane', 'liczba': 'mnoga'})]
         """
+
         if isinstance(word, basestring) == False:
             raise ValueError("check parameters!")
         else:

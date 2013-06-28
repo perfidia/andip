@@ -6,6 +6,13 @@ from andip.default import DefaultProvider
 
 class FileProvider(DefaultProvider):
     def __init__(self, filename, backoff = None):
+        """Provider which browse data in text files.
+
+        :param filename: path to file with words
+        :type filename: str
+        :param backoff: optional backoff
+        """
+
         DefaultProvider.__init__(self, backoff)
         self.data_set = self.__load(filename)
         self.conf_cache = None
