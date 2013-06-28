@@ -1,7 +1,9 @@
 Verb mapping for wiktionary
 ===========================
 
-.. _my-reference-label:
+**Uwaga**: pierwsza osoba dla liczby pojedynczej trybu rozkazującego nie występuje w języku polskim
+
+.. _ref-czasowniki-niedokonane:
 
 Czasowniki niedokonane
 ----------------------
@@ -60,16 +62,16 @@ robiono	         bezosobowa czasu przeszłego
 robienie         rzeczownik odczasownikowy
 ================ ================================= ========== ======== ======
 
-=============================== ==================
-Parametr                        Dozwolone wartości
-=============================== ==================
-dokonany                        tak|nie
-koniugacja                      *patrz Koniugacja*
-czas przeszły                   [[tryb oznajmujący]]
-forma bezos. czasu przeszłego   [[forma bezosobowa]] 
-=============================== ==================
+============================= ========================================
+Parametr                      Dozwolone wartości
+============================= ========================================
+dokonany                      tak|nie
+koniugacja                    :ref:`patrz Koniugacja <ref-koniugacja>`
+czas przeszły                 [[tryb oznajmujący]]
+forma bezos. czasu przeszłego [[forma bezosobowa]]
+============================= ========================================
 
-.. _my-reference-label2:
+.. _ref-czasowniki-dokonane:
 
 Czasowniki dokonane
 -------------------
@@ -113,12 +115,12 @@ zrobiono         bezosobowa czasu przeszłego
 zrobienie        rzeczownik odczasownikowy
 ================ ================================= ========== ======== ======
 
-================= ==================
-Parametr          Dozwolone wartości
-================= ==================
-dokonany          tak
-koniugacja        *patrz Koniugacja*
-================= ==================
+========== ========================================
+Parametr   Dozwolone wartości
+========== ========================================
+dokonany   tak
+koniugacja :ref:`patrz Koniugacja <ref-koniugacja>`
+========== ========================================
 
 Czasowniki zwrotne
 ------------------
@@ -126,28 +128,28 @@ Czasowniki zwrotne
 dokonane
 ++++++++
 
-Mapowanie jak dla :ref:`czasowników regularnych dokonanych <my-reference-label>`.
+Mapowanie jak dla :ref:`czasowników regularnych dokonanych <ref-czasowniki-niedokonane>`.
 
-================= =========================================
-Parametr          Dozwolone wartości
-================= =========================================
-dokonany          nie
-się               się
-zrobić            *bezokolicznik*
-================= =========================================
+======== ==================
+Parametr Dozwolone wartości
+======== ==================
+dokonany nie
+się      się
+zrobić   *bezokolicznik*
+======== ==================
 
 niedokonane
 +++++++++++
 
-Mapowanie jak dla :ref:`czasowników regularnych niedokonanych <my-reference-label2>`.
+Mapowanie jak dla :ref:`czasowników regularnych niedokonanych <ref-czasowniki-dokonane>`.
 
-================= =========================================
-Parametr          Dozwolone wartości
-================= =========================================
-dokonany          nie
-się               się
-robić			  *bezokolicznik*
-================= =========================================
+======== ==================
+Parametr Dozwolone wartości
+======== ==================
+dokonany nie
+się      się
+robić	 *bezokolicznik*
+======== ==================
 
 Czasowniki nieregularne
 -----------------------
@@ -250,6 +252,8 @@ wziąć,
 zebrać,
 znaleźć.
 
+.. _ref-koniugacja:
+
 Koniugacja
 ----------
 
@@ -274,7 +278,7 @@ XI.
 
 .. rubric:: Footnotes
 
-.. [*] oznacza osobę pierwszą, drugą i trzecią
+.. [*] gwiazdka oznacza osobę pierwszą, drugą i trzecią
 
 .. rubric:: References
 
