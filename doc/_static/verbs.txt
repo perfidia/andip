@@ -1,111 +1,117 @@
 Verb mapping for wiktionary
 ===========================
 
+.. _my-reference-label:
+
 Czasowniki niedokonane
 ----------------------
 
-================ ========================= ========== ======== ======
-Wyraz            Forma                     Liczba     Osoba    Rodzaj
-================ ========================= ========== ======== ======
-robię            czas teraźniejszy         pojedyncza pierwsza
-*N/A*            czas teraźniejszy         pojedyncza druga
-robi             czas teraźniejszy         pojedyncza trzeca
-*N/A*            czas teraźniejszy         mnoga      pierwsza
-*N/A*            czas teraźniejszy         mnoga      druga
-robią            czas teraźniejszy         mnoga      trzecia
-robiłem          czas przeszły             pojedyncza pierwsza m
-*N/A*            czas przeszły             pojedyncza druga    m
-robił            czas przeszły             pojedyncza trzecia  m
-*N/A*            czas przeszły             pojedyncza druga    ż
-*N/A*            czas przeszły             pojedyncza trzecia  ż
-robiła           czas przeszły             pojedyncza pierwsza ż
-*N/A*            czas przeszły             pojedyncza pierwsza n
-*N/A*            czas przeszły             pojedyncza druga    n
-*N/A*            czas przeszły             pojedyncza trzecia  n
-*N/A*            czas przeszły             mnoga      pierwsza m
-*N/A*            czas przeszły             mnoga      druga    m
-robili           czas przeszły             mnoga      trzecia  m
-*N/A*            czas przeszły             mnoga      pierwsza ż, n
-*N/A*            czas przeszły             mnoga      druga    ż, n
-*N/A*            czas przeszły             mnoga      trzecia  ż, n
-*N/A*            czas przyszły             pojedyncza pierwsza m
-*N/A*            czas przyszły             pojedyncza druga    m
-*N/A*            czas przyszły             pojedyncza trzecia  m
-*N/A*            czas przyszły             pojedyncza pierwsza ż
-*N/A*            czas przyszły             pojedyncza druga    ż
-*N/A*            czas przyszły             pojedyncza trzecia  ż
-*N/A*            czas przyszły             pojedyncza pierwsza n
-*N/A*            czas przyszły             pojedyncza druga    n
-*N/A*            czas przyszły             pojedyncza trzecia  n
-*N/A*            czas przyszły             mnoga      pierwsza m
-*N/A*            czas przyszły             mnoga      druga    m
-*N/A*            czas przyszły             mnoga      trzecia  m
-*N/A*            czas przyszły             mnoga      pierwsza ż, n
-*N/A*            czas przyszły             mnoga      druga    ż, n
-*N/A*            czas przyszły             mnoga      trzecia  ż, n
-rób              tryb rozkazujący          pojedyncza druga
-*N/A*            tryb rozkazujący          pojedyncza trzecia
-*N/A*            tryb rozkazujący          mnoga      pierwsza
-*N/A*            tryb rozkazujący          mnoga      druga
-*N/A*            tryb rozkazujący          mnoga      trzecia
-robiony          imiesłów przym. bierny    pojedyncza \*        m
-*N/A*            imiesłów przym. bierny    pojedyncza \*        ż
-*N/A*            imiesłów przym. bierny    pojedyncza \*        n
-robieni          imiesłów przym. bierny    mnoga      \*        m
-*N/A*            imiesłów przym. bierny    mnoga      \*        ż, n
+================ ================================= ========== ======== ======
+Wyraz            Forma                             Liczba     Osoba    Rodzaj
+================ ================================= ========== ======== ======
+robię            czas teraźniejszy                 pojedyncza pierwsza
+*N/A*            czas teraźniejszy                 pojedyncza druga
+robi             czas teraźniejszy                 pojedyncza trzeca
+*N/A*            czas teraźniejszy                 mnoga      pierwsza
+*N/A*            czas teraźniejszy                 mnoga      druga
+robią            czas teraźniejszy                 mnoga      trzecia
+robiłem          czas przeszły                     pojedyncza pierwsza m
+*N/A*            czas przeszły                     pojedyncza druga    m
+robił            czas przeszły                     pojedyncza trzecia  m
+robiła           czas przeszły                     pojedyncza pierwsza ż
+*N/A*            czas przeszły                     pojedyncza druga    ż
+*N/A*            czas przeszły                     pojedyncza trzecia  ż
+*N/A*            czas przeszły                     pojedyncza pierwsza n
+*N/A*            czas przeszły                     pojedyncza druga    n
+*N/A*            czas przeszły                     pojedyncza trzecia  n
+*N/A*            czas przeszły                     mnoga      pierwsza m
+*N/A*            czas przeszły                     mnoga      druga    m
+robili           czas przeszły                     mnoga      trzecia  m
+*N/A*            czas przeszły                     mnoga      pierwsza ż, n
+*N/A*            czas przeszły                     mnoga      druga    ż, n
+*N/A*            czas przeszły                     mnoga      trzecia  ż, n
+*N/A*            czas przyszły                     pojedyncza pierwsza m
+*N/A*            czas przyszły                     pojedyncza druga    m
+*N/A*            czas przyszły                     pojedyncza trzecia  m
+*N/A*            czas przyszły                     pojedyncza pierwsza ż
+*N/A*            czas przyszły                     pojedyncza druga    ż
+*N/A*            czas przyszły                     pojedyncza trzecia  ż
+*N/A*            czas przyszły                     pojedyncza pierwsza n
+*N/A*            czas przyszły                     pojedyncza druga    n
+*N/A*            czas przyszły                     pojedyncza trzecia  n
+*N/A*            czas przyszły                     mnoga      pierwsza m
+*N/A*            czas przyszły                     mnoga      druga    m
+*N/A*            czas przyszły                     mnoga      trzecia  m
+*N/A*            czas przyszły                     mnoga      pierwsza ż, n
+*N/A*            czas przyszły                     mnoga      druga    ż, n
+*N/A*            czas przyszły                     mnoga      trzecia  ż, n
+rób              tryb rozkazujący                  pojedyncza druga
+*N/A*            tryb rozkazujący                  pojedyncza trzecia
+*N/A*            tryb rozkazujący                  mnoga      pierwsza
+*N/A*            tryb rozkazujący                  mnoga      druga
+*N/A*            tryb rozkazujący                  mnoga      trzecia
+robiony          imiesłów przymiotnikowy bierny    pojedyncza [*]_        m
+*N/A*            imiesłów przymiotnikowy bierny    pojedyncza \*        ż
+*N/A*            imiesłów przymiotnikowy bierny    pojedyncza \*        n
+robieni          imiesłów przymiotnikowy bierny    mnoga      \*        m
+*N/A*            imiesłów przymiotnikowy bierny    mnoga      \*        ż, n
 robiąc           imiesłów przysłówkowy
-robiono	         bezos. czasu przeszłego
+robiono	         bezosobowa czasu przeszłego
 robienie         rzeczownik odczasownikowy
-================ ========================= ========== ======== ======
+================ ================================= ========== ======== ======
 
-================= ==================
-Parametr          Dozwolone wartości
-================= ==================
-dokonany          nie
-koniugacja        *patrz Koniugacja*
-================= ==================
+=============================== ==================
+Parametr                        Dozwolone wartości
+=============================== ==================
+dokonany                        tak|nie
+koniugacja                      *patrz Koniugacja*
+czas przeszły                   [[tryb oznajmujący]]
+forma bezos. czasu przeszłego   [[forma bezosobowa]] 
+=============================== ==================
+
+.. _my-reference-label2:
 
 Czasowniki dokonane
 -------------------
 
-================ ========================= ========== ======== ======
-Wyraz            Forma                     Liczba     Osoba    Rodzaj
-================ ========================= ========== ======== ======
-zrobiłem         czas przeszły             pojedyncza pierwsza m
-*N/A*            czas przeszły             pojedyncza druga    m
-zrobił           czas przeszły             pojedyncza trzecia  m
-*N/A*            czas przeszły             pojedyncza druga    ż
-*N/A*            czas przeszły             pojedyncza trzecia  ż
-zrobiła          czas przeszły             pojedyncza pierwsza ż
-*N/A*            czas przeszły             pojedyncza pierwsza n
-*N/A*            czas przeszły             pojedyncza druga    n
-*N/A*            czas przeszły             pojedyncza trzecia  n
-*N/A*            czas przeszły             mnoga      pierwsza m
-*N/A*            czas przeszły             mnoga      druga    m
-zrobili          czas przeszły             mnoga      trzecia  m
-*N/A*            czas przeszły             mnoga      pierwsza ż, n
-*N/A*            czas przeszły             mnoga      druga    ż, n
-*N/A*            czas przeszły             mnoga      trzecia  ż, n
-zrobię           czas przyszły             pojedyncza pierwsza
-*N/A*            czas przyszły             pojedyncza druga
-zrobi            czas przyszły             pojedyncza trzeca
-*N/A*            czas przyszły             mnoga      pierwsza
-*N/A*            czas przyszły             mnoga      druga
-zrobią           czas przyszły             mnoga      trzecia
-zrób             tryb rozkazujący          pojedyncza druga
-*N/A*            tryb rozkazujący          pojedyncza trzecia
-*N/A*            tryb rozkazujący          mnoga      pierwsza
-*N/A*            tryb rozkazujący          mnoga      druga
-*N/A*            tryb rozkazujący          mnoga      trzecia
-zrobiony         imiesłów przym. bierny    pojedyncza \*        m
-*N/A*            imiesłów przym. bierny    pojedyncza \*        ż
-*N/A*            imiesłów przym. bierny    pojedyncza \*        n
-zrobieni         imiesłów przym. bierny    mnoga      \*        m
-*N/A*            imiesłów przym. bierny    mnoga      \*        ż, n
+================ ================================= ========== ======== ======
+Wyraz            Forma                             Liczba     Osoba    Rodzaj
+================ ================================= ========== ======== ======
+zrobiłem         czas przeszły                     pojedyncza pierwsza m
+*N/A*            czas przeszły                     pojedyncza druga    m
+zrobił           czas przeszły                     pojedyncza trzecia  m
+zrobiła          czas przeszły                     pojedyncza pierwsza ż
+*N/A*            czas przeszły                     pojedyncza druga    ż
+*N/A*            czas przeszły                     pojedyncza trzecia  ż
+*N/A*            czas przeszły                     pojedyncza pierwsza n
+*N/A*            czas przeszły                     pojedyncza druga    n
+*N/A*            czas przeszły                     pojedyncza trzecia  n
+*N/A*            czas przeszły                     mnoga      pierwsza m
+*N/A*            czas przeszły                     mnoga      druga    m
+zrobili          czas przeszły                     mnoga      trzecia  m
+*N/A*            czas przeszły                     mnoga      pierwsza ż, n
+*N/A*            czas przeszły                     mnoga      druga    ż, n
+*N/A*            czas przeszły                     mnoga      trzecia  ż, n
+zrobię           czas przyszły                     pojedyncza pierwsza
+*N/A*            czas przyszły                     pojedyncza druga
+zrobi            czas przyszły                     pojedyncza trzeca
+*N/A*            czas przyszły                     mnoga      pierwsza
+*N/A*            czas przyszły                     mnoga      druga
+zrobią           czas przyszły                     mnoga      trzecia
+zrób             tryb rozkazujący                  pojedyncza druga
+*N/A*            tryb rozkazujący                  pojedyncza trzecia
+*N/A*            tryb rozkazujący                  mnoga      pierwsza
+*N/A*            tryb rozkazujący                  mnoga      druga
+*N/A*            tryb rozkazujący                  mnoga      trzecia
+zrobiony         imiesłów przymiotnikowy bierny    pojedyncza \*        m
+*N/A*            imiesłów przymiotnikowy bierny    pojedyncza \*        ż
+*N/A*            imiesłów przymiotnikowy bierny    pojedyncza \*        n
+zrobieni         imiesłów przymiotnikowy bierny    mnoga      \*        m
+*N/A*            imiesłów przymiotnikowy bierny    mnoga      \*        ż, n
 zrobiwszy        imiesłów przysłówkowy
-zrobiono         bezos. czasu przeszłego
+zrobiono         bezosobowa czasu przeszłego
 zrobienie        rzeczownik odczasownikowy
-================ ========================= ========== ======== ======
+================ ================================= ========== ======== ======
 
 ================= ==================
 Parametr          Dozwolone wartości
@@ -120,7 +126,7 @@ Czasowniki zwrotne
 dokonane
 ++++++++
 
-Mapowanie jak dla czasowników dokonanych.
+Mapowanie jak dla :ref:`czasowników regularnych dokonanych <my-reference-label>`.
 
 ================= =========================================
 Parametr          Dozwolone wartości
@@ -133,7 +139,7 @@ zrobić            *bezokolicznik*
 niedokonane
 +++++++++++
 
-Mapowanie jak dla czasowników niedokonanych.
+Mapowanie jak dla :ref:`czasowników regularnych niedokonanych <my-reference-label2>`.
 
 ================= =========================================
 Parametr          Dozwolone wartości
@@ -146,70 +152,70 @@ robić			  *bezokolicznik*
 Czasowniki nieregularne
 -----------------------
 
-================ ======================= ========== ======== ======
-Wyraz            Forma                   Liczba     Osoba    Rodzaj
-================ ======================= ========== ======== ======
-robię            czas teraźniejszy       pojedyncza pierwsza
-robisz           czas teraźniejszy       pojedyncza druga
-robi             czas teraźniejszy       pojedyncza trzeca
-robimy           czas teraźniejszy       mnoga      pierwsza
-robicie          czas teraźniejszy       mnoga      druga
-robią            czas teraźniejszy       mnoga      trzecia
-robiłem          czas przeszły           pojedyncza pierwsza m
-*N/A*            czas przeszły           pojedyncza druga    m
-robił            czas przeszły           pojedyncza trzecia  m
-*N/A*            czas przeszły           pojedyncza druga    ż
-*N/A*            czas przeszły           pojedyncza trzecia  ż
-robiła           czas przeszły           pojedyncza pierwsza ż
-*N/A*            czas przeszły           pojedyncza pierwsza n
-*N/A*            czas przeszły           pojedyncza druga    n
-*N/A*            czas przeszły           pojedyncza trzecia  n
-*N/A*            czas przeszły           mnoga      pierwsza m
-*N/A*            czas przeszły           mnoga      druga    m
-robili           czas przeszły           mnoga      trzecia  m
-*N/A*            czas przeszły           mnoga      pierwsza ż, n
-*N/A*            czas przeszły           mnoga      druga    ż, n
-*N/A*            czas przeszły           mnoga      trzecia  ż, n
-będę robił       czas przyszły           pojedyncza pierwsza m
-będziesz robił   czas przyszły           pojedyncza druga    m
-będzie robił     czas przyszły           pojedyncza trzecia  m
-będę robiła      czas przyszły           pojedyncza pierwsza ż
-będziesz robiła  czas przyszły           pojedyncza druga    ż
-będzie robiła    czas przyszły           pojedyncza trzecia  ż
-będę robiło      czas przyszły           pojedyncza pierwsza n
-będziesz robiło  czas przyszły           pojedyncza druga    n
-będzie robiło    czas przyszły           pojedyncza trzecia  n
-będziemy robili  czas przyszły           mnoga      pierwsza m
-będziecie robili czas przyszły           mnoga      druga    m
-będą robili      czas przyszły           mnoga      trzecia  m
-będziemy robiły  czas przyszły           mnoga      pierwsza ż, n
-będziecie robiły czas przyszły           mnoga      druga    ż, n
-będą robiły      czas przyszły           mnoga      trzecia  ż, n
-robiłbym         przypuszczający         pojedyncza pierwsza m
-robiłabym        przypuszczający         pojedyncza pierwsza ż
-robiłobym        przypuszczający         pojedyncza pierwsza n
-robiłbyś         przypuszczający         pojedyncza druga    m
-robiłabyś        przypuszczający         pojedyncza druga    ż
-robiłobyś        przypuszczający         pojedyncza druga    n
-robiłby          przypuszczający         pojedyncza trzecia  m
-robiłaby         przypuszczający         pojedyncza trzecia  ż
-robiłoby         przypuszczający         pojedyncza trzecia  n
-robiłybyśmy      przypuszczający         mnoga      pierwsza m
-robiłybyśmy      przypuszczający         mnoga      pierwsza ż, n
-robiłybyście     przypuszczający         mnoga      druga    m
-robiłybyście     przypuszczający         mnoga      druga    ż, n
-robiłyby         przypuszczający         mnoga      trzecia  m
-robiłyby         przypuszczający         mnoga      trzecia  ż, n
-rób              rozkazujący	         pojedyncza druga
-niech robi       rozkazujący             pojedyncza trzecia
-*N/A*            rozkazujący             mnoga      pierwsza
-*N/A*            rozkazujący             mnoga      druga
-niech robią      rozkazujący             mnoga      trzecia
-robiono	         bezos. czasu przeszłego
-robienie         rzecz. odczasownikowy
-robiąc           im. przys. współczesny
-zrobiwszy        im. przys. uprzedni
-================ ======================= ========== ======== ======
+================ ================================= ========== ======== ======
+Wyraz            Forma                             Liczba     Osoba    Rodzaj
+================ ================================= ========== ======== ======
+robię            czas teraźniejszy                 pojedyncza pierwsza
+robisz           czas teraźniejszy                 pojedyncza druga
+robi             czas teraźniejszy                 pojedyncza trzeca
+robimy           czas teraźniejszy                 mnoga      pierwsza
+robicie          czas teraźniejszy                 mnoga      druga
+robią            czas teraźniejszy                 mnoga      trzecia
+robiłem          czas przeszły                     pojedyncza pierwsza m
+*N/A*            czas przeszły                     pojedyncza druga    m
+robił            czas przeszły                     pojedyncza trzecia  m
+robiła           czas przeszły                     pojedyncza pierwsza ż
+*N/A*            czas przeszły                     pojedyncza druga    ż
+*N/A*            czas przeszły                     pojedyncza trzecia  ż
+*N/A*            czas przeszły                     pojedyncza pierwsza n
+*N/A*            czas przeszły                     pojedyncza druga    n
+*N/A*            czas przeszły                     pojedyncza trzecia  n
+*N/A*            czas przeszły                     mnoga      pierwsza m
+*N/A*            czas przeszły                     mnoga      druga    m
+robili           czas przeszły                     mnoga      trzecia  m
+*N/A*            czas przeszły                     mnoga      pierwsza ż, n
+*N/A*            czas przeszły                     mnoga      druga    ż, n
+*N/A*            czas przeszły                     mnoga      trzecia  ż, n
+będę robił       czas przyszły                     pojedyncza pierwsza m
+będziesz robił   czas przyszły                     pojedyncza druga    m
+będzie robił     czas przyszły                     pojedyncza trzecia  m
+będę robiła      czas przyszły                     pojedyncza pierwsza ż
+będziesz robiła  czas przyszły                     pojedyncza druga    ż
+będzie robiła    czas przyszły                     pojedyncza trzecia  ż
+będę robiło      czas przyszły                     pojedyncza pierwsza n
+będziesz robiło  czas przyszły                     pojedyncza druga    n
+będzie robiło    czas przyszły                     pojedyncza trzecia  n
+będziemy robili  czas przyszły                     mnoga      pierwsza m
+będziecie robili czas przyszły                     mnoga      druga    m
+będą robili      czas przyszły                     mnoga      trzecia  m
+będziemy robiły  czas przyszły                     mnoga      pierwsza ż, n
+będziecie robiły czas przyszły                     mnoga      druga    ż, n
+będą robiły      czas przyszły                     mnoga      trzecia  ż, n
+robiłbym         tryb przypuszczający              pojedyncza pierwsza m
+robiłabym        tryb przypuszczający              pojedyncza pierwsza ż
+robiłobym        tryb przypuszczający              pojedyncza pierwsza n
+robiłbyś         tryb przypuszczający              pojedyncza druga    m
+robiłabyś        tryb przypuszczający              pojedyncza druga    ż
+robiłobyś        tryb przypuszczający              pojedyncza druga    n
+robiłby          tryb przypuszczający              pojedyncza trzecia  m
+robiłaby         tryb przypuszczający              pojedyncza trzecia  ż
+robiłoby         tryb przypuszczający              pojedyncza trzecia  n
+robiłybyśmy      tryb przypuszczający              mnoga      pierwsza m
+robiłybyśmy      tryb przypuszczający              mnoga      pierwsza ż, n
+robiłybyście     tryb przypuszczający              mnoga      druga    m
+robiłybyście     tryb przypuszczający              mnoga      druga    ż, n
+robiłyby         tryb przypuszczający              mnoga      trzecia  m
+robiłyby         tryb przypuszczający              mnoga      trzecia  ż, n
+rób              tryb rozkazujący                  pojedyncza druga
+niech robi       tryb rozkazujący                  pojedyncza trzecia
+*N/A*            tryb rozkazujący                  mnoga      pierwsza
+*N/A*            tryb rozkazujący                  mnoga      druga
+niech robią      tryb rozkazujący                  mnoga      trzecia
+robiono	         bezosobowa czasu przeszłego
+robienie         rzeczownik odczasownikowy
+robiąc           imiesłów przysłówkowy współczesny
+zrobiwszy        imiesłów przysłówkowy uprzedni
+================ ================================= ========== ======== ======
 
 ================= ==================
 Parametr          Dozwolone wartości
@@ -265,6 +271,10 @@ Xa,
 `Xb <http://pl.wiktionary.org/wiki/Aneks:J%C4%99zyk_polski_-_koniugacja_Xb>`_,
 Xc,
 XI.
+
+.. rubric:: Footnotes
+
+.. [*] oznacza osobę pierwszą, drugą i trzecią
 
 .. rubric:: References
 
