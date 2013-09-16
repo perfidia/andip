@@ -1,910 +1,910 @@
 {
-	'zaimek': {
-		'word': {
-			# from http://pl.wiktionary.org/wiki/Aneks:J%C4%99zyk_polski_-_zaimki
-			'ja': {
-				'przypadek': {
-					'mianownik': {
-						'liczba': {
-							'pojedyncza': {
-								'osoba': {
-									'pierwsza': 'ja',
-									'druga': 'ty',
-									'trzecia': {
-										'rodzaj': {
-											'm': 'on',
-											'ż': 'ona',
-											'n': 'ono'
-										}
-									}
-								}
-							},
-							'mnoga': {
-								'osoba': {
-									'pierwsza': 'my',
-									'druga': 'wy',
-									'trzecia': {
-										'rodzaj': {
-											'm': 'oni',
-											'nm': 'one'
-										}
-									}
-								}
-							}
-						}
-					}, # end mianownik
-					'celownik': {
-						'liczba': {
-							'pojedyncza': {
-								'osoba': {
-									'trzecia': {
-										'rodzaj': {
-											'm': 'niemu',
-											'ż': 'niej',
-											'n': 'niemu'
-										}
-									}
-								}
-							},
-							'mnoga': {
-								'osoba': {
-									'trzecia': {
-										'rodzaj': {
-											'm': 'nim',
-											'nm': 'nim'
-										}
-									}
-								}
-							}
-						} # end liczba
-					}, # end celownik
-					'miejscownik': {
-						'liczba': {
-							'pojedyncza': {
-								'osoba': {
-									'pierwsza': 'mnie',
-									'druga': 'tobie',
-									'trzecia': {
-										'rodzaj': {
-											'm': 'nim',
-											'ż': 'niej',
-											'n': 'nim'
-										}
-									}
-								}
-							},
-							'mnoga': {
-								'osoba': {
-									'pierwsza': 'nas',
-									'druga': 'was',
-									'trzecia': {
-										'rodzaj': {
-											'm': 'nich',
-											'nm': 'nich'
-										}
-									}
-								}
-							}
-						} # end liczba
-					} # end miejscownik
-				} # end przypadek
-			}, # end ja
-			# from http://pl.wiktionary.org/wiki/kt%C3%B3ry
-			'który': {
-				'przypadek': {
-					'mianownik': {
-						'liczba': {
-							'pojedyncza': {
-								'rodzaj': {
-									'mos':  'który',
-									'mzw':  'który',
-									'mrz':  'który',
-									'ż':    'która',
-									'n':    'które'
-								}
-							},
-							'mnoga': {
-								'rodzaj': {
-									'mos':  'którzy',
-									'nmos': 'które'
-								}
-							}
-						}
-					}, # end mianownik
-					'dopełniacz': {
-						'liczba': {
-							'pojedyncza': {
-								'rodzaj': {
-									'mos':  'którego',
-									'mzw':  'którego',
-									'mrz':  'którego',
-									'ż':    'której',
-									'n':    'którego'
-								}
-							},
-							'mnoga': {
-								'rodzaj': {
-									'mos':  'których',
-									'nmos': 'których'
-								}
-							}
-						}
-					}, # end dopełniacz
-					'miejscownik': {
-						'liczba': {
-							'pojedyncza': {
-								'rodzaj': {
-									'mos':  'którym',
-									'mzw':  'którym',
-									'mrz':  'którym',
-									'ż':    'której',
-									'n':    'którym'
-								}
-							},
-							'mnoga': {
-								'rodzaj': {
-									'mos':  'których',
-									'nmos': 'których'
-								}
-							}
-						}
-					}, # end miejscownik
-				} # end przypadek
-			}, # end ktory
-		} # end word
-	}, # end zaimek
-	'czasownik': {
-		'word': {
-			'następować': {
-				'aspekt': {
-					'dokonane': {
-						'forma': {
-							'czas teraźniejszy': {
-								'liczba': {
-									'pojedyncza': {
-										'osoba': {
-											'pierwsza': 'następuje',
-											'druga':    'następujesz',
-											'trzecia':  'następuje',
-										}
-									},
-									'mnoga': {
-										'osoba': {
-											'pierwsza': 'następujemy',
-											'druga':    'następujecie',
-											'trzecia':  'następują',
-										}
-									},
-								}
-							}
-						}
-					}
-				}
-			}, # end nastąpić
-			'występować': {
-				'aspekt': {
-					'niedokonane': {
-						'forma': {
-							'czas teraźniejszy': {
-								'liczba': {
-									'pojedyncza': {
-										'osoba': {
-											'pierwsza': 'występuje',
-											'druga':    'występujesz',
-											'trzecia':  'występuje',
-										}
-									},
-									'mnoga': {
-										'osoba': {
-											'pierwsza': 'występujemy',
-											'druga':    'występujecie',
-											'trzecia':  'występują',
-										}
-									},
-								}
-							},
-							'czas przeszły': {
-								'liczba': {
-									'pojedyncza': {
-										'osoba': {
-											'pierwsza': {
-												'rodzaj': {
-													'm': 'występowałem',
-													'ż': 'występowałam',
-													'n': 'występowałom'
-												}
-											},
-											'druga': {
-												'rodzaj': {
-													'm': 'występowałeś',
-													'ż': 'występowałaś',
-													'n': 'występowałoś'
-												}
-											},
-											'trzecia': {
-												'rodzaj': {
-													'm': 'występował',
-													'ż': 'występowała',
-													'n': 'występowało'
-												}
-											}
-										}
-									},
-									'mnoga': {
-										'osoba': {
-											'pierwsza': {
-												'rodzaj': {
-													'm': 'występowaliśmy',
-													'ż': 'występowałyśmy',
-													'n': 'występowałyśmy'
-												}
-											},
-											'druga': {
-												'rodzaj': {
-													'm': 'występowaliście',
-													'ż': 'występowałyście',
-													'n': 'występowałyście'
-												}
-											},
-											'trzecia': {
-												'rodzaj': {
-													'm': 'występowali',
-													'ż': 'występowały',
-													'n': 'występowały'
-												}
-											}
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-			}, # end występować
-			'mieć': {
-				'aspekt': {
-					'dokonane': {
-						'forma': {
-							'czas teraźniejszy': {
-								'liczba': {
-									'pojedyncza': {
-										'osoba': {
-											'pierwsza': 'mam',
-											'druga':    'masz',
-											'trzecia':  'ma',
-										}
-									},
-									'mnoga': {
-										'osoba': {
-											'pierwsza': 'mamy',
-											'druga':    'macie',
-											'trzecia':  'mają',
-										}
-									},
-								}
-							},
-							'czas przeszły': {
-								'liczba': {
-									'pojedyncza': {
-										'osoba': {
-											'pierwsza': {
-												'rodzaj': {
-													'm': 'miałem',
-													'ż': 'miałam',
-													'n': 'miałom'
-												}
-											},
-											'druga': {
-												'rodzaj': {
-													'm': 'miałeś',
-													'ż': 'miałaś',
-													'n': 'miałoś'
-												}
-											},
-											'trzecia': {
-												'rodzaj': {
-													'm': 'miał',
-													'ż': 'miała',
-													'n': 'miało'
-												}
-											}
-										}
-									},
-									'mnoga': {
-										'osoba': {
-											'pierwsza': {
-												'rodzaj': {
-													'm': 'mieliśmy',
-													'ż': 'miałyśmy',
-													'n': 'miałyśmy'
-												}
-											},
-											'druga': {
-												'rodzaj': {
-													'm': 'mieliście',
-													'ż': 'miałyście',
-													'n': 'miałyście'
-												}
-											},
-											'trzecia': {
-												'rodzaj': {
-													'm': 'mieli',
-													'ż': 'miały',
-													'n': 'miały'
-												}
-											}
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-			}, # end mieć
-			'być': {
-				'aspekt': {
-					'niedokonane': {
-						'forma': {
-							'czas teraźniejszy': {
-								'liczba': {
-									'pojedyncza': {
-										'osoba': {
-											'pierwsza': 'jestem',
-											'druga': 'jesteś',
-											'trzecia': 'jest',
-										}
-									},
-									'mnoga': {
-										'osoba': {
-											'pierwsza': 'jesteśmy',
-											'druga': 'jesteście',
-											'trzecia': 'są',
-										}
-									}
-								}
-							},
-							'czas przeszły': {
-								'liczba': {
-									'pojedyncza': {
-										'osoba': {
-											'pierwsza': {
-												'rodzaj': {
-													'm': 'byłem',
-													'ż': 'byłam',
-													'n': 'byłom'
-												}
-											},
-											'druga': {
-												'rodzaj': {
-													'm': 'byłeś',
-													'ż': 'byłaś',
-													'n': 'byłoś'
-												}
-											},
-											'trzecia': {
-												'rodzaj': {
-													'm': 'był',
-													'ż': 'była',
-													'n': 'było'
-												}
-											}
-										}
-									},
-									'mnoga': {
-										'osoba': {
-											'pierwsza': {
-												'rodzaj': {
-													'm': 'byliśmy',
-													'ż': 'byłyśmy',
-													'n': 'byłyśmy'
-												}
-											},
-											'druga': {
-												'rodzaj': {
-													'm': 'byliście',
-													'ż': 'byłyście',
-													'n': 'byłyście'
-												}
-											},
-											'trzecia': {
-												'rodzaj': {
-													'm': 'byli',
-													'ż': 'były',
-													'n': 'były'
-												}
-											}
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-			}, # end być
-			'pozwolić': {
-				'aspekt': {
-					'dokonane': {
-						'forma': {
-							'czas teraźniejszy': {
-								'liczba': {
-									'pojedyncza': {
-										'osoba': {
-											'pierwsza': 'pozwolę',
-											'druga':    'pozwolisz',
-											'trzecia':  'pozwoli',
-										}
-									},
-									'mnoga': {
-										'osoba': {
-											'pierwsza': 'pozwolimy',
-											'druga':    'pozwolicie',
-											'trzecia':  'pozwolą',
-										}
-									},
-								}
-							},
-							'czas przeszły': {
-								'liczba': {
-									'pojedyncza': {
-										'osoba': {
-											'pierwsza': {
-												'rodzaj': {
-													'm': 'pozwoliłem',
-													'ż': 'pozwoliłam',
-													'n': 'pozwoliłom'
-												}
-											},
-											'druga': {
-												'rodzaj': {
-													'm': 'pozwoliłeś',
-													'ż': 'pozwoliłaś',
-													'n': 'pozwoliłoś'
-												}
-											},
-											'trzecia': {
-												'rodzaj': {
-													'm': 'pozwolił',
-													'ż': 'pozwoliła',
-													'n': 'pozwoliło'
-												}
-											}
-										}
-									},
-									'mnoga': {
-										'osoba': {
-											'pierwsza': {
-												'rodzaj': {
-													'm': 'pozwoliliśmy',
-													'ż': 'pozwoliłyśmy',
-													'n': 'pozwoliłyśmy'
-												}
-											},
-											'druga': {
-												'rodzaj': {
-													'm': 'pozwoliliście',
-													'ż': 'pozwoliłyście',
-													'n': 'pozwoliłyście'
-												}
-											},
-											'trzecia': {
-												'rodzaj': {
-													'm': 'pozwolili',
-													'ż': 'pozwoliły',
-													'n': 'pozwoliły'
-												}
-											}
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-			}, # end pozwolić
-			'stanowić': {
-				'aspekt': {
-					'dokonane': {
-						'forma': {
-							'czas teraźniejszy': {
-								'liczba': {
-									'pojedyncza': {
-										'osoba': {
-											'pierwsza': 'stanowię',
-											'druga':    'stanowisz',
-											'trzecia':  'stanowi',
-										}
-									},
-									'mnoga': {
-										'osoba': {
-											'pierwsza': 'stanowimy',
-											'druga':    'stanowicie',
-											'trzecia':  'stanowią',
-										}
-									},
-								}
-							},
-							'czas przeszły': {
-								'liczba': {
-									'pojedyncza': {
-										'osoba': {
-											'pierwsza': {
-												'rodzaj': {
-													'm': 'stanowiłem',
-													'ż': 'stanowiłam',
-													'n': 'stanowiłom'
-												}
-											},
-											'druga': {
-												'rodzaj': {
-													'm': 'stanowiłeś',
-													'ż': 'stanowiłaś',
-													'n': 'stanowiłoś'
-												}
-											},
-											'trzecia': {
-												'rodzaj': {
-													'm': 'stanowił',
-													'ż': 'stanowiła',
-													'n': 'stanowiło'
-												}
-											}
-										}
-									},
-									'mnoga': {
-										'osoba': {
-											'pierwsza': {
-												'rodzaj': {
-													'm': 'stanowiliśmy',
-													'ż': 'stanowiłyśmy',
-													'n': 'stanowiłyśmy'
-												}
-											},
-											'druga': {
-												'rodzaj': {
-													'm': 'stanowiliście',
-													'ż': 'stanowiłyście',
-													'n': 'stanowiłyście'
-												}
-											},
-											'trzecia': {
-												'rodzaj': {
-													'm': 'stanowili',
-													'ż': 'stanowiły',
-													'n': 'stanowiły'
-												}
-											}
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-			}, # end stanowić
-		} # end word
-	}, # end czasownik
-	'przymiotnik': {
-		'word': {
-			'opis': {
-				'liczba': {
-					'pojedyncza': {
-						'rodzaj': {
-							'm': 'opisany',
-							'ż': 'opisana',
-						}
-					},
-					'mnoga': {
-						'rodzaj': {
-							'm': 'opisane',
-							'ż': 'opisane',
-						}
-					}
-				}
-			} # end opis
-		}
-	}, # end przymiotnik
-	'przyimek': {
-		'word': {
-			'z': {
-				'forma': {
-					'z': 'z',
-					'ze': 'ze'
-				}
-			}
-		}
-	}, # end przyimek
-	'liczebnik': {
-		'word': {
-				'1': 'jednej',
-				'2': 'dwóch',
-				'3': 'trzech',
-				'4': 'czterech',
-				'5': 'pięciu',
-				'6': 'sześciu',
-				'7': 'siedmiu',
-				'8': 'ośmiu',
-				'9': 'dziewięciu',
-		}
-	}, # end liczebnik
-	'rzeczownik': {
-		'word': {
-			# from http://pl.wiktionary.org/wiki/Aneks:J%C4%99zyk_polski_-_zaimki
-			'znak': {
-				'przypadek': {
-					'mianownik': {
-						'liczba': {
-							'pojedyncza': 'znak',
-							'mnoga': 'znaki'
-						}
-					},
-					'dopełniacz': {
-						'liczba': {
-							'pojedyncza': 'znaku',
-							'mnoga': 'znaków'
-						}
-					},
-					'celownik': {
-						'liczba': {
-							'pojedyncza': 'znakowi',
-							'mnoga': 'znakom'
-						}
-					},
-					'biernik': {
-						'liczba': {
-							'pojedyncza': 'znak',
-							'mnoga': 'znaki'
-						}
-					},
-					'narzędnik': {
-						'liczba': {
-							'pojedyncza': 'znakiem',
-							'mnoga': 'znakami'
-						}
-					},
-					'miejscownik': {
-						'liczba': {
-							'pojedyncza': 'znaku',
-							'mnoga': 'znakach'
-						}
-					},
-					'wołacz': {
-						'liczba': {
-							'pojedyncza': 'znaku',
-							'mnoga': 'znaki'
-						}
-					}
-				}
-			}, # end znak
-			'cyfra': {
-				'przypadek': {
-					'mianownik': {
-						'liczba': {
-							'pojedyncza': 'cyfra',
-							'mnoga': 'cyfry'
-						}
-					},
-					'dopełniacz': {
-						'liczba': {
-							'pojedyncza': 'cyfry',
-							'mnoga': 'cyfr'
-						}
-					},
-					'celownik': {
-						'liczba': {
-							'pojedyncza': 'cyfrze',
-							'mnoga': 'cyfrom'
-						}
-					},
-					'biernik': {
-						'liczba': {
-							'pojedyncza': 'cyfrę',
-							'mnoga': 'cyfry'
-						}
-					},
-					'narzędnik': {
-						'liczba': {
-							'pojedyncza': 'cyfrą',
-							'mnoga': 'cyframi'
-						}
-					},
-					'miejscownik': {
-						'liczba': {
-							'pojedyncza': 'cyfrze',
-							'mnoga': 'cyfrach'
-						}
-					},
-					'wołacz': {
-						'liczba': {
-							'pojedyncza': 'cyfro',
-							'mnoga': 'cyfry'
-						}
-					}
-				}
-			}, # end cyfra
-			'kropka': {
-				'przypadek': {
-					'mianownik': {
-						'liczba': {
-							'pojedyncza': 'kropka',
-							'mnoga': 'kropki'
-						}
-					},
-					'dopełniacz': {
-						'liczba': {
-							'pojedyncza': 'kropki',
-							'mnoga': 'kropek'
-						}
-					},
-					'celownik': {
-						'liczba': {
-							'pojedyncza': 'kropce',
-							'mnoga': 'kropkom'
-						}
-					},
-					'biernik': {
-						'liczba': {
-							'pojedyncza': 'kropkę',
-							'mnoga': 'kropki'
-						}
-					},
-					'narzędnik': {
-						'liczba': {
-							'pojedyncza': 'kropką',
-							'mnoga': 'kropkami'
-						}
-					},
-					'miejscownik': {
-						'liczba': {
-							'pojedyncza': 'kropce',
-							'mnoga': 'kropkach'
-						}
-					},
-					'wołacz': {
-						'liczba': {
-							'pojedyncza': 'kropko',
-							'mnoga': 'kropki'
-						}
-					}
-				}
-			}, # end kropka
-			'dwukropek': {
-				'przypadek': {
-					'mianownik': {
-						'liczba': {
-							'pojedyncza': 'dwukropek',
-							'mnoga': 'dwukropki'
-						}
-					},
-					'dopełniacz': {
-						'liczba': {
-							'pojedyncza': 'dwukropka',
-							'mnoga': 'dwukropków'
-						}
-					},
-					'celownik': {
-						'liczba': {
-							'pojedyncza': 'dwukropkowi',
-							'mnoga': 'dwukropkom'
-						}
-					},
-					'biernik': {
-						'liczba': {
-							'pojedyncza': 'dwukropek',
-							'mnoga': 'dwukropki'
-						}
-					},
-					'narzędnik': {
-						'liczba': {
-							'pojedyncza': 'dwukropkiem',
-							'mnoga': 'dwukropkami'
-						}
-					},
-					'miejscownik': {
-						'liczba': {
-							'pojedyncza': 'dwukropku',
-							'mnoga': 'dwukropkach'
-						}
-					},
-					'wołacz': {
-						'liczba': {
-							'pojedyncza': 'dwukropku',
-							'mnoga': 'dwukropki'
-						}
-					}
-				}
-			}, # end dwukropek
-			'liczba': {
-				'przypadek': {
-					'mianownik': {
-						'liczba': {
-							'pojedyncza': 'liczba',
-							'mnoga': 'liczby'
-						}
-					},
-					'dopełniacz': {
-						'liczba': {
-							'pojedyncza': 'liczby',
-							'mnoga': 'liczb'
-						}
-					},
-					'celownik': {
-						'liczba': {
-							'pojedyncza': 'liczbie',
-							'mnoga': 'liczbom'
-						}
-					},
-					'biernik': {
-						'liczba': {
-							'pojedyncza': 'liczbę',
-							'mnoga': 'liczby'
-						}
-					},
-					'narzędnik': {
-						'liczba': {
-							'pojedyncza': 'liczbą',
-							'mnoga': 'liczbami'
-						}
-					},
-					'miejscownik': {
-						'liczba': {
-							'pojedyncza': 'liczbie',
-							'mnoga': 'liczbach'
-						}
-					},
-					'wołacz': {
-						'liczba': {
-							'pojedyncza': 'liczbo',
-							'mnoga': 'liczby'
-						}
-					}
-				}
-			}, # end liczba
-			'wykonawca': {
-				'przypadek': {
-					'mianownik': {
-						'liczba': {
-							'pojedyncza': 'wykonawca',
-							'mnoga': 'wykonawcy'
-						}
-					},
-					'dopełniacz': {
-						'liczba': {
-							'pojedyncza': 'wykonawcy',
-							'mnoga': 'wykonawców'
-						}
-					},
-					'celownik': {
-						'liczba': {
-							'pojedyncza': 'wykonawcy',
-							'mnoga': 'wykonawcom'
-						}
-					},
-					'biernik': {
-						'liczba': {
-							'pojedyncza': 'wykonawcę',
-							'mnoga': 'wykonawców'
-						}
-					},
-					'narzędnik': {
-						'liczba': {
-							'pojedyncza': 'wykonawcą',
-							'mnoga': 'wykonawcami'
-						}
-					},
-					'miejscownik': {
-						'liczba': {
-							'pojedyncza': 'wykonawcy',
-							'mnoga': 'wykonawcach'
-						}
-					},
-					'wołacz': {
-						'liczba': {
-							'pojedyncza': 'wykonawco',
-							'mnoga': 'wykonawcy'
-						}
-					}
-				}
-			}, # end wykonawca
-		}
-	}
+    'zaimek': {
+        'word': {
+            # from http://pl.wiktionary.org/wiki/Aneks:J%C4%99zyk_polski_-_zaimki
+            'ja': {
+                'przypadek': {
+                    'mianownik': {
+                        'liczba': {
+                            'pojedyncza': {
+                                'osoba': {
+                                    'pierwsza': 'ja',
+                                    'druga': 'ty',
+                                    'trzecia': {
+                                        'rodzaj': {
+                                            'm': 'on',
+                                            'ż': 'ona',
+                                            'n': 'ono'
+                                        }
+                                    }
+                                }
+                            },
+                            'mnoga': {
+                                'osoba': {
+                                    'pierwsza': 'my',
+                                    'druga': 'wy',
+                                    'trzecia': {
+                                        'rodzaj': {
+                                            'm': 'oni',
+                                            'nm': 'one'
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }, # end mianownik
+                    'celownik': {
+                        'liczba': {
+                            'pojedyncza': {
+                                'osoba': {
+                                    'trzecia': {
+                                        'rodzaj': {
+                                            'm': 'niemu',
+                                            'ż': 'niej',
+                                            'n': 'niemu'
+                                        }
+                                    }
+                                }
+                            },
+                            'mnoga': {
+                                'osoba': {
+                                    'trzecia': {
+                                        'rodzaj': {
+                                            'm': 'nim',
+                                            'nm': 'nim'
+                                        }
+                                    }
+                                }
+                            }
+                        } # end liczba
+                    }, # end celownik
+                    'miejscownik': {
+                        'liczba': {
+                            'pojedyncza': {
+                                'osoba': {
+                                    'pierwsza': 'mnie',
+                                    'druga': 'tobie',
+                                    'trzecia': {
+                                        'rodzaj': {
+                                            'm': 'nim',
+                                            'ż': 'niej',
+                                            'n': 'nim'
+                                        }
+                                    }
+                                }
+                            },
+                            'mnoga': {
+                                'osoba': {
+                                    'pierwsza': 'nas',
+                                    'druga': 'was',
+                                    'trzecia': {
+                                        'rodzaj': {
+                                            'm': 'nich',
+                                            'nm': 'nich'
+                                        }
+                                    }
+                                }
+                            }
+                        } # end liczba
+                    } # end miejscownik
+                } # end przypadek
+            }, # end ja
+            # from http://pl.wiktionary.org/wiki/kt%C3%B3ry
+            'który': {
+                'przypadek': {
+                    'mianownik': {
+                        'liczba': {
+                            'pojedyncza': {
+                                'rodzaj': {
+                                    'mos':  'który',
+                                    'mzw':  'który',
+                                    'mrz':  'który',
+                                    'ż':    'która',
+                                    'n':    'które'
+                                }
+                            },
+                            'mnoga': {
+                                'rodzaj': {
+                                    'mos':  'którzy',
+                                    'nmos': 'które'
+                                }
+                            }
+                        }
+                    }, # end mianownik
+                    'dopełniacz': {
+                        'liczba': {
+                            'pojedyncza': {
+                                'rodzaj': {
+                                    'mos':  'którego',
+                                    'mzw':  'którego',
+                                    'mrz':  'którego',
+                                    'ż':    'której',
+                                    'n':    'którego'
+                                }
+                            },
+                            'mnoga': {
+                                'rodzaj': {
+                                    'mos':  'których',
+                                    'nmos': 'których'
+                                }
+                            }
+                        }
+                    }, # end dopełniacz
+                    'miejscownik': {
+                        'liczba': {
+                            'pojedyncza': {
+                                'rodzaj': {
+                                    'mos':  'którym',
+                                    'mzw':  'którym',
+                                    'mrz':  'którym',
+                                    'ż':    'której',
+                                    'n':    'którym'
+                                }
+                            },
+                            'mnoga': {
+                                'rodzaj': {
+                                    'mos':  'których',
+                                    'nmos': 'których'
+                                }
+                            }
+                        }
+                    }, # end miejscownik
+                } # end przypadek
+            }, # end ktory
+        } # end word
+    }, # end zaimek
+    'czasownik': {
+        'word': {
+            'następować': {
+#				'aspekt': {
+#					'dokonane': {
+                        'forma': {
+                            'czas teraźniejszy': {
+                                'liczba': {
+                                    'pojedyncza': {
+                                        'osoba': {
+                                            'pierwsza': 'następuje',
+                                            'druga':    'następujesz',
+                                            'trzecia':  'następuje',
+                                        }
+                                    },
+                                    'mnoga': {
+                                        'osoba': {
+                                            'pierwsza': 'następujemy',
+                                            'druga':    'następujecie',
+                                            'trzecia':  'następują',
+                                        }
+                                    },
+                                }
+                            }
+                        }
+#					}
+#				}
+            }, # end nastąpić
+            'występować': {
+#                'aspekt': {
+#                    'niedokonane': {
+                        'forma': {
+                            'czas teraźniejszy': {
+                                'liczba': {
+                                    'pojedyncza': {
+                                        'osoba': {
+                                            'pierwsza': 'występuje',
+                                            'druga':    'występujesz',
+                                            'trzecia':  'występuje',
+                                        }
+                                    },
+                                    'mnoga': {
+                                        'osoba': {
+                                            'pierwsza': 'występujemy',
+                                            'druga':    'występujecie',
+                                            'trzecia':  'występują',
+                                        }
+                                    },
+                                }
+                            },
+                            'czas przeszły': {
+                                'liczba': {
+                                    'pojedyncza': {
+                                        'osoba': {
+                                            'pierwsza': {
+                                                'rodzaj': {
+                                                    'm': 'występowałem',
+                                                    'ż': 'występowałam',
+                                                    'n': 'występowałom'
+                                                }
+                                            },
+                                            'druga': {
+                                                'rodzaj': {
+                                                    'm': 'występowałeś',
+                                                    'ż': 'występowałaś',
+                                                    'n': 'występowałoś'
+                                                }
+                                            },
+                                            'trzecia': {
+                                                'rodzaj': {
+                                                    'm': 'występował',
+                                                    'ż': 'występowała',
+                                                    'n': 'występowało'
+                                                }
+                                            }
+                                        }
+                                    },
+                                    'mnoga': {
+                                        'osoba': {
+                                            'pierwsza': {
+                                                'rodzaj': {
+                                                    'm': 'występowaliśmy',
+                                                    'ż': 'występowałyśmy',
+                                                    'n': 'występowałyśmy'
+                                                }
+                                            },
+                                            'druga': {
+                                                'rodzaj': {
+                                                    'm': 'występowaliście',
+                                                    'ż': 'występowałyście',
+                                                    'n': 'występowałyście'
+                                                }
+                                            },
+                                            'trzecia': {
+                                                'rodzaj': {
+                                                    'm': 'występowali',
+                                                    'ż': 'występowały',
+                                                    'n': 'występowały'
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+#                        }
+#                    }
+                }
+            }, # end występować
+            'mieć': {
+#                'aspekt': {
+#                    'dokonane': {
+                        'forma': {
+                            'czas teraźniejszy': {
+                                'liczba': {
+                                    'pojedyncza': {
+                                        'osoba': {
+                                            'pierwsza': 'mam',
+                                            'druga':    'masz',
+                                            'trzecia':  'ma',
+                                        }
+                                    },
+                                    'mnoga': {
+                                        'osoba': {
+                                            'pierwsza': 'mamy',
+                                            'druga':    'macie',
+                                            'trzecia':  'mają',
+                                        }
+                                    },
+                                }
+                            },
+                            'czas przeszły': {
+                                'liczba': {
+                                    'pojedyncza': {
+                                        'osoba': {
+                                            'pierwsza': {
+                                                'rodzaj': {
+                                                    'm': 'miałem',
+                                                    'ż': 'miałam',
+                                                    'n': 'miałom'
+                                                }
+                                            },
+                                            'druga': {
+                                                'rodzaj': {
+                                                    'm': 'miałeś',
+                                                    'ż': 'miałaś',
+                                                    'n': 'miałoś'
+                                                }
+                                            },
+                                            'trzecia': {
+                                                'rodzaj': {
+                                                    'm': 'miał',
+                                                    'ż': 'miała',
+                                                    'n': 'miało'
+                                                }
+                                            }
+                                        }
+                                    },
+                                    'mnoga': {
+                                        'osoba': {
+                                            'pierwsza': {
+                                                'rodzaj': {
+                                                    'm': 'mieliśmy',
+                                                    'ż': 'miałyśmy',
+                                                    'n': 'miałyśmy'
+                                                }
+                                            },
+                                            'druga': {
+                                                'rodzaj': {
+                                                    'm': 'mieliście',
+                                                    'ż': 'miałyście',
+                                                    'n': 'miałyście'
+                                                }
+                                            },
+                                            'trzecia': {
+                                                'rodzaj': {
+                                                    'm': 'mieli',
+                                                    'ż': 'miały',
+                                                    'n': 'miały'
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+#                    }
+#                }
+            }, # end mieć
+            'być': {
+#                'aspekt': {
+#                    'niedokonane': {
+                        'forma': {
+                            'czas teraźniejszy': {
+                                'liczba': {
+                                    'pojedyncza': {
+                                        'osoba': {
+                                            'pierwsza': 'jestem',
+                                            'druga': 'jesteś',
+                                            'trzecia': 'jest',
+                                        }
+                                    },
+                                    'mnoga': {
+                                        'osoba': {
+                                            'pierwsza': 'jesteśmy',
+                                            'druga': 'jesteście',
+                                            'trzecia': 'są',
+                                        }
+                                    }
+                                }
+                            },
+                            'czas przeszły': {
+                                'liczba': {
+                                    'pojedyncza': {
+                                        'osoba': {
+                                            'pierwsza': {
+                                                'rodzaj': {
+                                                    'm': 'byłem',
+                                                    'ż': 'byłam',
+                                                    'n': 'byłom'
+                                                }
+                                            },
+                                            'druga': {
+                                                'rodzaj': {
+                                                    'm': 'byłeś',
+                                                    'ż': 'byłaś',
+                                                    'n': 'byłoś'
+                                                }
+                                            },
+                                            'trzecia': {
+                                                'rodzaj': {
+                                                    'm': 'był',
+                                                    'ż': 'była',
+                                                    'n': 'było'
+                                                }
+                                            }
+                                        }
+                                    },
+                                    'mnoga': {
+                                        'osoba': {
+                                            'pierwsza': {
+                                                'rodzaj': {
+                                                    'm': 'byliśmy',
+                                                    'ż': 'byłyśmy',
+                                                    'n': 'byłyśmy'
+                                                }
+                                            },
+                                            'druga': {
+                                                'rodzaj': {
+                                                    'm': 'byliście',
+                                                    'ż': 'byłyście',
+                                                    'n': 'byłyście'
+                                                }
+                                            },
+                                            'trzecia': {
+                                                'rodzaj': {
+                                                    'm': 'byli',
+                                                    'ż': 'były',
+                                                    'n': 'były'
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+#                    }
+#                }
+            }, # end być
+            'pozwolić': {
+#                'aspekt': {
+#                    'dokonane': {
+                        'forma': {
+                            'czas teraźniejszy': {
+                                'liczba': {
+                                    'pojedyncza': {
+                                        'osoba': {
+                                            'pierwsza': 'pozwolę',
+                                            'druga':    'pozwolisz',
+                                            'trzecia':  'pozwoli',
+                                        }
+                                    },
+                                    'mnoga': {
+                                        'osoba': {
+                                            'pierwsza': 'pozwolimy',
+                                            'druga':    'pozwolicie',
+                                            'trzecia':  'pozwolą',
+                                        }
+                                    },
+                                }
+                            },
+                            'czas przeszły': {
+                                'liczba': {
+                                    'pojedyncza': {
+                                        'osoba': {
+                                            'pierwsza': {
+                                                'rodzaj': {
+                                                    'm': 'pozwoliłem',
+                                                    'ż': 'pozwoliłam',
+                                                    'n': 'pozwoliłom'
+                                                }
+                                            },
+                                            'druga': {
+                                                'rodzaj': {
+                                                    'm': 'pozwoliłeś',
+                                                    'ż': 'pozwoliłaś',
+                                                    'n': 'pozwoliłoś'
+                                                }
+                                            },
+                                            'trzecia': {
+                                                'rodzaj': {
+                                                    'm': 'pozwolił',
+                                                    'ż': 'pozwoliła',
+                                                    'n': 'pozwoliło'
+                                                }
+                                            }
+                                        }
+                                    },
+                                    'mnoga': {
+                                        'osoba': {
+                                            'pierwsza': {
+                                                'rodzaj': {
+                                                    'm': 'pozwoliliśmy',
+                                                    'ż': 'pozwoliłyśmy',
+                                                    'n': 'pozwoliłyśmy'
+                                                }
+                                            },
+                                            'druga': {
+                                                'rodzaj': {
+                                                    'm': 'pozwoliliście',
+                                                    'ż': 'pozwoliłyście',
+                                                    'n': 'pozwoliłyście'
+                                                }
+                                            },
+                                            'trzecia': {
+                                                'rodzaj': {
+                                                    'm': 'pozwolili',
+                                                    'ż': 'pozwoliły',
+                                                    'n': 'pozwoliły'
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+#                    }
+#                }
+            }, # end pozwolić
+            'stanowić': {
+#                'aspekt': {
+#                    'dokonane': {
+                        'forma': {
+                            'czas teraźniejszy': {
+                                'liczba': {
+                                    'pojedyncza': {
+                                        'osoba': {
+                                            'pierwsza': 'stanowię',
+                                            'druga':    'stanowisz',
+                                            'trzecia':  'stanowi',
+                                        }
+                                    },
+                                    'mnoga': {
+                                        'osoba': {
+                                            'pierwsza': 'stanowimy',
+                                            'druga':    'stanowicie',
+                                            'trzecia':  'stanowią',
+                                        }
+                                    },
+                                }
+                            },
+                            'czas przeszły': {
+                                'liczba': {
+                                    'pojedyncza': {
+                                        'osoba': {
+                                            'pierwsza': {
+                                                'rodzaj': {
+                                                    'm': 'stanowiłem',
+                                                    'ż': 'stanowiłam',
+                                                    'n': 'stanowiłom'
+                                                }
+                                            },
+                                            'druga': {
+                                                'rodzaj': {
+                                                    'm': 'stanowiłeś',
+                                                    'ż': 'stanowiłaś',
+                                                    'n': 'stanowiłoś'
+                                                }
+                                            },
+                                            'trzecia': {
+                                                'rodzaj': {
+                                                    'm': 'stanowił',
+                                                    'ż': 'stanowiła',
+                                                    'n': 'stanowiło'
+                                                }
+                                            }
+                                        }
+                                    },
+                                    'mnoga': {
+                                        'osoba': {
+                                            'pierwsza': {
+                                                'rodzaj': {
+                                                    'm': 'stanowiliśmy',
+                                                    'ż': 'stanowiłyśmy',
+                                                    'n': 'stanowiłyśmy'
+                                                }
+                                            },
+                                            'druga': {
+                                                'rodzaj': {
+                                                    'm': 'stanowiliście',
+                                                    'ż': 'stanowiłyście',
+                                                    'n': 'stanowiłyście'
+                                                }
+                                            },
+                                            'trzecia': {
+                                                'rodzaj': {
+                                                    'm': 'stanowili',
+                                                    'ż': 'stanowiły',
+                                                    'n': 'stanowiły'
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+#                    }
+#                }
+            }, # end stanowić
+        } # end word
+    }, # end czasownik
+    'przymiotnik': {
+        'word': {
+            'opis': {
+                'liczba': {
+                    'pojedyncza': {
+                        'rodzaj': {
+                            'm': 'opisany',
+                            'ż': 'opisana',
+                        }
+                    },
+                    'mnoga': {
+                        'rodzaj': {
+                            'm': 'opisane',
+                            'ż': 'opisane',
+                        }
+                    }
+                }
+            } # end opis
+        }
+    }, # end przymiotnik
+    'przyimek': {
+        'word': {
+            'z': {
+                'forma': {
+                    'z': 'z',
+                    'ze': 'ze'
+                }
+            }
+        }
+    }, # end przyimek
+    'liczebnik': {
+        'word': {
+                '1': 'jednej',
+                '2': 'dwóch',
+                '3': 'trzech',
+                '4': 'czterech',
+                '5': 'pięciu',
+                '6': 'sześciu',
+                '7': 'siedmiu',
+                '8': 'ośmiu',
+                '9': 'dziewięciu',
+        }
+    }, # end liczebnik
+    'rzeczownik': {
+        'word': {
+            # from http://pl.wiktionary.org/wiki/Aneks:J%C4%99zyk_polski_-_zaimki
+            'znak': {
+                'przypadek': {
+                    'mianownik': {
+                        'liczba': {
+                            'pojedyncza': 'znak',
+                            'mnoga': 'znaki'
+                        }
+                    },
+                    'dopełniacz': {
+                        'liczba': {
+                            'pojedyncza': 'znaku',
+                            'mnoga': 'znaków'
+                        }
+                    },
+                    'celownik': {
+                        'liczba': {
+                            'pojedyncza': 'znakowi',
+                            'mnoga': 'znakom'
+                        }
+                    },
+                    'biernik': {
+                        'liczba': {
+                            'pojedyncza': 'znak',
+                            'mnoga': 'znaki'
+                        }
+                    },
+                    'narzędnik': {
+                        'liczba': {
+                            'pojedyncza': 'znakiem',
+                            'mnoga': 'znakami'
+                        }
+                    },
+                    'miejscownik': {
+                        'liczba': {
+                            'pojedyncza': 'znaku',
+                            'mnoga': 'znakach'
+                        }
+                    },
+                    'wołacz': {
+                        'liczba': {
+                            'pojedyncza': 'znaku',
+                            'mnoga': 'znaki'
+                        }
+                    }
+                }
+            }, # end znak
+            'cyfra': {
+                'przypadek': {
+                    'mianownik': {
+                        'liczba': {
+                            'pojedyncza': 'cyfra',
+                            'mnoga': 'cyfry'
+                        }
+                    },
+                    'dopełniacz': {
+                        'liczba': {
+                            'pojedyncza': 'cyfry',
+                            'mnoga': 'cyfr'
+                        }
+                    },
+                    'celownik': {
+                        'liczba': {
+                            'pojedyncza': 'cyfrze',
+                            'mnoga': 'cyfrom'
+                        }
+                    },
+                    'biernik': {
+                        'liczba': {
+                            'pojedyncza': 'cyfrę',
+                            'mnoga': 'cyfry'
+                        }
+                    },
+                    'narzędnik': {
+                        'liczba': {
+                            'pojedyncza': 'cyfrą',
+                            'mnoga': 'cyframi'
+                        }
+                    },
+                    'miejscownik': {
+                        'liczba': {
+                            'pojedyncza': 'cyfrze',
+                            'mnoga': 'cyfrach'
+                        }
+                    },
+                    'wołacz': {
+                        'liczba': {
+                            'pojedyncza': 'cyfro',
+                            'mnoga': 'cyfry'
+                        }
+                    }
+                }
+            }, # end cyfra
+            'kropka': {
+                'przypadek': {
+                    'mianownik': {
+                        'liczba': {
+                            'pojedyncza': 'kropka',
+                            'mnoga': 'kropki'
+                        }
+                    },
+                    'dopełniacz': {
+                        'liczba': {
+                            'pojedyncza': 'kropki',
+                            'mnoga': 'kropek'
+                        }
+                    },
+                    'celownik': {
+                        'liczba': {
+                            'pojedyncza': 'kropce',
+                            'mnoga': 'kropkom'
+                        }
+                    },
+                    'biernik': {
+                        'liczba': {
+                            'pojedyncza': 'kropkę',
+                            'mnoga': 'kropki'
+                        }
+                    },
+                    'narzędnik': {
+                        'liczba': {
+                            'pojedyncza': 'kropką',
+                            'mnoga': 'kropkami'
+                        }
+                    },
+                    'miejscownik': {
+                        'liczba': {
+                            'pojedyncza': 'kropce',
+                            'mnoga': 'kropkach'
+                        }
+                    },
+                    'wołacz': {
+                        'liczba': {
+                            'pojedyncza': 'kropko',
+                            'mnoga': 'kropki'
+                        }
+                    }
+                }
+            }, # end kropka
+            'dwukropek': {
+                'przypadek': {
+                    'mianownik': {
+                        'liczba': {
+                            'pojedyncza': 'dwukropek',
+                            'mnoga': 'dwukropki'
+                        }
+                    },
+                    'dopełniacz': {
+                        'liczba': {
+                            'pojedyncza': 'dwukropka',
+                            'mnoga': 'dwukropków'
+                        }
+                    },
+                    'celownik': {
+                        'liczba': {
+                            'pojedyncza': 'dwukropkowi',
+                            'mnoga': 'dwukropkom'
+                        }
+                    },
+                    'biernik': {
+                        'liczba': {
+                            'pojedyncza': 'dwukropek',
+                            'mnoga': 'dwukropki'
+                        }
+                    },
+                    'narzędnik': {
+                        'liczba': {
+                            'pojedyncza': 'dwukropkiem',
+                            'mnoga': 'dwukropkami'
+                        }
+                    },
+                    'miejscownik': {
+                        'liczba': {
+                            'pojedyncza': 'dwukropku',
+                            'mnoga': 'dwukropkach'
+                        }
+                    },
+                    'wołacz': {
+                        'liczba': {
+                            'pojedyncza': 'dwukropku',
+                            'mnoga': 'dwukropki'
+                        }
+                    }
+                }
+            }, # end dwukropek
+            'liczba': {
+                'przypadek': {
+                    'mianownik': {
+                        'liczba': {
+                            'pojedyncza': 'liczba',
+                            'mnoga': 'liczby'
+                        }
+                    },
+                    'dopełniacz': {
+                        'liczba': {
+                            'pojedyncza': 'liczby',
+                            'mnoga': 'liczb'
+                        }
+                    },
+                    'celownik': {
+                        'liczba': {
+                            'pojedyncza': 'liczbie',
+                            'mnoga': 'liczbom'
+                        }
+                    },
+                    'biernik': {
+                        'liczba': {
+                            'pojedyncza': 'liczbę',
+                            'mnoga': 'liczby'
+                        }
+                    },
+                    'narzędnik': {
+                        'liczba': {
+                            'pojedyncza': 'liczbą',
+                            'mnoga': 'liczbami'
+                        }
+                    },
+                    'miejscownik': {
+                        'liczba': {
+                            'pojedyncza': 'liczbie',
+                            'mnoga': 'liczbach'
+                        }
+                    },
+                    'wołacz': {
+                        'liczba': {
+                            'pojedyncza': 'liczbo',
+                            'mnoga': 'liczby'
+                        }
+                    }
+                }
+            }, # end liczba
+            'wykonawca': {
+                'przypadek': {
+                    'mianownik': {
+                        'liczba': {
+                            'pojedyncza': 'wykonawca',
+                            'mnoga': 'wykonawcy'
+                        }
+                    },
+                    'dopełniacz': {
+                        'liczba': {
+                            'pojedyncza': 'wykonawcy',
+                            'mnoga': 'wykonawców'
+                        }
+                    },
+                    'celownik': {
+                        'liczba': {
+                            'pojedyncza': 'wykonawcy',
+                            'mnoga': 'wykonawcom'
+                        }
+                    },
+                    'biernik': {
+                        'liczba': {
+                            'pojedyncza': 'wykonawcę',
+                            'mnoga': 'wykonawców'
+                        }
+                    },
+                    'narzędnik': {
+                        'liczba': {
+                            'pojedyncza': 'wykonawcą',
+                            'mnoga': 'wykonawcami'
+                        }
+                    },
+                    'miejscownik': {
+                        'liczba': {
+                            'pojedyncza': 'wykonawcy',
+                            'mnoga': 'wykonawcach'
+                        }
+                    },
+                    'wołacz': {
+                        'liczba': {
+                            'pojedyncza': 'wykonawco',
+                            'mnoga': 'wykonawcy'
+                        }
+                    }
+                }
+            }, # end wykonawca
+        }
+    }
 }

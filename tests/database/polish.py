@@ -17,7 +17,7 @@ class DatabasePolishTest(unittest.TestCase):
 
         ad_wi.get_word(('rzeczownik', 'pies', {'przypadek':'wołacz', 'liczba': 'mnoga'}))
         ad_wi.get_word(('przymiotnik', 'żółty', {'przypadek' : 'dopełniacz', 'stopień' : 'wyższy', 'liczba': 'mnoga', 'rodzaj': 'm'}))
-        ad_wi.get_word(("czasownik", "występować", {'aspekt': 'niedokonane', 'forma': 'czas teraźniejszy', 'liczba': 'mnoga', 'osoba': 'trzecia'}))
+        ad_wi.get_word(("czasownik", "występować", {'forma': 'czas teraźniejszy', 'liczba': 'mnoga', 'osoba': 'trzecia'}))
 
         cls.ad_db.save_model(ad_wi.get_model())
 
@@ -34,8 +34,8 @@ class DatabasePolishTest(unittest.TestCase):
         self.assertEquals(self.ad_db.get_word(('rzeczownik', 'pies', {'przypadek':'mianownik', 'liczba': 'pojedyncza'})), 'pies')
         self.assertEquals(self.ad_db.get_word(('przymiotnik', 'żółty', {'przypadek' : 'dopełniacz', 'stopień' : 'podstawowy', 'liczba': 'pojedyncza', 'rodzaj': 'm'})), 'żółtego')
 
-        self.assertEquals(self.ad_db.get_word(("czasownik", "występować", {'aspekt': 'niedokonane', 'forma': 'czas teraźniejszy', 'liczba': 'mnoga', 'osoba': 'trzecia'})), 'występują')
-        self.assertEquals(self.ad_db.get_word(("czasownik", "występować", {'aspekt': 'niedokonane', 'forma': 'czas przeszły', 'liczba': 'mnoga', 'osoba': 'trzecia', 'rodzaj':'m'})), "występowali")
+        self.assertEquals(self.ad_db.get_word(("czasownik", "występować", {'forma': 'czas teraźniejszy', 'liczba': 'mnoga', 'osoba': 'trzecia'})), 'występują')
+        self.assertEquals(self.ad_db.get_word(("czasownik", "występować", {'forma': 'czas przeszły', 'liczba': 'mnoga', 'osoba': 'trzecia', 'rodzaj':'m'})), "występowali")
 
 if __name__ == '__main__':
     #import sys;sys.argv = ['', 'Test.test']

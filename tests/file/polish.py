@@ -72,14 +72,14 @@ class FilePolishTest(unittest.TestCase):
         self.assertIn(('zaimek', 'który', {'przypadek': 'miejscownik', 'liczba': 'mnoga', 'rodzaj': 'mos'}), self.ad.get_conf('których'))
 
     def testGetConfVerb(self):
-        self.assertIn(('czasownik', 'następować', {'aspekt': 'dokonane', 'forma': 'czas teraźniejszy', 'liczba': 'pojedyncza', 'osoba': 'pierwsza'}), self.ad.get_conf('następuje'))
-        self.assertEqual(('czasownik', 'następować', {'aspekt': 'dokonane', 'forma': 'czas teraźniejszy', 'liczba': 'mnoga', 'osoba': 'trzecia'}), self.ad.get_conf('następują')[0])
+        self.assertIn(('czasownik', 'następować', {'forma': 'czas teraźniejszy', 'liczba': 'pojedyncza', 'osoba': 'pierwsza'}), self.ad.get_conf('następuje'))
+        self.assertEqual(('czasownik', 'następować', {'forma': 'czas teraźniejszy', 'liczba': 'mnoga', 'osoba': 'trzecia'}), self.ad.get_conf('następują')[0])
 
-        self.assertIn(('czasownik', 'występować', {'aspekt': 'niedokonane', 'forma': 'czas teraźniejszy', 'liczba': 'pojedyncza', 'osoba': 'pierwsza'}), self.ad.get_conf('występuje'))
-        self.assertEqual(('czasownik', 'występować', {'aspekt': 'niedokonane', 'forma': 'czas teraźniejszy', 'liczba': 'mnoga', 'osoba': 'trzecia'}), self.ad.get_conf('występują')[0])
+        self.assertIn(('czasownik', 'występować', {'forma': 'czas teraźniejszy', 'liczba': 'pojedyncza', 'osoba': 'pierwsza'}), self.ad.get_conf('występuje'))
+        self.assertEqual(('czasownik', 'występować', {'forma': 'czas teraźniejszy', 'liczba': 'mnoga', 'osoba': 'trzecia'}), self.ad.get_conf('występują')[0])
 
-        self.assertEqual(('czasownik', 'być', {'aspekt': 'niedokonane', 'forma': 'czas teraźniejszy', 'liczba': 'pojedyncza', 'osoba': 'trzecia'}), self.ad.get_conf('jest')[0])
-        self.assertEqual(('czasownik', 'być', {'aspekt': 'niedokonane', 'forma': 'czas teraźniejszy', 'liczba': 'mnoga', 'osoba': 'trzecia'}),   self.ad.get_conf('są')[0])
+        self.assertEqual(('czasownik', 'być', {'forma': 'czas teraźniejszy', 'liczba': 'pojedyncza', 'osoba': 'trzecia'}), self.ad.get_conf('jest')[0])
+        self.assertEqual(('czasownik', 'być', {'forma': 'czas teraźniejszy', 'liczba': 'mnoga', 'osoba': 'trzecia'}),   self.ad.get_conf('są')[0])
 
     def testGetConfPreposition(self):
         self.assertEqual(('przyimek', 'z', {'forma': 'z'}),  self.ad.get_conf('z')[0])
