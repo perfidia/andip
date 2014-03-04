@@ -1,37 +1,55 @@
 {
-	'verb': {
-		'word': {
-			'be': {
-				'number': {
-					'singular': {
-						'person': {
-							'first': 'am',
-							'second': 'are',
-							'third': 'is'
-						}
-					},
-					'plural': {
-						'person': {
-							'first': 'are',
-							'second': 'are',
-							'third': 'are'
-						}
-					}
-				}
-			}
-		}
-	}, # end verb
-	'numeral': {
-		'word': {
-				'1': 'one',
-				'2': 'two',
-				'3': 'three',
-				'4': 'four',
-				'5': 'five',
-				'6': 'six',
-				'7': 'seven',
-				'8': 'eight',
-				'9': 'nine',
-		}
-	}
+    'verb': {
+        'word': {
+            'be': {
+                'number': {
+                    'singular': {
+                        'person': {
+                            'first':  'am',
+                            'second': 'are',
+                            'third':  'is'
+                        }
+                    },
+                    'plural': {
+                        'person': {
+                            'first':  'are',
+                            'second': 'are',
+                            'third':  'are'
+                        }
+                    }
+                }
+            }, # end be
+            'consist': {
+                'number': {
+                    'singular': {
+                        'person': {
+                            'first':  'consist',
+                            'second': 'consist',
+                            'third':  'consists'
+                        }
+                    },
+                    'plural': {
+                        'person': {
+                            'first':  'consist',
+                            'second': 'consist',
+                            'third':  'consist'
+                        }
+                    }
+                }
+            } # end consist
+        }
+    }, # end verb
+    'numeral': {
+        'word': {
+                '1': 'one',
+                '2': 'two',
+                '3': 'three',
+                '4': 'four',
+                '5': 'five',
+                '6': 'six',
+                '7': 'seven',
+                '8': 'eight',
+                '9': 'nine',
+        }
+    }
 }
